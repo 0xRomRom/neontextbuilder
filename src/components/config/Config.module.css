@@ -95,6 +95,7 @@
   padding: 4px;
   border-radius: 0.25rem;
   border: 1px solid transparent;
+  background-size: cover;
 }
 
 .selectedBg {

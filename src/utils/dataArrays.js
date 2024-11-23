@@ -20,6 +20,7 @@ const backgrounds = [
   "./images/Brickwall.webp",
   "./images/Muur.jpg",
   "./images/Bord.jpg",
+  "./images/Spotlight.jpg",
 ];
 
 export { colors, backgrounds };
