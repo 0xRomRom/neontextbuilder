@@ -1,0 +1,100 @@
+.longestRow {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 700px;
+  /* height: 10rem; */
+  border-radius: 0.8rem;
+  padding: 15px;
+  box-shadow: 0px 0px 20px var(--purple);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-image: radial-gradient(
+    ellipse 100% 100% at 50% 75%,
+    rgba(37, 99, 235, 0.15),
+    rgba(37, 99, 235, 0) 60%
+  );
+}
+
+.hero {
+  color: black;
+  font-size: 30px;
+  user-select: none;
+  background-color: var(--pink);
+  padding: 2px 9px;
+}
+
+.longestSelect {
+  outline: none;
+  width: 15rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+  margin-top: 0.5rem;
+  background-color: transparent;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  border: 2px solid purple;
+  outline: none;
+  box-shadow: 0px 0px 10px purple;
+}
+
+.longestSelect option {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.green {
+  color: rgb(251, 0, 169);
+}
+
+.rgb {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 0, 0),
+    rgb(0, 255, 0),
+    rgb(0, 0, 255)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.checked {
+  box-shadow: 0px 0px 20px var(--green);
+}
+
+.videoWrapper {
+  height: 22.5rem;
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.079);
+  border-radius: 0.4rem;
+}
+
+.videoWrapper div {
+  height: 100%;
+}
+
+.contour {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 35px;
+  border-top-right-radius: 90px;
+  margin-top: 5px;
+  height: 2.45rem;
+  line-height: 31px;
+}
+
+.corners {
+  border-radius: 0.6rem;
+  margin-top: 5px;
+  height: 2.45rem;
+  line-height: 31px;
+}
+
+@media (max-width: 500px) {
+  .videoWrapper {
+    height: 13.5rem;
+  }
+}

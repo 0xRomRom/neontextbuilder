@@ -1,0 +1,317 @@
+.app {
+  /* background-color: #030e26; */
+  background-color: #030e26;
+  background: linear-gradient(#030e26, #030e26, #030e26, #120326);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.brickBg {
+  background-image: url("../public/images/Brickbg.webp");
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  inset: 0;
+  height: 1100px;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.paddWrapper {
+  position: relative;
+  /* margin: 0px 20px; */
+  overflow: hidden;
+}
+
+.mainLogo {
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  max-width: 325px;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.hamburger {
+  width: 4.4rem;
+  height: 4.4rem;
+  object-fit: contain;
+  position: absolute;
+  position: fixed;
+  top: 25px;
+  right: 2.75rem;
+  z-index: 400;
+}
+
+.burgerCta {
+  position: absolute;
+  right: 24px;
+  top: 25px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pageHero {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48.4px;
+  font-family: var(--hero-font);
+  text-shadow: 0px 0px 0px var(--pink);
+}
+
+.pink {
+  color: var(--pink);
+  text-shadow: 0px 0px 0px var(--pink);
+}
+
+.subHero {
+  color: white;
+  text-shadow: 0px 0px 30px var(--pink);
+  padding-top: 0.2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+.mainApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5rem;
+  z-index: 30;
+  padding-bottom: 6rem;
+}
+
+.transition {
+  position: absolute;
+  height: 300px;
+  bottom: 0%;
+  width: 100%;
+  background: #030e26;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgb(3, 14, 38)),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: linear-gradient(0deg, rgb(3, 14, 38) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.green {
+  color: rgb(0, 255, 0);
+}
+
+.activeArrow {
+  color: white;
+  position: relative;
+  transform: rotate(270deg);
+  font-size: 60px;
+  margin: 2.5rem 0rem;
+  color: PURPLE;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 0px 5px red;
+}
+
+.footerBlock {
+  bottom: 15px;
+  color: #d8d5d5;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  left: 10px;
+  letter-spacing: 2px;
+  position: fixed; /* Change from 'absolute' to 'fixed' */
+  text-align: start;
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Add a transition for smoother appearance */
+  z-index: 300;
+}
+
+.footerBlock.show {
+  opacity: 1; /* Show when the 'show' class is applied */
+}
+
+a {
+  color: #d8d5d5;
+  text-decoration: none;
+}
+
+.blueSpan {
+  color: #004ef7;
+}
+
+@media (max-width: 1260px) {
+  .mainLogo {
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    max-width: 225px;
+  }
+}
+@media (max-width: 1000px) {
+  .mainLogo {
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    max-width: 150px;
+    z-index: 300;
+  }
+}
+@media (max-width: 780px) {
+  .header {
+    padding-top: 9rem;
+  }
+  .mainApp {
+    padding-top: 3rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 6rem;
+  }
+
+  .pageHero {
+    font-size: 8.7vw;
+  }
+}
+@media (max-width: 480px) {
+  .subHero {
+    font-size: 5vw;
+  }
+  .footerBlock {
+    transform: scale(0.8);
+    left: 5px;
+  }
+}
+
+.whatsAppButton {
+  position: fixed;
+  right: 1.5%;
+  bottom: 1.5%;
+  z-index: 2;
+  min-height: 41.59px;
+  z-index: 200;
+}
+
+.appAnchor {
+  padding: 0.6rem 1.5rem;
+  background-color: #fdf06c;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-box-shadow: 3px 3px 17px rgba(0, 0, 0, 0.5019607843);
+  box-shadow: 3px 3px 17px rgba(0, 0, 0, 0.5019607843);
+  font-weight: medium;
+  color: black;
+  text-transform: uppercase;
+  font-size: 17.6px;
+  border-radius: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.appLogo {
+  font-size: 22px;
+  top: 1px;
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .whatsAppButton {
+    min-height: none;
+    right: 2%;
+  }
+  .appAnchor {
+    padding: 0.6rem 0.5rem;
+    padding-top: 0.5rem;
+  }
+  .appOns {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  .hamburger {
+    right: 8px;
+    top: 5px;
+  }
+  .activeArrow {
+    margin: 1.5rem 0rem;
+  }
+}
+
+.purpleSphere {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background-color: rgba(45, 0, 128, 0.85);
+  border-radius: 50%;
+  filter: blur(50rem);
+  top: 30rem;
+}
+
+.purpleSphere2 {
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  background-color: rgba(75, 0, 128, 0.45);
+  border-radius: 50%;
+  filter: blur(50rem);
+  top: 90rem;
+  right: 5rem;
+}
+
+.purpleSphere3 {
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  background-color: rgba(79, 0, 128, 0.45);
+  border-radius: 50%;
+  filter: blur(50rem);
+  top: 190rem;
+  left: 5rem;
+  /* display: none; */
+}
+
+.purpleSphere4 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background-color: rgba(45, 0, 128, 0.961);
+  border-radius: 50%;
+  filter: blur(50rem);
+  top: 280rem;
+  right: 30%;
+  /* display: none; */
+}
+
+@media (max-width: 500px) {
+  .purpleSphere4 {
+    top: 245rem;
+    right: 20%;
+  }
+}
