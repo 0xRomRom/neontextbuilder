@@ -3,27 +3,13 @@ import { useState } from "react";
 import NavOverlay from "./components/nav/NavOverlay";
 import Config from "./components/config/Config";
 import Canvas from "./components/canvas/Canvas";
-const colors = [
-  "#FF5733",
-  "#33FF57",
-  "#3357FF",
-  "#F1C40F",
-  "#8E44AD",
-  "#E74C3C",
-  "#1ABC9C",
-  "#2ECC71",
-  "#3498DB",
-  "#9B59B6",
-  "#34495E",
-  "#16A085",
-  "#27AE60",
-  "#2980B9",
-  "#8E44AF",
-];
+import { colors, backgrounds } from "./utils/dataArrays";
+
 const App = () => {
   const [showNav, setShowNav] = useState(false);
   const [currentText, setCurrentText] = useState("Uw Leds Go Neon Text");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [backgroundImage, setBackgroundImage] = useState(backgrounds[2]);
 
   return (
     <div className={stl.app}>
@@ -58,12 +44,18 @@ const App = () => {
           </h1>
         </header>
         <main className={stl.mainApp}>
-          <Canvas currentText={currentText} selectedColor={selectedColor} />
+          <Canvas
+            currentText={currentText}
+            selectedColor={selectedColor}
+            backgroundImage={backgroundImage}
+          />
           <Config
             currentText={currentText}
             setCurrentText={setCurrentText}
             selectedColor={selectedColor}
             setSelectedColor={setSelectedColor}
+            setBackgroundImage={setBackgroundImage}
+            backgroundImage={backgroundImage}
           />
         </main>
       </div>

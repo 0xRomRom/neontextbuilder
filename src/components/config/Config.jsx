@@ -1,32 +1,25 @@
-import React, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import stl from "./Config.module.css";
 import { BiText } from "react-icons/bi";
 import { IoColorPaletteOutline } from "react-icons/io5";
-const colors = [
-  "#FF5733",
-  "#33FF57",
-  "#3357FF",
-  "#F1C40F",
-  "#8E44AD",
-  "#E74C3C",
-  "#1ABC9C",
-  "#2ECC71",
-  "#3498DB",
-  "#9B59B6",
-  "#34495E",
-  "#16A085",
-  "#27AE60",
-  "#2980B9",
-  "#8E44AF",
-];
+import { colors, backgrounds } from "../../utils/dataArrays";
 
 const Config = ({
   currentText,
   setCurrentText,
   selectedColor,
   setSelectedColor,
+  setBackgroundImage,
+  backgroundImage,
 }) => {
+  const inputRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    if (activeTab === 0) {
+      inputRef?.current?.focus();
+    }
+  }, [activeTab]);
 
   return (
     <div className={stl.config}>
@@ -43,6 +36,7 @@ const Config = ({
               className={stl.textInput}
               value={currentText}
               onInput={(e) => setCurrentText(e.target.value)}
+              ref={inputRef}
             />
           </div>
         )}
@@ -69,6 +63,31 @@ const Config = ({
                     style={{ backgroundColor: color }}
                   ></div>
                 </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className={stl.box}>
+        <span className={stl.title} onClick={() => setActiveTab(2)}>
+          <IoColorPaletteOutline className={stl.icon} />
+          Achtergrond
+        </span>
+        {activeTab === 2 && (
+          <div className={stl.content}>
+            <div className={stl.colorGrid}>
+              {backgrounds.map((background, index) => (
+                <div
+                  key={index}
+                  onClick={() => setBackgroundImage(background)}
+                  className={`${stl.bgDiv} ${
+                    backgroundImage === background ? stl.selectedBg : ""
+                  }`}
+                  style={{
+                    backgroundImage: `url(${background})`,
+                  }}
+                ></div>
               ))}
             </div>
           </div>

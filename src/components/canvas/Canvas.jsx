@@ -1,15 +1,6 @@
-import { useState } from "react";
 import stl from "./Canvas.module.css";
 
-const images = [
-  "./images/Brickwall.webp",
-  "./images/Muur.jpg",
-  "./images/Bord.jpg",
-];
-
-const Canvas = ({ currentText, selectedColor }) => {
-  const [backgroundImage, setBackgroundImage] = useState(images[2]);
-
+const Canvas = ({ currentText, selectedColor, backgroundImage }) => {
   return (
     <div className={stl.canvas}>
       <h1

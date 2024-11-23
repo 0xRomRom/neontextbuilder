@@ -87,3 +87,16 @@
 .content {
   margin-top: 0.5rem;
 }
+
+.bgDiv {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+
+.selectedBg {
+  border: 1px solid white;
+}
