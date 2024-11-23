@@ -1,199 +1,32 @@
 import stl from "./App.module.css";
-import { TiArrowLeftThick } from "react-icons/ti";
-import React, { useEffect, useState } from "react";
-
-import UploadModal from "./components/UploadModal/UploadModal";
-import ImageEditor from "./components/ImageEditor/ImageEditor";
-import RequestCalculation from "./components/RequestCalculation/RequestCalculation";
-import LongestRow from "./components/LongestRow/LongestRow";
-import LedKind from "./components/LedKind/LedKind";
-import BackplateType from "./components/BackplateType/BackplateType";
-import BackplateShape from "./components/BackplateShape/BackplateShape";
-import Mounting from "./components/Mounting/Mounting";
-import { FaWhatsapp } from "react-icons/fa";
-import SmallForm from "./components/SmallForm/SmallForm";
-import CurrentOverview from "./CurrentOverview/CurrentOverview";
-import NavOverlay from "./components/navoverlay/NavOverlay";
-
+import { useState } from "react";
+import NavOverlay from "./components/nav/NavOverlay";
+import Config from "./components/config/Config";
+import Canvas from "./components/canvas/Canvas";
+const colors = [
+  "#FF5733",
+  "#33FF57",
+  "#3357FF",
+  "#F1C40F",
+  "#8E44AD",
+  "#E74C3C",
+  "#1ABC9C",
+  "#2ECC71",
+  "#3498DB",
+  "#9B59B6",
+  "#34495E",
+  "#16A085",
+  "#27AE60",
+  "#2980B9",
+  "#8E44AD",
+];
 const App = () => {
-  const [isDraggingOver, setIsDraggingOver] = useState(false);
-  const [uploadedImg, setUploadedImg] = useState(null);
-  const [aspectRatio, setAspectRatio] = useState(null);
-  const [longestSide, setLongestSide] = useState(null);
-  const [progressState, setProgressState] = useState(0);
-  const [toggleIconBool, setToggleIconBool] = useState(false);
-  const [ledType, setLedType] = useState(null);
-  const [backplateType, setBackplateType] = useState(null);
-  const [backplateShape, setBackplateShape] = useState(null);
-  const [mountType, setMountType] = useState(null);
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [notice, setNotice] = useState(null);
-  const [priceEstimate, setPriceEstimate] = useState(null);
-  const [RGBPrice, setRGBPrice] = useState(null);
-  const [backplatePrice, setBackPlatePrice] = useState(null);
-  const [showFooter, setShowFooter] = useState(false);
   const [showNav, setShowNav] = useState(false);
-  const [selectedColor, setSelectedColor] = useState([]);
-  const [base64img, setBase64img] = useState(null);
-  const [fileExtension, setFileExtension] = useState(null);
-  const [dataType, setDataType] = useState(null);
-  const [unsupportedFormat, setUnsupportedFormat] = useState(false);
-
-  useEffect(() => {
-    if (uploadedImg) {
-      const uploadedFileExtension = uploadedImg.file.path.split(".")[1];
-      const imgDataType = uploadedImg.file.type;
-
-      setFileExtension(uploadedFileExtension);
-      setDataType(imgDataType);
-
-      const convertImageToBase64 = () => {
-        const file = uploadedImg.file;
-
-        if (file) {
-          const reader = new FileReader();
-
-          reader.onload = function (e) {
-            const base64String = e.target.result.split(",")[1];
-            setBase64img(base64String);
-          };
-
-          reader.readAsDataURL(file);
-        }
-      };
-      convertImageToBase64();
-
-      setTimeout(() => {
-        const clickEvent = new MouseEvent("click", {
-          bubbles: true,
-          cancelable: true,
-          view: window,
-        });
-
-        // Trigger the click on the body element
-        document.body.dispatchEvent(clickEvent);
-      }, 1000);
-    }
-  }, [uploadedImg]);
-
-  useEffect(() => {
-    if (!showNav) {
-      document.body.style.overflow = "";
-      return;
-    }
-
-    // document.body.style.overflow = "hidden"; // Disable scrolling on the body
-  }, [showNav]);
-
-  const handleDragOver = () => {
-    setIsDraggingOver(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDraggingOver(false);
-  };
-
-  const handleClickDefault = (e) => {
-    e.preventDefault();
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      const offset = 0;
-
-      if (scrollPosition + windowHeight >= documentHeight - offset) {
-        setShowFooter(true);
-      } else {
-        setShowFooter(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (progressState > 0) {
-      if (progressState === 5) return;
-      window.scrollTo(0, document.body.scrollHeight);
-    }
-  }, [progressState]);
-
-  useEffect(() => {
-    const length = +longestSide?.slice(0, -2);
-    let priceCalculation = 0;
-    let dimensions = 0;
-
-    if (aspectRatio >= 1) {
-      const height = length / aspectRatio;
-      const width = length;
-
-      dimensions = height * width;
-    }
-
-    if (aspectRatio < 1) {
-      const height = length;
-      const width = aspectRatio * height;
-
-      dimensions = width * height;
-    }
-
-    priceCalculation = 0.0425 * dimensions + 200;
-    if (+length > 0) {
-      if (!backplateType && !ledType && !aspectRatio && !longestSide) {
-        setPriceEstimate(null);
-        return;
-      }
-
-      if (!ledType && !backplateType) {
-        setPriceEstimate(priceCalculation);
-      }
-      if (ledType) {
-        const ledMultiplied = priceCalculation * 1.4;
-
-        if (ledType === "RGB" && !backplateType) {
-          setRGBPrice(priceCalculation * 0.4);
-          priceCalculation *= 1.4;
-        }
-        if (ledType === "RGB" && backplateType === "Gekleurd") {
-          setRGBPrice(priceCalculation * 0.4);
-          setBackPlatePrice(ledMultiplied * 0.25);
-          priceCalculation = ledMultiplied * 1.25;
-        }
-        if (ledType === "RGB" && backplateType === "Transparant") {
-          setRGBPrice(priceCalculation * 0.4);
-          setBackPlatePrice(null);
-          priceCalculation = priceCalculation * 1.4;
-        }
-
-        if (ledType === "Single color" && !backplateType) {
-          priceCalculation *= 1;
-          setRGBPrice(null);
-        }
-        if (ledType === "Single color" && backplateType === "Gekleurd") {
-          setRGBPrice(null);
-          setBackPlatePrice(priceCalculation * 0.25);
-          priceCalculation *= 1.25;
-        }
-        if (ledType === "Single color" && backplateType === "Transparant") {
-          setRGBPrice(null);
-          setBackPlatePrice(null);
-        }
-        setPriceEstimate(priceCalculation);
-      }
-    }
-  }, [aspectRatio, ledType, longestSide, backplateType]);
+  const [currentText, setCurrentText] = useState("Uw Leds Go Neon Text");
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
 
   return (
-    <div className={stl.app} onClick={handleClickDefault}>
+    <div className={stl.app}>
       <NavOverlay setShowNav={setShowNav} showNav={showNav} />
 
       <div className={stl.brickBg}>
@@ -224,7 +57,15 @@ const App = () => {
             <span className={stl.pink}>Text</span> configurator
           </h1>
         </header>
-        <main className={stl.mainApp}></main>
+        <main className={stl.mainApp}>
+          <Canvas currentText={currentText} selectedColor={selectedColor} />
+          <Config
+            currentText={currentText}
+            setCurrentText={setCurrentText}
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+          />
+        </main>
       </div>
     </div>
   );

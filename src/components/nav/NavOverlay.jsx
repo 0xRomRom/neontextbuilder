@@ -1,6 +1,6 @@
 import stl from "./NavOverlay.module.css";
 import { FaArrowRight } from "react-icons/fa6";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BiLogoFacebookCircle } from "react-icons/bi";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -13,6 +13,14 @@ const NavOverlay = ({ showNav, setShowNav }) => {
   const handleCloseButtonClick = () => {
     setShowNav(!showNav); // Slide to the right
   };
+
+  useEffect(() => {
+    if (!showNav) {
+      document.body.style.overflow = "";
+      return;
+    }
+    document.body.style.overflow = "hidden";
+  }, [showNav]);
 
   return (
     <div className={`${stl.navOverlay} ${showNav ? stl.slideIn : stl.hidden}`}>

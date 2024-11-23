@@ -1,1 +1,1 @@
-  "homepage": "https://ledsgoneon.nl/logo-samensteller/",
+  // "homepage": "https://ledsgoneon.nl/text-configurator/",

@@ -1,0 +1,78 @@
+.config {
+  width: 20rem;
+  height: 40rem;
+  background-color: black;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px var(--purple);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.box {
+  width: 100%;
+  background-color: rgba(151, 0, 136, 0.261);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.title {
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: rgba(151, 0, 136, 0.15);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.textInput {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid rgb(151, 0, 136);
+  background-color: rgba(151, 0, 136, 0.261);
+  width: 100%;
+  padding: 14px 8px;
+  border-radius: 0.5rem;
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.textInput:focus {
+  box-shadow: 0px 0px 5px rgb(151, 0, 136);
+  background-color: rgba(151, 0, 136, 0.3);
+}
+
+.icon {
+  color: rgb(187, 187, 187);
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.colorBox {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.colorBox:hover {
+  transform: scale(1.1);
+}
+
+.selected {
+  border: 2px solid #000;
+}
+
+.content {
+  margin-top: 0.5rem;
+}
