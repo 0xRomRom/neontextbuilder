@@ -17,7 +17,7 @@ const colors = [
   "#16A085",
   "#27AE60",
   "#2980B9",
-  "#8E44AD",
+  "#8E44AF",
 ];
 
 const Config = ({
@@ -51,7 +51,7 @@ const Config = ({
       <div className={stl.box}>
         <span className={stl.title} onClick={() => setActiveTab(1)}>
           <IoColorPaletteOutline className={stl.icon} />
-          Kies een kleur
+          Kleur
         </span>
         {activeTab === 1 && (
           <div className={stl.content}>
@@ -59,12 +59,16 @@ const Config = ({
               {colors.map((color, index) => (
                 <div
                   key={index}
-                  className={`${stl.colorBox} ${
+                  onClick={() => setSelectedColor(color)}
+                  className={`${stl.outerDiv} ${
                     selectedColor === color ? stl.selected : ""
                   }`}
-                  style={{ backgroundColor: color }}
-                  onClick={() => setSelectedColor(color)}
-                ></div>
+                >
+                  <div
+                    className={stl.colorBox}
+                    style={{ backgroundColor: color }}
+                  ></div>
+                </div>
               ))}
             </div>
           </div>

@@ -18,7 +18,7 @@ const colors = [
   "#16A085",
   "#27AE60",
   "#2980B9",
-  "#8E44AD",
+  "#8E44AF",
 ];
 const App = () => {
   const [showNav, setShowNav] = useState(false);

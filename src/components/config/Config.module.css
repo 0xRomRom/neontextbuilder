@@ -28,6 +28,7 @@
   background-color: rgba(151, 0, 136, 0.15);
   padding: 4px;
   cursor: pointer;
+  user-select: none;
 }
 
 .textInput {
@@ -57,20 +58,30 @@
   gap: 0.5rem;
 }
 
+.outerDiv {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  transition: all 0.1s ease-in-out;
+  /* border-radius: 0.5rem; */
+}
+
 .colorBox {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transition: transform 0.2s ease;
-}
-
-.colorBox:hover {
-  transform: scale(1.1);
+  border-radius: 0.5rem;
 }
 
 .selected {
-  border: 2px solid #000;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .content {
