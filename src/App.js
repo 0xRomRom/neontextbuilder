@@ -83,7 +83,7 @@ const App = () => {
       return;
     }
 
-    document.body.style.overflow = "hidden"; // Disable scrolling on the body
+    // document.body.style.overflow = "hidden"; // Disable scrolling on the body
   }, [showNav]);
 
   const handleDragOver = () => {
@@ -193,46 +193,9 @@ const App = () => {
   }, [aspectRatio, ledType, longestSide, backplateType]);
 
   return (
-    <div
-      className={stl.app}
-      onClick={handleClickDefault}
-      onDragOver={handleDragOver}
-    >
+    <div className={stl.app} onClick={handleClickDefault}>
       <NavOverlay setShowNav={setShowNav} showNav={showNav} />
-      <div className={stl.whatsAppButton}>
-        <a
-          className={stl.appAnchor}
-          href="https://wa.me/message/HLRIKBZBL4MRA1"
-          onClick={() =>
-            window.open("https://wa.me/message/HLRIKBZBL4MRA1", "_blank")
-          }
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaWhatsapp className={stl.appLogo} />
 
-          <span className={stl.appOns}>App ons</span>
-        </a>
-      </div>
-      {priceEstimate && aspectRatio && longestSide && (
-        <CurrentOverview
-          priceEstimate={priceEstimate}
-          ledType={ledType}
-          RGBPrice={RGBPrice}
-          backplateType={backplateType}
-          backplatePrice={backplatePrice}
-        />
-      )}
-      {uploadedImg && !aspectRatio && progressState === 0 && (
-        <ImageEditor
-          uploadedImg={uploadedImg}
-          setUploadedImg={setUploadedImg}
-          setAspectRatio={setAspectRatio}
-          setProgressState={setProgressState}
-          setToggleIconBool={setToggleIconBool}
-          setLongestSide={setLongestSide}
-        />
-      )}
       <div className={stl.brickBg}>
         <a href="https://ledsgoneon.nl">
           <img
@@ -258,132 +221,11 @@ const App = () => {
 
         <header className={stl.header}>
           <h1 className={stl.pageHero}>
-            <span className={stl.pink}>Logo</span> samenstellen
+            <span className={stl.pink}>Text</span> configurator
           </h1>
-          <h2 className={stl.subHero}>
-            Stel hier <span className={stl.pink}>vrijblijvend</span> je eigen
-            LED's Go Neon lamp samen
-          </h2>
         </header>
-        <main className={stl.mainApp}>
-          <UploadModal
-            handleDragLeave={handleDragLeave}
-            isDraggingOver={isDraggingOver}
-            setUploadedImg={setUploadedImg}
-            uploadedImg={uploadedImg}
-            setProgressState={setProgressState}
-            progressState={progressState}
-            setAspectRatio={setAspectRatio}
-            setLongestSide={setLongestSide}
-            setToggleIconBool={setToggleIconBool}
-            setUnsupportedFormat={setUnsupportedFormat}
-          />
-          {progressState > 0 && !unsupportedFormat && (
-            <TiArrowLeftThick className={stl.activeArrow} />
-          )}
-          {uploadedImg && progressState >= 1 && !unsupportedFormat && (
-            <RequestCalculation
-              aspectRatio={aspectRatio}
-              setAspectRatio={setAspectRatio}
-              setProgressState={setProgressState}
-              toggleIconBool={toggleIconBool}
-              setToggleIconBool={setToggleIconBool}
-              setLongestSide={setLongestSide}
-              setPriceEstimate={setPriceEstimate}
-            />
-          )}
-          {progressState === 1 ||
-            (progressState >= 3 && (
-              <TiArrowLeftThick className={stl.activeArrow} />
-            ))}
-          {progressState >= 3 && (
-            <LongestRow
-              setLongestSide={setLongestSide}
-              setProgressState={setProgressState}
-              longestSide={longestSide}
-              aspectRatio={aspectRatio}
-            />
-          )}
-          {progressState >= 4 && (
-            <TiArrowLeftThick className={stl.activeArrow} />
-          )}
-          {progressState >= 4 && longestSide && (
-            <LedKind
-              setLedType={setLedType}
-              setProgressState={setProgressState}
-              selectedColor={selectedColor}
-              setSelectedColor={setSelectedColor}
-              progressState={progressState}
-            />
-          )}
-          {progressState >= 5 && (
-            <TiArrowLeftThick className={stl.activeArrow} />
-          )}
-          {progressState >= 5 && (
-            <BackplateType
-              setProgressState={setProgressState}
-              setBackplateType={setBackplateType}
-            />
-          )}
-          {progressState >= 6 && (
-            <TiArrowLeftThick className={stl.activeArrow} />
-          )}
-          {progressState >= 6 && (
-            <BackplateShape
-              setBackplateShape={setBackplateShape}
-              setProgressState={setProgressState}
-            />
-          )}
-          {progressState >= 7 && (
-            <TiArrowLeftThick className={stl.activeArrow} />
-          )}
-          {progressState >= 7 && (
-            <Mounting
-              setProgressState={setProgressState}
-              setMountType={setMountType}
-              backplateType={backplateType}
-            />
-          )}
-          {progressState >= 8 && (
-            <TiArrowLeftThick className={stl.activeArrow} />
-          )}
-
-          {progressState === 8 && (
-            <SmallForm
-              setName={setName}
-              name={name}
-              setEmail={setEmail}
-              email={email}
-              setProgressState={setProgressState}
-              setNotice={setNotice}
-              notice={notice}
-              ledType={ledType}
-              backplateType={backplateType}
-              backplateShape={backplateShape}
-              mountType={mountType}
-              base64img={base64img}
-              longestSide={longestSide}
-              selectedColor={selectedColor}
-              priceEstimate={priceEstimate}
-              aspectRatio={aspectRatio}
-              uploadedImg={uploadedImg}
-              fileExtension={fileExtension}
-              dataType={dataType}
-            />
-          )}
-        </main>
+        <main className={stl.mainApp}></main>
       </div>
-      {showFooter && email && (
-        <div
-          className={`${stl.footerBlock} ${showFooter ? stl.show : ""}`}
-          onClick={() => window.open("https://0xWebDev.com/", "_blank")}
-        >
-          By <br />
-          <a href="https://0xWebDev.com" target="_blank" rel="noreferrer">
-            0<span className={stl.blueSpan}>x</span>WebDev
-          </a>
-        </div>
-      )}
     </div>
   );
 };

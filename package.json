@@ -1,6 +1,6 @@
 {
-  "name": "ledsgoneonform",
-  "homepage": "https://ledsgoneon.nl/logo-samensteller/",
+  "name": "ledsgoneonconfigurator",
+  "homepage": "https://ledsgoneon.nl/text-configurator/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
