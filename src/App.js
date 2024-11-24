@@ -9,7 +9,7 @@ const App = () => {
   const [showNav, setShowNav] = useState(false);
   const [currentText, setCurrentText] = useState("Uw Leds Go Neon Text");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
-  const [backgroundImage, setBackgroundImage] = useState(backgrounds[2]);
+  const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
   const [selectedFont, setSelectedFont] = useState("Hanken");
   const [customBg, setCustomBg] = useState("");
   const [customLength, setCustomLength] = useState(60);

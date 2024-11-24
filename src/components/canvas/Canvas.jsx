@@ -45,15 +45,48 @@ const Canvas = ({
             <div className={stl.bottomRight}></div>
           </div>
         )}
+        {mountingMethod === "Ketting" && backPanelColor === "Zwart" && (
+          <div className={stl.displayerBox}>
+            <img
+              src="../images/Chain.png"
+              alt="Chain"
+              className={stl.leftChain}
+            />
+            <img
+              src="../images/Chain.png"
+              alt="Chain"
+              className={stl.rightChain}
+            />
+          </div>
+        )}
+        {mountingMethod === "Railmontage" && backPanelColor === "Zwart" && (
+          <div
+            className={stl.displayerBox}
+            style={{
+              overflow: mountingMethod === "Railmontage" ? "hidden" : "",
+            }}
+          >
+            <img src="../images/Rail.png" alt="Rail" className={stl.leftRail} />
+            <img
+              src="../images/Rail.png"
+              alt="Rail"
+              className={stl.rightRail}
+            />
+          </div>
+        )}
         <div
           className={`${stl.innerColWrap} ${
-            mountingMethod === "Afstandhouders" ? stl.displacer : ""
+            mountingMethod === "Afstandhouders" && backPanelColor === "Zwart"
+              ? stl.displacer
+              : ""
           }`}
           style={{
             backgroundColor:
               backPanelColor === "Zwart"
-                ? mountingMethod === "Afstandhouders" &&
-                  backPanelColor === "Zwart"
+                ? (mountingMethod === "Afstandhouders" &&
+                    backPanelColor === "Zwart") ||
+                  (mountingMethod === "Railmontage" &&
+                    backPanelColor === "Zwart")
                   ? "rgba(0, 0, 0, 0.65)"
                   : "black"
                 : "",
