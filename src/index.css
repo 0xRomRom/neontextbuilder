@@ -14,6 +14,14 @@
   font-family: "Roboto";
   src: url("../public/Roboto.ttf") format("truetype");
 }
+@font-face {
+  font-family: "VT3";
+  src: url("../public/VT3.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Opensans";
+  src: url("../public/Opensans.ttf") format("truetype");
+}
 
 body {
   margin: 0;

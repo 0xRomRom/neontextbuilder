@@ -27,7 +27,14 @@ const backgrounds = [
   "./images/Last.webp",
 ];
 
-const fontFamilies = ["Hanken", "Itil", "Montserrat", "Roboto"];
+const fontFamilies = [
+  "Hanken",
+  "Itil",
+  "Montserrat",
+  "Roboto",
+  "VT3",
+  "Opensans",
+];
 
 const videoIDs = ["9U296TyVMqY"];
 

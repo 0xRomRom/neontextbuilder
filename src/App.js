@@ -19,7 +19,7 @@ const App = () => {
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
   const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
   const [checkoutMessage, setCheckoutMessage] = useState("");
-  const [videoOverlay, setVideoOverlay] = useState("123");
+  const [videoOverlay, setVideoOverlay] = useState("");
 
   return (
     <div className={stl.app}>
