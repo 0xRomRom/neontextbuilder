@@ -14,6 +14,7 @@ const App = () => {
   const [customBg, setCustomBg] = useState("");
   const [customLength, setCustomLength] = useState(60);
   const [finalPrice, setFinalPrice] = useState(120);
+  const [backPanelColor, setBackPanelColor] = useState("Transparant");
 
   return (
     <div className={stl.app}>
@@ -55,6 +56,7 @@ const App = () => {
             customBg={customBg}
             selectedFont={selectedFont}
             finalPrice={finalPrice}
+            backPanelColor={backPanelColor}
           />
           <Config
             currentText={currentText}
@@ -69,6 +71,8 @@ const App = () => {
             setSelectedFont={setSelectedFont}
             customLength={customLength}
             setCustomLength={setCustomLength}
+            backPanelColor={backPanelColor}
+            setBackPanelColor={setBackPanelColor}
           />
         </main>
       </div>

@@ -176,3 +176,26 @@
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+
+.choiceCtas {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.choiceCtas button {
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 0, 255, 0.2);
+  color: rgb(194, 194, 194);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.activePlateCta {
+  background-color: rgba(255, 0, 255, 0.8) !important;
+  color: white !important;
+}

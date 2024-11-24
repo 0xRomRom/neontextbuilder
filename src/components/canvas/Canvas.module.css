@@ -24,7 +24,6 @@
   word-wrap: break-word;
   width: 100%;
   text-align: center;
-  padding-bottom: 3rem;
   font-family: "Hanken";
   font-family: "Itim";
 }
@@ -50,4 +49,19 @@
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+}
+
+.endPrice {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: white;
+  z-index: 100;
+  font-weight: bold;
+}
+
+.textCol {
+  width: 100%;
+  z-index: 10;
+  margin-bottom: 3rem;
 }

@@ -8,6 +8,7 @@ const Canvas = ({
   customBg,
   selectedFont,
   finalPrice,
+  backPanelColor,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
 
@@ -24,17 +25,26 @@ const Canvas = ({
           value={bgOpacity}
         />
       </div>
-      <div className={stl.endPrice}></div>
-      <h1
-        className={stl.mainText}
+      <div className={stl.endPrice}>
+        <span>Totaal Prijs €{finalPrice},-</span>
+      </div>
+      <div
+        className={stl.textCol}
         style={{
-          color: selectedColor,
-          textShadow: `0px 0px 20px ${selectedColor}`,
-          fontFamily: selectedFont,
+          backgroundColor: backPanelColor === "Zwart" ? "black" : "",
         }}
       >
-        {currentText}
-      </h1>
+        <h1
+          className={stl.mainText}
+          style={{
+            color: selectedColor,
+            textShadow: `0px 0px 20px ${selectedColor}`,
+            fontFamily: selectedFont,
+          }}
+        >
+          {currentText}
+        </h1>
+      </div>
       <img
         src={customBg || backgroundImage}
         alt="Background"

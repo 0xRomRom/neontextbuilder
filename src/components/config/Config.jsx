@@ -5,6 +5,7 @@ import { IoColorPaletteOutline } from "react-icons/io5";
 import { colors, backgrounds, fontFamilies } from "../../utils/dataArrays";
 import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
+import { PiSelectionBackgroundFill } from "react-icons/pi";
 
 const Config = ({
   currentText,
@@ -19,6 +20,8 @@ const Config = ({
   setSelectedFont,
   customLength,
   setCustomLength,
+  backPanelColor,
+  setBackPanelColor,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -189,7 +192,7 @@ const Config = ({
           onClick={() => setActiveTab(activeTab === 4 ? "" : 4)}
         >
           <FaRulerVertical className={stl.icon} />
-          Breedte
+          Lengte
         </span>
         {activeTab === 4 && (
           <div className={stl.lengthBox}>
@@ -203,6 +206,33 @@ const Config = ({
               className={stl.rangeInput}
             />
             <span className={stl.rangeValue}>{customLength}CM</span>
+          </div>
+        )}
+      </div>
+      <div className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}>
+        <span
+          className={stl.title}
+          onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
+        >
+          <PiSelectionBackgroundFill className={stl.icon} />
+          Achter Paneel Kleur
+        </span>
+        {activeTab === 5 && (
+          <div className={stl.choiceCtas}>
+            <button
+              className={
+                backPanelColor === "Transparant" ? stl.activePlateCta : ""
+              }
+              onClick={() => setBackPanelColor("Transparant")}
+            >
+              Transparant
+            </button>
+            <button
+              className={backPanelColor === "Zwart" ? stl.activePlateCta : ""}
+              onClick={() => setBackPanelColor("Zwart")}
+            >
+              Zwart (+25%)
+            </button>
           </div>
         )}
       </div>
