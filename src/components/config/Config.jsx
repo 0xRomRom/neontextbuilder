@@ -7,6 +7,9 @@ import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
 import { PiSelectionBackgroundFill } from "react-icons/pi";
 import { GiScrew } from "react-icons/gi";
+import { FaCreditCard } from "react-icons/fa";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { FaArrowTurnDown } from "react-icons/fa6";
 
 import { RiShape2Fill } from "react-icons/ri";
 
@@ -58,253 +61,291 @@ const Config = ({
 
   return (
     <div className={stl.config}>
-      <div className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 0 ? "" : 0)}
-        >
-          <BiText className={stl.icon} />
-          Text
-        </span>
-        {activeTab === 0 && (
-          <div className={stl.content}>
-            <input
-              type="text"
-              placeholder="Voer uw text in"
-              className={stl.textInput}
-              value={currentText}
-              onInput={(e) => setCurrentText(e.target.value)}
-              ref={inputRef}
-            />
+      {activeTab !== 8 && (
+        <div className={stl.restRows}>
+          <div className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 0 ? "" : 0)}
+            >
+              <BiText className={stl.icon} />
+              Text
+            </span>
+            {activeTab === 0 && (
+              <div className={stl.content}>
+                <input
+                  type="text"
+                  placeholder="Voer uw text in"
+                  className={stl.textInput}
+                  value={currentText}
+                  onInput={(e) => setCurrentText(e.target.value)}
+                  ref={inputRef}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 1 ? "" : 1)}
-        >
-          <ImFontSize className={stl.icon} />
-          Lettertype
-        </span>
-        {activeTab === 1 && (
-          <div className={stl.content}>
-            <div className={stl.fontGrid}>
-              {fontFamilies.map((font, index) => (
-                <div
-                  key={index}
-                  onClick={() => setSelectedFont(font)}
-                  className={`${stl.fontDiv} ${
-                    selectedFont === font ? stl.activeFont : ""
-                  }`}
-                >
-                  <span
-                    style={{
-                      fontFamily: font,
-                    }}
-                  >
-                    {font}
-                  </span>
+          <div className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 1 ? "" : 1)}
+            >
+              <ImFontSize className={stl.icon} />
+              Lettertype
+            </span>
+            {activeTab === 1 && (
+              <div className={stl.content}>
+                <div className={stl.fontGrid}>
+                  {fontFamilies.map((font, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setSelectedFont(font)}
+                      className={`${stl.fontDiv} ${
+                        selectedFont === font ? stl.activeFont : ""
+                      }`}
+                    >
+                      <span
+                        style={{
+                          fontFamily: font,
+                        }}
+                      >
+                        {font}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 2 ? "" : 2)}
-        >
-          <IoColorPaletteOutline className={stl.icon} />
-          Kleur
-        </span>
-        {activeTab === 2 && (
-          <div className={stl.content}>
-            <div className={stl.colorGrid}>
-              {colors.map((color, index) => (
-                <div
-                  key={index}
-                  onClick={() => setSelectedColor(color)}
-                  className={`${stl.outerDiv} ${
-                    selectedColor === color ? stl.selected : ""
-                  }`}
-                >
-                  <div
-                    className={stl.colorBox}
-                    style={{ backgroundColor: color }}
-                  ></div>
+          <div className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 2 ? "" : 2)}
+            >
+              <IoColorPaletteOutline className={stl.icon} />
+              Kleur
+            </span>
+            {activeTab === 2 && (
+              <div className={stl.content}>
+                <div className={stl.colorGrid}>
+                  {colors.map((color, index) => (
+                    <div
+                      key={index}
+                      onClick={() => setSelectedColor(color)}
+                      className={`${stl.outerDiv} ${
+                        selectedColor === color ? stl.selected : ""
+                      }`}
+                    >
+                      <div
+                        className={stl.colorBox}
+                        style={{ backgroundColor: color }}
+                      ></div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 3 ? "" : 3)}
-        >
-          <IoColorPaletteOutline className={stl.icon} />
-          Achtergrond
-        </span>
-        {activeTab === 3 && (
-          <div className={stl.content}>
-            <div className={stl.bgGrid}>
-              {backgrounds.map((background, index) => (
-                <div
-                  key={index}
-                  onClick={() => {
-                    setBackgroundImage(background);
-                    setCustomBg("");
-                    if (index === backgrounds.length - 1) {
-                      uploadImage();
-                    }
-                  }}
-                  className={`${stl.bgDiv} ${
-                    backgroundImage === background ? stl.selectedBg : ""
-                  }`}
-                  style={{
-                    backgroundImage: `url(${
-                      index !== backgrounds.length - 1 ? background : customBg
-                    })`,
-                    border:
-                      index === backgrounds.length - 1
-                        ? "1px solid rgb(134, 0, 134)"
-                        : "",
-                  }}
-                >
-                  {index === backgrounds.length - 1 && <span>Upload Foto</span>}
+          <div className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 3 ? "" : 3)}
+            >
+              <IoColorPaletteOutline className={stl.icon} />
+              Achtergrond
+            </span>
+            {activeTab === 3 && (
+              <div className={stl.content}>
+                <div className={stl.bgGrid}>
+                  {backgrounds.map((background, index) => (
+                    <div
+                      key={index}
+                      onClick={() => {
+                        setBackgroundImage(background);
+                        setCustomBg("");
+                        if (index === backgrounds.length - 1) {
+                          uploadImage();
+                        }
+                      }}
+                      className={`${stl.bgDiv} ${
+                        backgroundImage === background ? stl.selectedBg : ""
+                      }`}
+                      style={{
+                        backgroundImage: `url(${
+                          index !== backgrounds.length - 1
+                            ? background
+                            : customBg
+                        })`,
+                        border:
+                          index === backgrounds.length - 1
+                            ? "1px solid rgb(134, 0, 134)"
+                            : "",
+                      }}
+                    >
+                      {index === backgrounds.length - 1 && (
+                        <span>Upload Foto</span>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <input
-              type="file"
-              accept="image/*"
-              ref={fileInputRef}
-              style={{ display: "none" }}
-              onChange={handleFileChange}
-            />
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={fileInputRef}
+                  style={{ display: "none" }}
+                  onChange={handleFileChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}>
+          <div className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 4 ? "" : 4)}
+            >
+              <FaRulerVertical className={stl.icon} />
+              Lengte
+            </span>
+            {activeTab === 4 && (
+              <div className={stl.lengthBox}>
+                <input
+                  type="range"
+                  min="60"
+                  max="240"
+                  step="20"
+                  value={customLength}
+                  onChange={(e) => setCustomLength(e.target.value)}
+                  className={stl.rangeInput}
+                />
+                <span className={stl.rangeValue}>{customLength}CM</span>
+              </div>
+            )}
+          </div>
+
+          <div className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
+            >
+              <IoColorPaletteOutline className={stl.icon} />
+              Achterpaneel Kleur
+            </span>
+            {activeTab === 5 && (
+              <div className={stl.choiceCtas}>
+                <button
+                  className={
+                    backPanelColor === "Transparant" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setBackPanelColor("Transparant")}
+                >
+                  Transparant
+                </button>
+                <button
+                  className={
+                    backPanelColor === "Zwart" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setBackPanelColor("Zwart")}
+                >
+                  Zwart (+25%)
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 6 ? "" : 6)}
+            >
+              <RiShape2Fill className={stl.icon} />
+              Achterpaneel Vorm
+            </span>
+            {activeTab === 6 && (
+              <div className={stl.choiceCtas}>
+                <button
+                  className={
+                    backPlateShape === "Rechthoekig" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setBackPlateShape("Rechthoekig")}
+                >
+                  Rechthoekig
+                </button>
+                <button
+                  className={
+                    backPlateShape === "Contour" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setBackPlateShape("Contour")}
+                >
+                  Contour
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}>
+            <span
+              className={stl.title}
+              onClick={() => setActiveTab(activeTab === 7 ? "" : 7)}
+            >
+              <GiScrew className={stl.icon} />
+              Montage Methode
+            </span>
+            {activeTab === 7 && (
+              <div className={stl.choiceCtas}>
+                <button
+                  className={
+                    mountingMethod === "Afstandhouders"
+                      ? stl.activePlateCta
+                      : ""
+                  }
+                  onClick={() => setMountingMethod("Afstandhouders")}
+                >
+                  Afstandhouders
+                </button>
+                <button
+                  className={
+                    mountingMethod === "Ketting" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setMountingMethod("Ketting")}
+                >
+                  Ketting
+                </button>
+                <button
+                  className={
+                    mountingMethod === "Railmontage" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setMountingMethod("Railmontage")}
+                >
+                  Railmontage
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+      {activeTab === 8 && (
+        <div className={stl.spaceDiv} onClick={() => setActiveTab("")}>
+          <FaArrowTurnDown className={stl.backArrow} />
+          <button>Terug naar instellingen</button>
+        </div>
+      )}
+      <div className={`${stl.box} ${activeTab === 8 ? stl.activeBg : ""}`}>
         <span
           className={stl.title}
-          onClick={() => setActiveTab(activeTab === 4 ? "" : 4)}
+          onClick={() => setActiveTab(activeTab === 8 ? "" : 8)}
         >
-          <FaRulerVertical className={stl.icon} />
-          Lengte
+          <FaCreditCard className={stl.icon} />
+          Afrekenen
         </span>
-        {activeTab === 4 && (
-          <div className={stl.lengthBox}>
-            <input
-              type="range"
-              min="60"
-              max="240"
-              step="20"
-              value={customLength}
-              onChange={(e) => setCustomLength(e.target.value)}
-              className={stl.rangeInput}
-            />
-            <span className={stl.rangeValue}>{customLength}CM</span>
-          </div>
-        )}
-      </div>
 
-      <div className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
-        >
-          <IoColorPaletteOutline className={stl.icon} />
-          Achterpaneel Kleur
-        </span>
-        {activeTab === 5 && (
-          <div className={stl.choiceCtas}>
-            <button
-              className={
-                backPanelColor === "Transparant" ? stl.activePlateCta : ""
-              }
-              onClick={() => setBackPanelColor("Transparant")}
-            >
-              Transparant
-            </button>
-            <button
-              className={backPanelColor === "Zwart" ? stl.activePlateCta : ""}
-              onClick={() => setBackPanelColor("Zwart")}
-            >
-              Zwart (+25%)
-            </button>
-          </div>
-        )}
-      </div>
-
-      <div className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 6 ? "" : 6)}
-        >
-          <RiShape2Fill className={stl.icon} />
-          Achterpaneel Vorm
-        </span>
-        {activeTab === 6 && (
-          <div className={stl.choiceCtas}>
-            <button
-              className={
-                backPlateShape === "Rechthoekig" ? stl.activePlateCta : ""
-              }
-              onClick={() => setBackPlateShape("Rechthoekig")}
-            >
-              Rechthoekig
-            </button>
-            <button
-              className={backPlateShape === "Contour" ? stl.activePlateCta : ""}
-              onClick={() => setBackPlateShape("Contour")}
-            >
-              Contour
-            </button>
-          </div>
-        )}
-      </div>
-
-      <div className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}>
-        <span
-          className={stl.title}
-          onClick={() => setActiveTab(activeTab === 7 ? "" : 7)}
-        >
-          <GiScrew className={stl.icon} />
-          Montage Methode
-        </span>
-        {activeTab === 7 && (
-          <div className={stl.choiceCtas}>
-            <button
-              className={
-                mountingMethod === "Afstandhouders" ? stl.activePlateCta : ""
-              }
-              onClick={() => setMountingMethod("Afstandhouders")}
-            >
-              Afstandhouders
-            </button>
-            <button
-              className={mountingMethod === "Ketting" ? stl.activePlateCta : ""}
-              onClick={() => setMountingMethod("Ketting")}
-            >
-              Ketting
-            </button>
-            <button
-              className={
-                mountingMethod === "Railmontage" ? stl.activePlateCta : ""
-              }
-              onClick={() => setMountingMethod("Railmontage")}
-            >
-              Railmontage
-            </button>
+        {activeTab === 8 && (
+          <div className={stl.checkoutDiv}>
+            <textarea placeholder="Opmerkingen (optioneel)"></textarea>
+            <button>Afrekenen</button>
           </div>
         )}
       </div>

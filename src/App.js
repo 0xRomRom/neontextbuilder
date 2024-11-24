@@ -7,7 +7,7 @@ import { colors, backgrounds } from "./utils/dataArrays";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
-  const [currentText, setCurrentText] = useState("Uw Leds Go Neon Text");
+  const [currentText, setCurrentText] = useState("LED's GO  NEON");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
   const [selectedFont, setSelectedFont] = useState("Hanken");

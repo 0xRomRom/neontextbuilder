@@ -15,7 +15,6 @@
   background-repeat: no-repeat;
   position: absolute;
   inset: 0;
-  height: 1100px;
 }
 
 .header {
@@ -93,16 +92,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 3rem;
   z-index: 30;
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
   gap: 1.5rem;
 }
 
 .transition {
   position: absolute;
   height: 300px;
-  bottom: 0%;
+  bottom: -2.5%;
   width: 100%;
   background: #030e26;
   background: -webkit-gradient(

@@ -22,6 +22,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(24, 0, 24);
 }
 
 * {
@@ -40,4 +41,27 @@ body {
   --red: red;
   --blue: rgb(79, 182, 247);
   --dblue: rgb(2, 12, 60);
+}
+/* For modern browsers */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Dark color for the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: #b7b7b7; /* Dark color for the scrollbar track */
+  border-radius: 4px; /* Rounded corners for the scrollbar track */
+  margin: 2px; /* Optional: Add space between the track and the content */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow effect for the track */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #333 #000000; /* Thumb color and track color */
 }
