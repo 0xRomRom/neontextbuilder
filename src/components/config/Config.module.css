@@ -237,10 +237,17 @@
   border: none;
   outline: none;
   background-color: rgba(255, 0, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkoutDiv button:hover {
-  background-color: rgba(203, 0, 203, 1);
+  background-color: rgba(255, 0, 255, 1);
 }
 
 .restRows {
@@ -260,7 +267,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  gap: 0.5rem;
+  gap: 0.25rem;
   border-radius: 0.5rem;
   background: linear-gradient(180deg, black, rgba(128, 0, 128, 0.434));
   cursor: pointer;
@@ -278,14 +285,13 @@
   cursor: pointer;
   height: 100%;
   color: white;
-  gap: 1rem;
   font-size: 16px;
 }
 
 .backArrow {
   z-index: 10;
-  color: rgb(202, 202, 202);
-  font-size: 20px;
+  color: rgb(163, 163, 163);
+  font-size: 18px;
   transform: rotate(180deg);
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }

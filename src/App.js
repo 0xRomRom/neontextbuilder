@@ -17,6 +17,7 @@ const App = () => {
   const [backPanelColor, setBackPanelColor] = useState("Transparant");
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
   const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
+  const [checkoutMessage, setCheckoutMessage] = useState("");
 
   return (
     <div className={stl.app}>
@@ -81,6 +82,8 @@ const App = () => {
             setBackPlateShape={setBackPlateShape}
             mountingMethod={mountingMethod}
             setMountingMethod={setMountingMethod}
+            checkoutMessage={checkoutMessage}
+            setCheckoutMessage={setCheckoutMessage}
           />
         </main>
       </div>

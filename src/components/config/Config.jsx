@@ -5,10 +5,8 @@ import { IoColorPaletteOutline } from "react-icons/io5";
 import { colors, backgrounds, fontFamilies } from "../../utils/dataArrays";
 import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
-import { PiSelectionBackgroundFill } from "react-icons/pi";
 import { GiScrew } from "react-icons/gi";
 import { FaCreditCard } from "react-icons/fa";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import { FaArrowTurnDown } from "react-icons/fa6";
 
 import { RiShape2Fill } from "react-icons/ri";
@@ -32,10 +30,13 @@ const Config = ({
   setBackPlateShape,
   mountingMethod,
   setMountingMethod,
+  checkoutMessage,
+  setCheckoutMessage,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   useEffect(() => {
     if (activeTab === 0) {
@@ -63,11 +64,11 @@ const Config = ({
     <div className={stl.config}>
       {activeTab !== 8 && (
         <div className={stl.restRows}>
-          <div className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 0 ? "" : 0)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 0 ? "" : 0)}
+          >
+            <span className={stl.title}>
               <BiText className={stl.icon} />
               Text
             </span>
@@ -85,11 +86,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 1 ? "" : 1)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 1 ? "" : 1)}
+          >
+            <span className={stl.title}>
               <ImFontSize className={stl.icon} />
               Lettertype
             </span>
@@ -118,11 +119,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 2 ? "" : 2)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 2 ? "" : 2)}
+          >
+            <span className={stl.title}>
               <IoColorPaletteOutline className={stl.icon} />
               Kleur
             </span>
@@ -148,11 +149,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 3 ? "" : 3)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 3 ? "" : 3)}
+          >
+            <span className={stl.title}>
               <IoColorPaletteOutline className={stl.icon} />
               Achtergrond
             </span>
@@ -202,11 +203,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 4 ? "" : 4)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 4 ? "" : 4)}
+          >
+            <span className={stl.title}>
               <FaRulerVertical className={stl.icon} />
               Lengte
             </span>
@@ -226,11 +227,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
+          >
+            <span className={stl.title}>
               <IoColorPaletteOutline className={stl.icon} />
               Achterpaneel Kleur
             </span>
@@ -256,11 +257,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 6 ? "" : 6)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 6 ? "" : 6)}
+          >
+            <span className={stl.title}>
               <RiShape2Fill className={stl.icon} />
               Achterpaneel Vorm
             </span>
@@ -286,11 +287,11 @@ const Config = ({
             )}
           </div>
 
-          <div className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}>
-            <span
-              className={stl.title}
-              onClick={() => setActiveTab(activeTab === 7 ? "" : 7)}
-            >
+          <div
+            className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(activeTab === 7 ? "" : 7)}
+          >
+            <span className={stl.title}>
               <GiScrew className={stl.icon} />
               Montage Methode
             </span>
@@ -328,15 +329,20 @@ const Config = ({
         </div>
       )}
       {activeTab === 8 && (
-        <div className={stl.spaceDiv} onClick={() => setActiveTab("")}>
+        <div className={stl.spaceDiv} onClick={() => setActiveTab(0)}>
           <FaArrowTurnDown className={stl.backArrow} />
           <button>Terug naar instellingen</button>
         </div>
       )}
-      <div className={`${stl.box} ${activeTab === 8 ? stl.activeBg : ""}`}>
+      <div
+        className={`${stl.box} ${activeTab === 8 ? stl.activeBg : ""}`}
+        onClick={() => setActiveTab(activeTab === 8 ? 8 : 8)}
+      >
         <span
           className={stl.title}
-          onClick={() => setActiveTab(activeTab === 8 ? "" : 8)}
+          style={{
+            cursor: activeTab === 8 ? "initial" : "pointer",
+          }}
         >
           <FaCreditCard className={stl.icon} />
           Afrekenen
@@ -344,8 +350,17 @@ const Config = ({
 
         {activeTab === 8 && (
           <div className={stl.checkoutDiv}>
-            <textarea placeholder="Opmerkingen (optioneel)"></textarea>
-            <button>Afrekenen</button>
+            <textarea
+              placeholder="Opmerkingen (optioneel)"
+              value={checkoutMessage}
+              onInput={(e) => setCheckoutMessage(e.target.value)}
+            ></textarea>
+            <button disabled={checkoutLoading ? true : false}>
+              {checkoutLoading && (
+                <img src="../images/Spinner.svg" alt="Spinner" />
+              )}
+              {!checkoutLoading && "Afrekenen"}
+            </button>
           </div>
         )}
       </div>
