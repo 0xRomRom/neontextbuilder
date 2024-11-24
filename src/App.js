@@ -15,6 +15,7 @@ const App = () => {
   const [customLength, setCustomLength] = useState(60);
   const [finalPrice, setFinalPrice] = useState(120);
   const [backPanelColor, setBackPanelColor] = useState("Transparant");
+  const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
 
   return (
     <div className={stl.app}>
@@ -57,6 +58,7 @@ const App = () => {
             selectedFont={selectedFont}
             finalPrice={finalPrice}
             backPanelColor={backPanelColor}
+            backPlateShape={backPlateShape}
           />
           <Config
             currentText={currentText}
@@ -73,6 +75,8 @@ const App = () => {
             setCustomLength={setCustomLength}
             backPanelColor={backPanelColor}
             setBackPanelColor={setBackPanelColor}
+            backPlateShape={backPlateShape}
+            setBackPlateShape={setBackPlateShape}
           />
         </main>
       </div>

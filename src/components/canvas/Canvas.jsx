@@ -9,6 +9,7 @@ const Canvas = ({
   selectedFont,
   finalPrice,
   backPanelColor,
+  backPlateShape,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
 
@@ -32,6 +33,7 @@ const Canvas = ({
         className={stl.textCol}
         style={{
           backgroundColor: backPanelColor === "Zwart" ? "black" : "",
+          borderRadius: backPlateShape === "Contour" ? "1rem" : "",
         }}
       >
         <h1

@@ -6,6 +6,7 @@ import { colors, backgrounds, fontFamilies } from "../../utils/dataArrays";
 import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
 import { PiSelectionBackgroundFill } from "react-icons/pi";
+import { RiShape2Fill } from "react-icons/ri";
 
 const Config = ({
   currentText,
@@ -22,6 +23,8 @@ const Config = ({
   setCustomLength,
   backPanelColor,
   setBackPanelColor,
+  backPlateShape,
+  setBackPlateShape,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -209,13 +212,14 @@ const Config = ({
           </div>
         )}
       </div>
+
       <div className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}>
         <span
           className={stl.title}
           onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
         >
-          <PiSelectionBackgroundFill className={stl.icon} />
-          Achter Paneel Kleur
+          <IoColorPaletteOutline className={stl.icon} />
+          Achterpaneel Kleur
         </span>
         {activeTab === 5 && (
           <div className={stl.choiceCtas}>
@@ -232,6 +236,34 @@ const Config = ({
               onClick={() => setBackPanelColor("Zwart")}
             >
               Zwart (+25%)
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}>
+        <span
+          className={stl.title}
+          onClick={() => setActiveTab(activeTab === 6 ? "" : 6)}
+        >
+          <RiShape2Fill className={stl.icon} />
+          Achterpaneel Vorm
+        </span>
+        {activeTab === 6 && (
+          <div className={stl.choiceCtas}>
+            <button
+              className={
+                backPlateShape === "Rechthoekig" ? stl.activePlateCta : ""
+              }
+              onClick={() => setBackPlateShape("Rechthoekig")}
+            >
+              Rechthoekig
+            </button>
+            <button
+              className={backPlateShape === "Contour" ? stl.activePlateCta : ""}
+              onClick={() => setBackPlateShape("Contour")}
+            >
+              Contour
             </button>
           </div>
         )}
