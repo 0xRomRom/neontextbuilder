@@ -21,6 +21,9 @@ const backgrounds = [
   "./images/Muur.jpg",
   "./images/Bord.jpg",
   "./images/Spotlight.jpg",
+  "./images/Last.webp",
 ];
 
-export { colors, backgrounds };
+const fontFamilies = ["Hanken", "Itil", "Montserrat", "Roboto"];
+
+export { colors, backgrounds, fontFamilies };

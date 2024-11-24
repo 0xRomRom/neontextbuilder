@@ -10,6 +10,10 @@ const App = () => {
   const [currentText, setCurrentText] = useState("Uw Leds Go Neon Text");
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[2]);
+  const [selectedFont, setSelectedFont] = useState("Hanken");
+  const [customBg, setCustomBg] = useState("");
+  const [customLength, setCustomLength] = useState(60);
+  const [finalPrice, setFinalPrice] = useState(120);
 
   return (
     <div className={stl.app}>
@@ -48,6 +52,9 @@ const App = () => {
             currentText={currentText}
             selectedColor={selectedColor}
             backgroundImage={backgroundImage}
+            customBg={customBg}
+            selectedFont={selectedFont}
+            finalPrice={finalPrice}
           />
           <Config
             currentText={currentText}
@@ -56,6 +63,12 @@ const App = () => {
             setSelectedColor={setSelectedColor}
             setBackgroundImage={setBackgroundImage}
             backgroundImage={backgroundImage}
+            setCustomBg={setCustomBg}
+            customBg={customBg}
+            selectedFont={selectedFont}
+            setSelectedFont={setSelectedFont}
+            customLength={customLength}
+            setCustomLength={setCustomLength}
           />
         </main>
       </div>

@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Hanken";
+  src: url("../public/Hanken.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Itim";
+  src: url("../public/Itim.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/Montserrat.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/Roboto.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
