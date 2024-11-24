@@ -2,7 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import stl from "./Config.module.css";
 import { BiText } from "react-icons/bi";
 import { IoColorPaletteOutline } from "react-icons/io5";
-import { colors, backgrounds, fontFamilies } from "../../utils/dataArrays";
+import {
+  colors,
+  backgrounds,
+  fontFamilies,
+  videoIDs,
+} from "../../utils/dataArrays";
 import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
 import { GiScrew } from "react-icons/gi";
@@ -33,6 +38,7 @@ const Config = ({
   setMountingMethod,
   checkoutMessage,
   setCheckoutMessage,
+  setVideoOverlay,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -75,7 +81,7 @@ const Config = ({
                 Text
               </span>
               {activeTab === 0 && (
-                <button>
+                <button onClick={() => setVideoOverlay(videoIDs[0])}>
                   <FiYoutube />
                   Voorbeeld
                 </button>

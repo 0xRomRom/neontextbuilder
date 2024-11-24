@@ -4,6 +4,7 @@ import NavOverlay from "./components/nav/NavOverlay";
 import Config from "./components/config/Config";
 import Canvas from "./components/canvas/Canvas";
 import { colors, backgrounds } from "./utils/dataArrays";
+import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
@@ -18,11 +19,17 @@ const App = () => {
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
   const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
   const [checkoutMessage, setCheckoutMessage] = useState("");
+  const [videoOverlay, setVideoOverlay] = useState("123");
 
   return (
     <div className={stl.app}>
       <NavOverlay setShowNav={setShowNav} showNav={showNav} />
-
+      {videoOverlay && (
+        <VideoOverlay
+          videoOverlay={videoOverlay}
+          setVideoOverlay={setVideoOverlay}
+        />
+      )}
       <div className={stl.brickBg}>
         <a href="https://ledsgoneon.nl">
           <img
@@ -84,6 +91,7 @@ const App = () => {
             setMountingMethod={setMountingMethod}
             checkoutMessage={checkoutMessage}
             setCheckoutMessage={setCheckoutMessage}
+            setVideoOverlay={setVideoOverlay}
           />
         </main>
       </div>
