@@ -16,6 +16,7 @@ const App = () => {
   const [finalPrice, setFinalPrice] = useState(120);
   const [backPanelColor, setBackPanelColor] = useState("Transparant");
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
+  const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
 
   return (
     <div className={stl.app}>
@@ -77,6 +78,8 @@ const App = () => {
             setBackPanelColor={setBackPanelColor}
             backPlateShape={backPlateShape}
             setBackPlateShape={setBackPlateShape}
+            mountingMethod={mountingMethod}
+            setMountingMethod={setMountingMethod}
           />
         </main>
       </div>

@@ -6,6 +6,8 @@ import { colors, backgrounds, fontFamilies } from "../../utils/dataArrays";
 import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
 import { PiSelectionBackgroundFill } from "react-icons/pi";
+import { GiScrew } from "react-icons/gi";
+
 import { RiShape2Fill } from "react-icons/ri";
 
 const Config = ({
@@ -25,6 +27,8 @@ const Config = ({
   setBackPanelColor,
   backPlateShape,
   setBackPlateShape,
+  mountingMethod,
+  setMountingMethod,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -264,6 +268,42 @@ const Config = ({
               onClick={() => setBackPlateShape("Contour")}
             >
               Contour
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}>
+        <span
+          className={stl.title}
+          onClick={() => setActiveTab(activeTab === 7 ? "" : 7)}
+        >
+          <GiScrew className={stl.icon} />
+          Montage Methode
+        </span>
+        {activeTab === 7 && (
+          <div className={stl.choiceCtas}>
+            <button
+              className={
+                mountingMethod === "Afstandhouders" ? stl.activePlateCta : ""
+              }
+              onClick={() => setMountingMethod("Afstandhouders")}
+            >
+              Afstandhouders
+            </button>
+            <button
+              className={mountingMethod === "Ketting" ? stl.activePlateCta : ""}
+              onClick={() => setMountingMethod("Ketting")}
+            >
+              Ketting
+            </button>
+            <button
+              className={
+                mountingMethod === "Railmontage" ? stl.activePlateCta : ""
+              }
+              onClick={() => setMountingMethod("Railmontage")}
+            >
+              Railmontage
             </button>
           </div>
         )}
