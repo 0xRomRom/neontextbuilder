@@ -8,6 +8,7 @@ import { FaRulerVertical } from "react-icons/fa";
 import { GiScrew } from "react-icons/gi";
 import { FaCreditCard } from "react-icons/fa";
 import { FaArrowTurnDown } from "react-icons/fa6";
+import { FiYoutube } from "react-icons/fi";
 
 import { RiShape2Fill } from "react-icons/ri";
 
@@ -68,10 +69,19 @@ const Config = ({
             className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(activeTab === 0 ? 0 : 0)}
           >
-            <span className={stl.title}>
-              <BiText className={stl.icon} />
-              Text
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <BiText className={stl.icon} />
+                Text
+              </span>
+              {activeTab === 0 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
             {activeTab === 0 && (
               <div className={stl.content}>
                 <input
@@ -90,10 +100,18 @@ const Config = ({
             className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(1)}
           >
-            <span className={stl.title}>
-              <ImFontSize className={stl.icon} />
-              Lettertype
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <ImFontSize className={stl.icon} />
+                Lettertype
+              </span>
+              {activeTab === 1 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
             {activeTab === 1 && (
               <div className={stl.content}>
                 <div className={stl.fontGrid}>
@@ -123,10 +141,18 @@ const Config = ({
             className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(2)}
           >
-            <span className={stl.title}>
-              <IoColorPaletteOutline className={stl.icon} />
-              Kleur
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <IoColorPaletteOutline className={stl.icon} />
+                Kleur
+              </span>
+              {activeTab === 2 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
             {activeTab === 2 && (
               <div className={stl.content}>
                 <div className={stl.colorGrid}>
@@ -160,10 +186,19 @@ const Config = ({
             className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(3)}
           >
-            <span className={stl.title}>
-              <IoColorPaletteOutline className={stl.icon} />
-              Achtergrond
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <IoColorPaletteOutline className={stl.icon} />
+                Achtergrond
+              </span>
+              {activeTab === 3 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
             {activeTab === 3 && (
               <div className={stl.content}>
                 <div className={stl.bgGrid}>
@@ -214,17 +249,26 @@ const Config = ({
             className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(4)}
           >
-            <span className={stl.title}>
-              <FaRulerVertical className={stl.icon} />
-              Lengte
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <FaRulerVertical className={stl.icon} />
+                Lengte
+              </span>
+              {activeTab === 4 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
             {activeTab === 4 && (
               <div className={stl.lengthBox}>
                 <input
                   type="range"
                   min="60"
                   max="240"
-                  step={customLength <= 100 ? 10 : 20}
+                  step={customLength < 100 ? 10 : 20}
                   value={customLength}
                   onChange={(e) => setCustomLength(e.target.value)}
                   className={stl.rangeInput}
@@ -238,10 +282,19 @@ const Config = ({
             className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(5)}
           >
-            <span className={stl.title}>
-              <IoColorPaletteOutline className={stl.icon} />
-              Achterpaneel Kleur
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <IoColorPaletteOutline className={stl.icon} />
+                Achterpaneel Kleur
+              </span>
+              {activeTab === 5 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
             {activeTab === 5 && (
               <div className={stl.choiceCtas}>
                 <button
@@ -268,10 +321,19 @@ const Config = ({
             className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(6)}
           >
-            <span className={stl.title}>
-              <RiShape2Fill className={stl.icon} />
-              Achterpaneel Vorm
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <RiShape2Fill className={stl.icon} />
+                Achterpaneel Vorm
+              </span>
+              {activeTab === 6 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
             {activeTab === 6 && (
               <div className={stl.choiceCtas}>
                 <button
@@ -298,10 +360,19 @@ const Config = ({
             className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(7)}
           >
-            <span className={stl.title}>
-              <GiScrew className={stl.icon} />
-              Montage Methode
-            </span>
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <GiScrew className={stl.icon} />
+                Montage Methode
+              </span>
+              {activeTab === 7 && (
+                <button>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
             {activeTab === 7 && (
               <div className={stl.choiceCtas}>
                 <button
@@ -345,15 +416,17 @@ const Config = ({
         className={`${stl.box} ${activeTab === 8 ? stl.activeBg : ""}`}
         onClick={() => setActiveTab(8)}
       >
-        <span
-          className={stl.title}
-          style={{
-            cursor: activeTab === 8 ? "initial" : "pointer",
-          }}
-        >
-          <FaCreditCard className={stl.icon} />
-          Afrekenen
-        </span>
+        <div className={stl.topRow}>
+          <span
+            className={stl.title}
+            style={{
+              cursor: activeTab === 8 ? "initial" : "pointer",
+            }}
+          >
+            <FaCreditCard className={stl.icon} />
+            Afrekenen
+          </span>
+        </div>
 
         {activeTab === 8 && (
           <div className={stl.checkoutDiv}>

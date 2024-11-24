@@ -183,18 +183,18 @@
 @keyframes rgbCycle {
   0% {
     color: red;
-    box-shadow: 0px 0px 5px red;
+    text-shadow: 0px 0px 20px red;
   }
   33% {
     color: green;
-    box-shadow: 0px 0px 5px green;
+    text-shadow: 0px 0px 20px green;
   }
   66% {
     color: blue;
-    box-shadow: 0px 0px 5px blue;
+    text-shadow: 0px 0px 20px blue;
   }
   100% {
     color: red;
-    box-shadow: 0px 0px 5px red;
+    text-shadow: 0px 0px 20px red;
   }
 }

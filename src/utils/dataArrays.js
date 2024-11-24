@@ -21,6 +21,9 @@ const backgrounds = [
   "./images/Muur.jpg",
   "./images/Bord.jpg",
   "./images/Spotlight.jpg",
+  "./images/Factory.jpg",
+  "./images/Wood.jpg",
+  "./images/Desk.webp",
   "./images/Last.webp",
 ];
 
