@@ -10,6 +10,7 @@ const Canvas = ({
   finalPrice,
   backPanelColor,
   backPlateShape,
+  mountingMethod,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
 
@@ -30,22 +31,46 @@ const Canvas = ({
         <span>Totaal Prijs €{finalPrice},-</span>
       </div>
       <div
-        className={stl.textCol}
-        style={{
-          backgroundColor: backPanelColor === "Zwart" ? "black" : "",
-          borderRadius: backPlateShape === "Contour" ? "1rem" : "",
-        }}
+        className={`${stl.textCol} ${
+          mountingMethod === "Afstandhouders" && backPanelColor === "Zwart"
+            ? stl.backdrop
+            : ""
+        }`}
       >
-        <h1
-          className={stl.mainText}
+        {mountingMethod === "Afstandhouders" && backPanelColor === "Zwart" && (
+          <div className={stl.displayerBox}>
+            <div className={stl.topleft}></div>
+            <div className={stl.bottomleft}></div>
+            <div className={stl.topRight}></div>
+            <div className={stl.bottomRight}></div>
+          </div>
+        )}
+        <div
+          className={`${stl.innerColWrap} ${
+            mountingMethod === "Afstandhouders" ? stl.displacer : ""
+          }`}
           style={{
-            color: selectedColor,
-            textShadow: `0px 0px 20px ${selectedColor}`,
-            fontFamily: selectedFont,
+            backgroundColor:
+              backPanelColor === "Zwart"
+                ? mountingMethod === "Afstandhouders" &&
+                  backPanelColor === "Zwart"
+                  ? "rgba(0, 0, 0, 0.65)"
+                  : "black"
+                : "",
+            borderRadius: backPlateShape === "Contour" ? "1rem" : "",
           }}
         >
-          {currentText}
-        </h1>
+          <h1
+            className={stl.mainText}
+            style={{
+              color: selectedColor,
+              textShadow: `0px 0px 20px ${selectedColor}`,
+              fontFamily: selectedFont,
+            }}
+          >
+            {currentText}
+          </h1>
+        </div>
       </div>
       <img
         src={customBg || backgroundImage}

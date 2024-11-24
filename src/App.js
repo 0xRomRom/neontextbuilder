@@ -60,6 +60,7 @@ const App = () => {
             finalPrice={finalPrice}
             backPanelColor={backPanelColor}
             backPlateShape={backPlateShape}
+            mountingMethod={mountingMethod}
           />
           <Config
             currentText={currentText}
