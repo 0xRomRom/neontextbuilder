@@ -66,7 +66,7 @@ const Config = ({
         <div className={stl.restRows}>
           <div
             className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 0 ? "" : 0)}
+            onClick={() => setActiveTab(activeTab === 0 ? 0 : 0)}
           >
             <span className={stl.title}>
               <BiText className={stl.icon} />
@@ -88,7 +88,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 1 ? "" : 1)}
+            onClick={() => setActiveTab(1)}
           >
             <span className={stl.title}>
               <ImFontSize className={stl.icon} />
@@ -121,7 +121,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 2 ? "" : 2)}
+            onClick={() => setActiveTab(2)}
           >
             <span className={stl.title}>
               <IoColorPaletteOutline className={stl.icon} />
@@ -140,8 +140,15 @@ const Config = ({
                     >
                       <div
                         className={stl.colorBox}
-                        style={{ backgroundColor: color }}
-                      ></div>
+                        style={{
+                          backgroundColor:
+                            index !== colors.length - 1 ? color : "black",
+                        }}
+                      >
+                        {index === colors.length - 1 && (
+                          <div className={stl.rgbTile}></div>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -151,7 +158,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 3 ? "" : 3)}
+            onClick={() => setActiveTab(3)}
           >
             <span className={stl.title}>
               <IoColorPaletteOutline className={stl.icon} />
@@ -205,7 +212,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 4 ? "" : 4)}
+            onClick={() => setActiveTab(4)}
           >
             <span className={stl.title}>
               <FaRulerVertical className={stl.icon} />
@@ -217,7 +224,7 @@ const Config = ({
                   type="range"
                   min="60"
                   max="240"
-                  step="20"
+                  step={customLength <= 100 ? 10 : 20}
                   value={customLength}
                   onChange={(e) => setCustomLength(e.target.value)}
                   className={stl.rangeInput}
@@ -229,7 +236,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 5 ? "" : 5)}
+            onClick={() => setActiveTab(5)}
           >
             <span className={stl.title}>
               <IoColorPaletteOutline className={stl.icon} />
@@ -259,7 +266,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 6 ? "" : 6)}
+            onClick={() => setActiveTab(6)}
           >
             <span className={stl.title}>
               <RiShape2Fill className={stl.icon} />
@@ -289,7 +296,7 @@ const Config = ({
 
           <div
             className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 7 ? "" : 7)}
+            onClick={() => setActiveTab(7)}
           >
             <span className={stl.title}>
               <GiScrew className={stl.icon} />
@@ -336,7 +343,7 @@ const Config = ({
       )}
       <div
         className={`${stl.box} ${activeTab === 8 ? stl.activeBg : ""}`}
-        onClick={() => setActiveTab(activeTab === 8 ? 8 : 8)}
+        onClick={() => setActiveTab(8)}
       >
         <span
           className={stl.title}

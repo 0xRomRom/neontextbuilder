@@ -94,7 +94,9 @@ const Canvas = ({
           }}
         >
           <h1
-            className={stl.mainText}
+            className={`${stl.mainText} ${
+              selectedColor === "RGB" ? stl.rgb : ""
+            }`}
             style={{
               color: selectedColor,
               textShadow: `0px 0px 20px ${selectedColor}`,
