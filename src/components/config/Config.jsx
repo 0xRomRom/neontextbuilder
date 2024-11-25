@@ -67,6 +67,10 @@ const Config = ({
     }
   };
 
+  const submitForm = async () => {
+    setCheckoutLoading(true);
+  };
+
   return (
     <div className={stl.config}>
       {activeTab !== 8 && (
@@ -80,12 +84,6 @@ const Config = ({
                 <BiText className={stl.icon} />
                 Text
               </span>
-              {activeTab === 0 && (
-                <button onClick={() => setVideoOverlay(videoIDs[0])}>
-                  <FiYoutube />
-                  Voorbeeld
-                </button>
-              )}
             </div>
 
             {activeTab === 0 && (
@@ -111,12 +109,6 @@ const Config = ({
                 <ImFontSize className={stl.icon} />
                 Lettertype
               </span>
-              {activeTab === 1 && (
-                <button>
-                  <FiYoutube />
-                  Voorbeeld
-                </button>
-              )}
             </div>
             {activeTab === 1 && (
               <div className={stl.content}>
@@ -152,12 +144,6 @@ const Config = ({
                 <IoColorPaletteOutline className={stl.icon} />
                 Kleur
               </span>
-              {activeTab === 2 && (
-                <button>
-                  <FiYoutube />
-                  Voorbeeld
-                </button>
-              )}
             </div>
             {activeTab === 2 && (
               <div className={stl.content}>
@@ -197,12 +183,6 @@ const Config = ({
                 <IoColorPaletteOutline className={stl.icon} />
                 Achtergrond
               </span>
-              {activeTab === 3 && (
-                <button>
-                  <FiYoutube />
-                  Voorbeeld
-                </button>
-              )}
             </div>
 
             {activeTab === 3 && (
@@ -260,12 +240,6 @@ const Config = ({
                 <FaRulerVertical className={stl.icon} />
                 Lengte
               </span>
-              {activeTab === 4 && (
-                <button>
-                  <FiYoutube />
-                  Voorbeeld
-                </button>
-              )}
             </div>
 
             {activeTab === 4 && (
@@ -294,7 +268,7 @@ const Config = ({
                 Achterpaneel Kleur
               </span>
               {activeTab === 5 && (
-                <button>
+                <button onClick={() => setVideoOverlay(videoIDs[0])}>
                   <FiYoutube />
                   Voorbeeld
                 </button>
@@ -333,7 +307,7 @@ const Config = ({
                 Achterpaneel Vorm
               </span>
               {activeTab === 6 && (
-                <button>
+                <button onClick={() => setVideoOverlay(videoIDs[0])}>
                   <FiYoutube />
                   Voorbeeld
                 </button>
@@ -372,7 +346,7 @@ const Config = ({
                 Montage Methode
               </span>
               {activeTab === 7 && (
-                <button>
+                <button onClick={() => setVideoOverlay(videoIDs[0])}>
                   <FiYoutube />
                   Voorbeeld
                 </button>
@@ -441,7 +415,10 @@ const Config = ({
               value={checkoutMessage}
               onInput={(e) => setCheckoutMessage(e.target.value)}
             ></textarea>
-            <button disabled={checkoutLoading ? true : false}>
+            <button
+              disabled={checkoutLoading ? true : false}
+              onClick={submitForm}
+            >
               {checkoutLoading && (
                 <img src="../images/Spinner.svg" alt="Spinner" />
               )}
