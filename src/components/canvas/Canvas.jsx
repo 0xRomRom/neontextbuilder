@@ -17,7 +17,7 @@ const Canvas = ({
   return (
     <div className={stl.canvas}>
       <div className={stl.backgroundLightning}>
-        {selectedColor !== "RGB" && (
+        {selectedColor !== "RGB" && selectedFont > 4 && (
           <>
             <span>Dim NEON</span>
             <input
@@ -50,11 +50,17 @@ const Canvas = ({
           <h1
             className={`${stl.mainText} ${
               selectedColor === "RGB" ? stl.rgb : ""
-            }`}
+            } ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
               color: selectedColor,
-              textShadow: `0px 0px ${neonGlow}px ${selectedColor}`,
+              textShadow:
+                selectedFont < 5
+                  ? `0px 0px 25px ${selectedColor}`
+                  : `0px 0px ${neonGlow}px ${selectedColor}`,
               fontFamily: fontFamilies[selectedFont],
+              WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+              WebkitTextStrokeColor:
+                selectedFont < 5 ? selectedColor : "transparent",
             }}
           >
             {currentText}
