@@ -3,7 +3,7 @@ import { useState } from "react";
 import NavOverlay from "./components/nav/NavOverlay";
 import Config from "./components/config/Config";
 import Canvas from "./components/canvas/Canvas";
-import { colors, backgrounds } from "./utils/dataArrays";
+import { colors, backgrounds, fontFamilies } from "./utils/dataArrays";
 import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
@@ -11,9 +11,9 @@ const App = () => {
   const [currentText, setCurrentText] = useState("LED's GO  NEON");
   const [selectedColor, setSelectedColor] = useState(colors[2]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
-  const [selectedFont, setSelectedFont] = useState("Hanken");
   const [customBg, setCustomBg] = useState("");
   const [customLength, setCustomLength] = useState(100);
+  const [selectedFont, setSelectedFont] = useState(0);
   const [finalPrice, setFinalPrice] = useState(120);
   const [backPanelColor, setBackPanelColor] = useState("Transparant");
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
@@ -70,6 +70,7 @@ const App = () => {
             backPlateShape={backPlateShape}
             mountingMethod={mountingMethod}
             customLength={customLength}
+            fontFamilies={fontFamilies}
           />
           <Config
             currentText={currentText}
@@ -93,6 +94,7 @@ const App = () => {
             checkoutMessage={checkoutMessage}
             setCheckoutMessage={setCheckoutMessage}
             setVideoOverlay={setVideoOverlay}
+            fontFamilies={fontFamilies}
           />
         </main>
       </div>

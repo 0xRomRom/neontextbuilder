@@ -39,6 +39,7 @@ const Config = ({
   checkoutMessage,
   setCheckoutMessage,
   setVideoOverlay,
+  fontFamilies,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -116,9 +117,11 @@ const Config = ({
                   {fontFamilies.map((font, index) => (
                     <div
                       key={index}
-                      onClick={() => setSelectedFont(font)}
+                      onClick={() => setSelectedFont(index)}
                       className={`${stl.fontDiv} ${
-                        selectedFont === font ? stl.activeFont : ""
+                        fontFamilies[selectedFont] === font
+                          ? stl.activeFont
+                          : ""
                       }`}
                     >
                       <span

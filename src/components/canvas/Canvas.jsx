@@ -8,7 +8,7 @@ const Canvas = ({
   customBg,
   selectedFont,
   finalPrice,
-
+  fontFamilies,
   customLength,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
@@ -54,7 +54,7 @@ const Canvas = ({
             style={{
               color: selectedColor,
               textShadow: `0px 0px ${neonGlow}px ${selectedColor}`,
-              fontFamily: selectedFont,
+              fontFamily: fontFamilies[selectedFont],
             }}
           >
             {currentText}
