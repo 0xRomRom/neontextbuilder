@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import stl from "./Canvas.module.css";
+import { colors as ColorsArray } from "../../utils/dataArrays";
 
 const Canvas = ({
   currentText,
@@ -13,10 +14,44 @@ const Canvas = ({
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(15.5);
+  const [colorIndex, setColorIndex] = useState(0);
+  const [rgbSpeed, setRgbSpeed] = useState(500);
+
+  const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
+  useEffect(() => {
+    if (selectedColor !== "RGB") {
+      return;
+    }
+    console.log("Triggering");
+    const interval = setInterval(() => {
+      setColorIndex((prevIndex) => (prevIndex + 1) % rgbColors.length);
+    }, rgbSpeed);
+
+    // Cleanup on unmount
+    return () => clearInterval(interval);
+  }, [rgbSpeed, selectedColor]);
+
+  useEffect(() => {
+    const index = ColorsArray.indexOf(selectedColor);
+    setColorIndex(index);
+  }, [selectedColor]);
 
   return (
     <div className={stl.canvas}>
       <div className={stl.backgroundLightning}>
+        {selectedColor === "RGB" && selectedFont < 5 && (
+          <>
+            <span>RGB Snelheid</span>
+            <input
+              type="range"
+              min="100"
+              max="1000"
+              step="100"
+              onInput={(e) => setRgbSpeed(e.target.value)}
+              value={rgbSpeed}
+            />
+          </>
+        )}
         {selectedColor !== "RGB" && selectedFont > 4 && (
           <>
             <span>Dim NEON</span>
@@ -48,19 +83,20 @@ const Canvas = ({
       <div className={stl.textCol}>
         <div className={stl.innerColWrap}>
           <h1
-            className={`${stl.mainText} ${
-              selectedColor === "RGB" ? stl.rgb : ""
-            } ${selectedFont < 5 ? stl.outline : ""}`}
+            className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
-              color: selectedColor,
+              color:
+                selectedColor !== "RGB"
+                  ? ColorsArray[colorIndex]
+                  : rgbColors[colorIndex], // Use color from state
               textShadow:
                 selectedFont < 5
-                  ? `0px 0px 25px ${selectedColor}`
-                  : `0px 0px ${neonGlow}px ${selectedColor}`,
+                  ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                  : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
               WebkitTextStrokeColor:
-                selectedFont < 5 ? selectedColor : "transparent",
+                selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
             }}
           >
             {currentText}

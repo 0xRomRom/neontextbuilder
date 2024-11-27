@@ -103,3 +103,42 @@ const App = () => {
 };
 
 export default App;
+
+/*
+Prijs Formule (graag afronden op hele euros):
+
+((LxLxHx0,0425)+175)xSxLxF
+
+L= Lengte
+
+H= Hoogte waarde (hoeveel regels onder elkaar); 
+1 regel;0,225
+2 regels;0,375
+3 regels;0,525
+4 regels;0,675
+
+S= Soort achterpaneel;
+Transparant; 1
+Zwart;1,25
+
+L= Soort LED
+Enkele kleur; 1
+RGB; 1,4
+
+F= Factor Lettertype
+Single line font; 1
+Outline font; 1,15
+
+Max karakters per regel
+Totale lengte range= 40-240cm
+
+40cm=8
+50cm=10
+60cm=14
+70cm=18
+80cm=22
+100cm=32
+120cm=42
+140cm=52
+Groter dan 150cm is er geen max karakters. 
+*/

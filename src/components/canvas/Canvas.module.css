@@ -29,6 +29,7 @@
 .outline {
   color: transparent !important; /* Hides the text fill */
   text-stroke: 2px green !important; /* For future compatibility */
+  transition: all 0.1s ease-in-out;
 }
 
 .bgImg {
