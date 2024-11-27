@@ -180,67 +180,18 @@ const Config = ({
           >
             <div className={stl.topRow}>
               <span className={stl.title}>
-                <GiScrew className={stl.icon} />
-                Montage Methode
-              </span>
-              {activeTab === 7 && (
-                <button onClick={() => setVideoOverlay(videoIDs[0])}>
-                  <FiYoutube />
-                  Voorbeeld
-                </button>
-              )}
-            </div>
-
-            {activeTab === 3 && (
-              <div className={stl.choiceCtas}>
-                <button
-                  className={
-                    mountingMethod === "Afstandhouders"
-                      ? stl.activePlateCta
-                      : ""
-                  }
-                  onClick={() => setMountingMethod("Afstandhouders")}
-                >
-                  Afstandhouders
-                </button>
-                <button
-                  className={
-                    mountingMethod === "Ketting" ? stl.activePlateCta : ""
-                  }
-                  onClick={() => setMountingMethod("Ketting")}
-                >
-                  Ketting
-                </button>
-                <button
-                  className={
-                    mountingMethod === "Railmontage" ? stl.activePlateCta : ""
-                  }
-                  onClick={() => setMountingMethod("Railmontage")}
-                >
-                  Railmontage
-                </button>
-              </div>
-            )}
-          </div>
-
-          <div
-            className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(4)}
-          >
-            <div className={stl.topRow}>
-              <span className={stl.title}>
                 <FaRulerVertical className={stl.icon} />
                 Lengte
               </span>
             </div>
 
-            {activeTab === 4 && (
+            {activeTab === 3 && (
               <div className={stl.lengthBox}>
                 <input
                   type="range"
-                  min="60"
+                  min="40"
                   max="240"
-                  step={customLength < 100 ? 10 : 20}
+                  step="10"
                   value={customLength}
                   onChange={(e) => setCustomLength(e.target.value)}
                   className={stl.rangeInput}
@@ -251,15 +202,15 @@ const Config = ({
           </div>
 
           <div
-            className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(5)}
+            className={`${stl.box} ${activeTab === 4 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(4)}
           >
             <div className={stl.topRow}>
               <span className={stl.title}>
                 <IoColorPaletteOutline className={stl.icon} />
                 Achterpaneel Kleur
               </span>
-              {activeTab === 5 && (
+              {activeTab === 4 && (
                 <button onClick={() => setVideoOverlay(videoIDs[0])}>
                   <FiYoutube />
                   Voorbeeld
@@ -267,7 +218,7 @@ const Config = ({
               )}
             </div>
 
-            {activeTab === 5 && (
+            {activeTab === 4 && (
               <div className={stl.choiceCtas}>
                 <button
                   className={
@@ -290,15 +241,15 @@ const Config = ({
           </div>
 
           <div
-            className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(6)}
+            className={`${stl.box} ${activeTab === 5 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(5)}
           >
             <div className={stl.topRow}>
               <span className={stl.title}>
                 <RiShape2Fill className={stl.icon} />
                 Achterpaneel Vorm
               </span>
-              {activeTab === 6 && (
+              {activeTab === 5 && (
                 <button onClick={() => setVideoOverlay(videoIDs[0])}>
                   <FiYoutube />
                   Voorbeeld
@@ -306,7 +257,7 @@ const Config = ({
               )}
             </div>
 
-            {activeTab === 6 && (
+            {activeTab === 5 && (
               <div className={stl.choiceCtas}>
                 <button
                   className={
@@ -329,8 +280,8 @@ const Config = ({
           </div>
 
           <div
-            className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(7)}
+            className={`${stl.box} ${activeTab === 6 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(6)}
           >
             <div className={stl.topRow}>
               <span className={stl.title}>
@@ -338,7 +289,7 @@ const Config = ({
                 Voorbeeld Achtergrond
               </span>
             </div>
-            {activeTab === 7 && (
+            {activeTab === 6 && (
               <div className={stl.content}>
                 <div className={stl.bgGrid}>
                   {backgrounds.map((background, index) => (
@@ -380,6 +331,56 @@ const Config = ({
                   style={{ display: "none" }}
                   onChange={handleFileChange}
                 />
+              </div>
+            )}
+          </div>
+          <div
+            className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}
+            onClick={() => setActiveTab(7)}
+          >
+            <div className={stl.topRow}>
+              <span className={stl.title}>
+                <GiScrew className={stl.icon} />
+                Montage Methode
+              </span>
+              {activeTab === 7 && (
+                <button onClick={() => setVideoOverlay(videoIDs[0])}>
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+            </div>
+
+            {activeTab === 7 && (
+              <div className={stl.choiceCtas}>
+                <button
+                  className={
+                    mountingMethod === "Afstandhouders"
+                      ? stl.activePlateCta
+                      : ""
+                  }
+                  onClick={() => setMountingMethod("Afstandhouders")}
+                >
+                  Afstandhouders
+                </button>
+                <button
+                  className={
+                    mountingMethod === "Ketting" ? stl.activePlateCta : ""
+                  }
+                  onClick={() => setMountingMethod("Ketting")}
+                >
+                  Ketting
+                </button>
+                {backPanelColor === "Zwart" && (
+                  <button
+                    className={
+                      mountingMethod === "Railmontage" ? stl.activePlateCta : ""
+                    }
+                    onClick={() => setMountingMethod("Railmontage")}
+                  >
+                    Railmontage
+                  </button>
+                )}
               </div>
             )}
           </div>

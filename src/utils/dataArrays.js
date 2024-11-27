@@ -1,18 +1,14 @@
 const colors = [
-  "#FF5733",
-  "#33FF57",
-  "#3357FF",
-  "#F1C40F",
-  "#8E44AD",
-  "#E74C3C",
-  "#1ABC9C",
-  "#2ECC71",
-  "#3498DB",
-  "#9B59B6",
-  "#34495E",
-  "#16A085",
-  "#27AE60",
-  "#2980B9",
+  "#FFFFFF",
+  "#F5DF85FF",
+  "#FFFF00FF",
+  "#EEA400FF",
+  "#FE5C14FF",
+  "#FC03FBFF",
+  "#8630FEFF",
+  "#2020FFFF",
+  "#38C7FFFF",
+  "#00F15CFF",
   "RGB",
 ];
 
@@ -28,12 +24,21 @@ const backgrounds = [
 ];
 
 const fontFamilies = [
-  "Hanken",
-  "Itil",
-  "Montserrat",
-  "Roboto",
-  "VT3",
-  "Opensans",
+  "Arial Black",
+  "Arial Rounded Bold",
+  "ChalkboardSE",
+  "Impact",
+  "MarkerFelt",
+  "AA13Regular",
+  "AA14Regular",
+  "AA15Regular",
+  "Art Deco",
+  "Bubble Wrap",
+  "Magnolia",
+  "Melody",
+  "Picnic Basket",
+  "Architect Regular",
+  "Peaches",
 ];
 
 const videoIDs = ["9U296TyVMqY"];

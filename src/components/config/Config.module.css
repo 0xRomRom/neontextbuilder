@@ -63,6 +63,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
 }
+
 .bgGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -141,6 +142,9 @@
   cursor: pointer;
   text-align: center;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fontDiv:hover {
@@ -158,6 +162,10 @@
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.fontGrid > :last-child {
+  grid-column: span 2;
 }
 
 .activeBg {

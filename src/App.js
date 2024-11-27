@@ -9,11 +9,11 @@ import VideoOverlay from "./components/videooverlay/VideoOverlay";
 const App = () => {
   const [showNav, setShowNav] = useState(false);
   const [currentText, setCurrentText] = useState("LED's GO  NEON");
-  const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const [selectedColor, setSelectedColor] = useState(colors[2]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
   const [selectedFont, setSelectedFont] = useState("Hanken");
   const [customBg, setCustomBg] = useState("");
-  const [customLength, setCustomLength] = useState(60);
+  const [customLength, setCustomLength] = useState(100);
   const [finalPrice, setFinalPrice] = useState(120);
   const [backPanelColor, setBackPanelColor] = useState("Transparant");
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
