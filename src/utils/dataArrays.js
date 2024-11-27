@@ -41,6 +41,21 @@ const fontFamilies = [
   "Peaches",
 ];
 
+const maxChars = {
+  40: 8,
+  50: 10,
+  60: 14,
+  70: 18,
+  80: 22,
+  90: 22,
+  100: 32,
+  110: 32,
+  120: 42,
+  130: 42,
+  140: 52,
+  150: "ANY",
+};
+
 const videoIDs = ["9U296TyVMqY"];
 
-export { colors, backgrounds, fontFamilies, videoIDs };
+export { colors, backgrounds, fontFamilies, maxChars, videoIDs };

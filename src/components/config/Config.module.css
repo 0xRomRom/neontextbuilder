@@ -47,6 +47,8 @@
   border-radius: 0.5rem;
   color: white;
   transition: all 0.1s ease-in-out;
+  height: 6rem;
+  resize: none;
 }
 
 .textInput:focus {
@@ -102,6 +104,13 @@
 
 .content {
   margin-top: 0.5rem;
+  position: relative;
+}
+.currentLength {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  color: gray !important;
 }
 
 .bgDiv {

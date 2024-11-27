@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import stl from "./Canvas.module.css";
-import { colors as ColorsArray } from "../../utils/dataArrays";
+import {
+  colors as ColorsArray,
+  maxChars,
+  fontFamilies,
+} from "../../utils/dataArrays";
 
 const Canvas = ({
   currentText,
@@ -9,20 +13,19 @@ const Canvas = ({
   customBg,
   selectedFont,
   finalPrice,
-  fontFamilies,
   customLength,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(15.5);
   const [colorIndex, setColorIndex] = useState(0);
   const [rgbSpeed, setRgbSpeed] = useState(500);
+  const [zoom, setZoom] = useState(1);
 
   const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
   useEffect(() => {
     if (selectedColor !== "RGB") {
       return;
     }
-    console.log("Triggering");
     const interval = setInterval(() => {
       setColorIndex((prevIndex) => (prevIndex + 1) % rgbColors.length);
     }, rgbSpeed);
@@ -39,7 +42,7 @@ const Canvas = ({
   return (
     <div className={stl.canvas}>
       <div className={stl.backgroundLightning}>
-        {selectedColor === "RGB" && selectedFont < 5 && (
+        {selectedColor === "RGB" && (
           <>
             <span>RGB Snelheid</span>
             <input
@@ -65,6 +68,15 @@ const Canvas = ({
             />
           </>
         )}
+        <span>Zoom</span>
+        <input
+          type="range"
+          min="0.2"
+          max="3"
+          step="0.1"
+          onInput={(e) => setZoom(e.target.value)}
+          value={zoom}
+        />
         <span>Dim Achtergrond</span>
         <input
           type="range"
@@ -88,7 +100,7 @@ const Canvas = ({
               color:
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
-                  : rgbColors[colorIndex], // Use color from state
+                  : rgbColors[colorIndex],
               textShadow:
                 selectedFont < 5
                   ? `0px 0px 25px ${ColorsArray[colorIndex]}`
@@ -97,6 +109,8 @@ const Canvas = ({
               WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
               WebkitTextStrokeColor:
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+              fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+              transform: `scale(${zoom})`,
             }}
           >
             {currentText}

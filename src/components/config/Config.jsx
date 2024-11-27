@@ -5,8 +5,9 @@ import { IoColorPaletteOutline } from "react-icons/io5";
 import {
   colors,
   backgrounds,
-  fontFamilies,
+  maxChars,
   videoIDs,
+  fontFamilies,
 } from "../../utils/dataArrays";
 import { ImFontSize } from "react-icons/im";
 import { FaRulerVertical } from "react-icons/fa";
@@ -39,7 +40,8 @@ const Config = ({
   checkoutMessage,
   setCheckoutMessage,
   setVideoOverlay,
-  fontFamilies,
+  textLength,
+  setTextLength,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -89,14 +91,22 @@ const Config = ({
 
             {activeTab === 0 && (
               <div className={stl.content}>
-                <input
+                {customLength < 150 && (
+                  <span className={stl.currentLength}>
+                    [{textLength}/{maxChars[customLength]}]
+                  </span>
+                )}
+                <textarea
                   type="text"
                   placeholder="Voer uw text in"
                   className={stl.textInput}
                   value={currentText}
-                  onInput={(e) => setCurrentText(e.target.value)}
+                  onInput={(e) => {
+                    setTextLength(currentText.length);
+                    setCurrentText(e.target.value);
+                  }}
                   ref={inputRef}
-                />
+                ></textarea>
               </div>
             )}
           </div>

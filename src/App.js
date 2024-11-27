@@ -1,14 +1,14 @@
 import stl from "./App.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavOverlay from "./components/nav/NavOverlay";
 import Config from "./components/config/Config";
 import Canvas from "./components/canvas/Canvas";
-import { colors, backgrounds, fontFamilies } from "./utils/dataArrays";
+import { colors, backgrounds } from "./utils/dataArrays";
 import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
-  const [currentText, setCurrentText] = useState("LED's GO  NEON");
+  const [currentText, setCurrentText] = useState("LED's GO NEON");
   const [selectedColor, setSelectedColor] = useState(colors[2]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
   const [customBg, setCustomBg] = useState("");
@@ -20,6 +20,15 @@ const App = () => {
   const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
   const [checkoutMessage, setCheckoutMessage] = useState("");
   const [videoOverlay, setVideoOverlay] = useState("");
+  const [textLength, setTextLength] = useState(13);
+
+  // useEffect(() => {
+  //   setFinalPrice();
+  // }, []);
+
+  useEffect(() => {
+    setTextLength(currentText.length);
+  }, [currentText]);
 
   return (
     <div className={stl.app}>
@@ -70,7 +79,6 @@ const App = () => {
             backPlateShape={backPlateShape}
             mountingMethod={mountingMethod}
             customLength={customLength}
-            fontFamilies={fontFamilies}
           />
           <Config
             currentText={currentText}
@@ -94,7 +102,8 @@ const App = () => {
             checkoutMessage={checkoutMessage}
             setCheckoutMessage={setCheckoutMessage}
             setVideoOverlay={setVideoOverlay}
-            fontFamilies={fontFamilies}
+            textLength={textLength}
+            setTextLength={setTextLength}
           />
         </main>
       </div>

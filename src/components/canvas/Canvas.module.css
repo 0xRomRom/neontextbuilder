@@ -9,15 +9,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
   user-select: none;
 }
 
 .mainText {
   z-index: 10;
-  /* color: white; */
   position: relative;
-  font-size: 4rem;
+  font-size: clamp(1rem, 1.5vw, 2rem);
   white-space: normal;
   word-wrap: break-word;
   width: 100%;
