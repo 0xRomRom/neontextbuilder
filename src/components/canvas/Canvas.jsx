@@ -11,12 +11,23 @@ const Canvas = ({
   backPanelColor,
   backPlateShape,
   mountingMethod,
+  customLength,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
+  const [neonGlow, setNeonGlow] = useState(15.5);
 
   return (
     <div className={stl.canvas}>
       <div className={stl.backgroundLightning}>
+        <span>Dim NEON</span>
+        <input
+          type="range"
+          min="0"
+          max="25"
+          step="0.25"
+          onInput={(e) => setNeonGlow(e.target.value)}
+          value={neonGlow}
+        />
         <span>Dim Achtergrond</span>
         <input
           type="range"
@@ -28,7 +39,9 @@ const Canvas = ({
         />
       </div>
       <div className={stl.endPrice}>
-        <span>Totaal Prijs €{finalPrice},-</span>
+        <span>Prijs €{finalPrice},-</span>
+        <span>Exclusief BTW.</span>
+        <span>Lengte: {customLength}CM</span>
       </div>
       <div
         className={`${stl.textCol} ${
@@ -99,7 +112,7 @@ const Canvas = ({
             }`}
             style={{
               color: selectedColor,
-              textShadow: `0px 0px 20px ${selectedColor}`,
+              textShadow: `0px 0px ${neonGlow}px ${selectedColor}`,
               fontFamily: selectedFont,
             }}
           >

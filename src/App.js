@@ -69,6 +69,7 @@ const App = () => {
             backPanelColor={backPanelColor}
             backPlateShape={backPlateShape}
             mountingMethod={mountingMethod}
+            customLength={customLength}
           />
           <Config
             currentText={currentText}

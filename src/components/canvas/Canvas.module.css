@@ -24,7 +24,6 @@
   word-wrap: break-word;
   width: 100%;
   text-align: center;
-  font-family: "Hanken";
   font-family: "Itim";
 }
 
@@ -42,22 +41,29 @@
   width: 10rem;
   bottom: 1rem;
   z-index: 10;
-  right: 1rem;
+  right: 0rem;
   color: rgb(187, 187, 187);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
+  align-items: flex-start;
+  gap: 0.2rem;
+  font-size: 14px;
 }
 
 .endPrice {
   position: absolute;
-  left: 1rem;
-  bottom: 1rem;
+  right: 0.5rem;
+  top: 1rem;
   color: white;
   z-index: 100;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+}
+.endPrice span:nth-child(1) {
+  font-size: 24px;
 }
 
 .textCol {
