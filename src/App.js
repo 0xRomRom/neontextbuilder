@@ -49,7 +49,14 @@ const App = () => {
       base * BACKPANEL_TYPE * LED_TYPE * FONT_FACTOR
     );
     setFinalPrice(finalPrice);
-  }, [textLength, currentText, selectedColor, selectedFont, backPanelColor]);
+  }, [
+    customLength,
+    textLength,
+    currentText,
+    selectedColor,
+    selectedFont,
+    backPanelColor,
+  ]);
 
   useEffect(() => {
     const currentLength = currentText.length;

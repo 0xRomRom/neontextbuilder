@@ -53,7 +53,7 @@ const maxChars = {
   120: 42,
   130: 42,
   140: 52,
-  150: 999,
+  150: 250,
 };
 
 const videoIDs = ["9U296TyVMqY"];

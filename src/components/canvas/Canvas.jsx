@@ -94,9 +94,34 @@ const Canvas = ({
         <span>Exclusief BTW.</span>
         <span>Lengte: {customLength}CM</span>
       </div>
-      <div className={stl.textCol}>
-        <div className={stl.innerColWrap}>
-          <h1
+
+      <div className={stl.innerColWrap}>
+        <h1
+          className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
+          style={{
+            color:
+              selectedColor !== "RGB"
+                ? ColorsArray[colorIndex]
+                : rgbColors[colorIndex],
+            textShadow:
+              selectedFont < 5
+                ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+            fontFamily: fontFamilies[selectedFont],
+            WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
+            WebkitTextStrokeColor:
+              selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+            fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+            transform: `scale(${zoom})`,
+            lineHeight: `${zoom * 25}px`,
+            textAlign: alignment,
+            letterSpacing: `${zoom * 1.1}px`,
+          }}
+        >
+          {currentText.slice(0, maxChars[customLength])}
+        </h1>
+        {textLength > maxChars[customLength] && (
+          <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
               color:
@@ -108,7 +133,7 @@ const Canvas = ({
                   ? `0px 0px 25px ${ColorsArray[colorIndex]}`
                   : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
+              WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
               WebkitTextStrokeColor:
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
@@ -118,103 +143,72 @@ const Canvas = ({
               letterSpacing: `${zoom * 1.1}px`,
             }}
           >
-            {currentText.slice(0, maxChars[customLength])}
-          </h1>
-          {textLength > maxChars[customLength] && (
-            <h2
-              className={`${stl.mainText2} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
-              style={{
-                color:
-                  selectedColor !== "RGB"
-                    ? ColorsArray[colorIndex]
-                    : rgbColors[colorIndex],
-                textShadow:
-                  selectedFont < 5
-                    ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                    : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
-                fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
-                WebkitTextStrokeColor:
-                  selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
-                fontSize:
-                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
-                transform: `scale(${zoom})`,
-                lineHeight: `${zoom * 25}px`,
-                textAlign: alignment,
-              }}
-            >
-              {currentText.slice(
-                maxChars[customLength],
-                maxChars[customLength] * 2
-              )}
-            </h2>
-          )}
-          {textLength > maxChars[customLength] * 2 && (
-            <h2
-              className={`${stl.mainText2} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
-              style={{
-                color:
-                  selectedColor !== "RGB"
-                    ? ColorsArray[colorIndex]
-                    : rgbColors[colorIndex],
-                textShadow:
-                  selectedFont < 5
-                    ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                    : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
-                fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
-                WebkitTextStrokeColor:
-                  selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
-                fontSize:
-                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
-                transform: `scale(${zoom})`,
-                lineHeight: `${zoom * 25}px`,
-                textAlign: alignment,
-              }}
-            >
-              {currentText.slice(
-                maxChars[customLength] * 2,
-                maxChars[customLength] * 3
-              )}
-            </h2>
-          )}
-          {textLength > maxChars[customLength] * 3 && (
-            <h2
-              className={`${stl.mainText2} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
-              style={{
-                color:
-                  selectedColor !== "RGB"
-                    ? ColorsArray[colorIndex]
-                    : rgbColors[colorIndex],
-                textShadow:
-                  selectedFont < 5
-                    ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                    : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
-                fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
-                WebkitTextStrokeColor:
-                  selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
-                fontSize:
-                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
-                transform: `scale(${zoom})`,
-                lineHeight: `${zoom * 25}px`,
-                textAlign: alignment,
-              }}
-            >
-              {currentText.slice(
-                maxChars[customLength] * 3,
-                maxChars[customLength] * 4
-              )}
-            </h2>
-          )}
-        </div>
+            {currentText.slice(
+              maxChars[customLength],
+              maxChars[customLength] * 2
+            )}
+          </h2>
+        )}
+        {textLength > maxChars[customLength] * 2 && (
+          <h2
+            className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
+            style={{
+              color:
+                selectedColor !== "RGB"
+                  ? ColorsArray[colorIndex]
+                  : rgbColors[colorIndex],
+              textShadow:
+                selectedFont < 5
+                  ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                  : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+              fontFamily: fontFamilies[selectedFont],
+              WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
+              WebkitTextStrokeColor:
+                selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+              fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+              transform: `scale(${zoom})`,
+              lineHeight: `${zoom * 25}px`,
+              textAlign: alignment,
+              letterSpacing: `${zoom * 1.1}px`,
+            }}
+          >
+            {currentText.slice(
+              maxChars[customLength] * 2,
+              maxChars[customLength] * 3
+            )}
+          </h2>
+        )}
+        {textLength > maxChars[customLength] * 3 && (
+          <h2
+            className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
+            style={{
+              color:
+                selectedColor !== "RGB"
+                  ? ColorsArray[colorIndex]
+                  : rgbColors[colorIndex],
+              textShadow:
+                selectedFont < 5
+                  ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                  : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+              fontFamily: fontFamilies[selectedFont],
+              WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
+              WebkitTextStrokeColor:
+                selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+              fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+              transform: `scale(${zoom})`,
+              lineHeight: `${zoom * 25}px`,
+              textAlign: alignment,
+              letterSpacing: `${zoom * 1.1}px`,
+            }}
+          >
+            {currentText.slice(
+              maxChars[customLength] * 3,
+              maxChars[customLength] * 4
+            )}
+          </h2>
+        )}
       </div>
+
       <img
         src={customBg || backgroundImage}
         alt="Background"
