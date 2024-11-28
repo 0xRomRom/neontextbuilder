@@ -21,7 +21,7 @@ const Canvas = ({
   const [neonGlow, setNeonGlow] = useState(15.5);
   const [colorIndex, setColorIndex] = useState(0);
   const [rgbSpeed, setRgbSpeed] = useState(500);
-  const [zoom, setZoom] = useState(2.3);
+  const [zoom, setZoom] = useState(2);
 
   const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
   useEffect(() => {
@@ -51,7 +51,7 @@ const Canvas = ({
               type="range"
               min="100"
               max="1000"
-              step="100"
+              step="10"
               onInput={(e) => setRgbSpeed(e.target.value)}
               value={rgbSpeed}
             />
@@ -108,13 +108,14 @@ const Canvas = ({
                   ? `0px 0px 25px ${ColorsArray[colorIndex]}`
                   : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+              WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
               WebkitTextStrokeColor:
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
               transform: `scale(${zoom})`,
               lineHeight: `${zoom * 25}px`,
               textAlign: alignment,
+              letterSpacing: `${zoom * 1.1}px`,
             }}
           >
             {currentText.slice(0, maxChars[customLength])}
@@ -134,7 +135,7 @@ const Canvas = ({
                     ? `0px 0px 25px ${ColorsArray[colorIndex]}`
                     : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+                WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
                 WebkitTextStrokeColor:
                   selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
                 fontSize:
@@ -165,7 +166,7 @@ const Canvas = ({
                     ? `0px 0px 25px ${ColorsArray[colorIndex]}`
                     : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+                WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
                 WebkitTextStrokeColor:
                   selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
                 fontSize:
@@ -196,7 +197,7 @@ const Canvas = ({
                     ? `0px 0px 25px ${ColorsArray[colorIndex]}`
                     : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+                WebkitTextStrokeWidth: selectedFont < 5 ? "0.2px" : "0px",
                 WebkitTextStrokeColor:
                   selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
                 fontSize:

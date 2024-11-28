@@ -14,7 +14,7 @@ const App = () => {
   const [customBg, setCustomBg] = useState("");
   const [customLength, setCustomLength] = useState(100);
   const [selectedFont, setSelectedFont] = useState(0);
-  const [finalPrice, setFinalPrice] = useState(120);
+  const [finalPrice, setFinalPrice] = useState(0);
   const [backPanelColor, setBackPanelColor] = useState("Transparant");
   const [backPlateShape, setBackPlateShape] = useState("Rechthoekig");
   const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
@@ -24,9 +24,32 @@ const App = () => {
   const [lineAmount, setLineAmount] = useState(1);
   const [alignment, setAlignment] = useState("center");
 
-  // useEffect(() => {
-  //   setFinalPrice();
-  // }, []);
+  //////////////// Price Constants ///////////////////
+  const BASE_PRICE = 175;
+  const BACKPANEL_TYPE = backPanelColor === "Zwart" ? 1.25 : 1;
+  const LED_TYPE = selectedColor === "RGB" ? 1.4 : 1;
+  const FONT_FACTOR = selectedFont < 5 ? 1.15 : 1;
+
+  useEffect(() => {
+    let lineMultiplier = 0.225;
+
+    if (lineAmount === 2) {
+      lineMultiplier = 0.375;
+    }
+    if (lineAmount === 3) {
+      lineMultiplier = 0.525;
+    }
+    if (lineAmount === 4) {
+      lineMultiplier = 0.675;
+    }
+
+    const base =
+      customLength * customLength * lineMultiplier * 0.0425 + BASE_PRICE;
+    const finalPrice = Math.floor(
+      base * BACKPANEL_TYPE * LED_TYPE * FONT_FACTOR
+    );
+    setFinalPrice(finalPrice);
+  }, [textLength, currentText, selectedColor, selectedFont, backPanelColor]);
 
   useEffect(() => {
     const currentLength = currentText.length;
