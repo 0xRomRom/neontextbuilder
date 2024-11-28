@@ -133,10 +133,7 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              textShadow:
-                selectedFont < 5
-                  ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                  : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+              textShadow: getTextShadow(),
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
               WebkitTextStrokeColor:
@@ -162,10 +159,7 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              textShadow:
-                selectedFont < 5
-                  ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                  : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+              textShadow: getTextShadow(),
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
               WebkitTextStrokeColor:
@@ -191,10 +185,7 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              textShadow:
-                selectedFont < 5
-                  ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                  : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+              textShadow: getTextShadow(),
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
               WebkitTextStrokeColor:

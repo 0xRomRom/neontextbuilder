@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ce58a13.css",
-    "main.js": "/static/js/main.592b50c8.js",
+    "main.css": "/static/css/main.cb46a29d.css",
+    "main.js": "/static/js/main.e8827f0f.js",
     "static/media/MarkerFelt.ttc": "/static/media/MarkerFelt.3a83925bc211a8146173.ttc",
     "static/media/ChalkboardSE.ttc": "/static/media/ChalkboardSE.dea96def2065948aca8e.ttc",
     "static/media/ArtDeco.otf": "/static/media/ArtDeco.0cd13cbf5ca1f8c386f7.otf",
@@ -19,11 +19,11 @@
     "static/media/ArialRoundedBold.ttf": "/static/media/ArialRoundedBold.5f260905da2e679d3dc3.ttf",
     "static/media/Melody.ttf": "/static/media/Melody.f4bae39b6f720882c9d6.ttf",
     "index.html": "/index.html",
-    "main.2ce58a13.css.map": "/static/css/main.2ce58a13.css.map",
-    "main.592b50c8.js.map": "/static/js/main.592b50c8.js.map"
+    "main.cb46a29d.css.map": "/static/css/main.cb46a29d.css.map",
+    "main.e8827f0f.js.map": "/static/js/main.e8827f0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ce58a13.css",
-    "static/js/main.592b50c8.js"
+    "static/css/main.cb46a29d.css",
+    "static/js/main.e8827f0f.js"
   ]
 }
