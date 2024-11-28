@@ -307,7 +307,7 @@ const Config = ({
                 Achterpaneel Vorm
               </span>
               {activeTab === 5 && (
-                <button onClick={() => setVideoOverlay(videoIDs[0])}>
+                <button onClick={() => setVideoOverlay(videoIDs[1])}>
                   <FiYoutube />
                   Voorbeeld
                 </button>
@@ -401,7 +401,7 @@ const Config = ({
                 Montage Methode
               </span>
               {activeTab === 7 && (
-                <button onClick={() => setVideoOverlay(videoIDs[0])}>
+                <button onClick={() => setVideoOverlay(videoIDs[2])}>
                   <FiYoutube />
                   Voorbeeld
                 </button>
@@ -464,7 +464,7 @@ const Config = ({
             Afrekenen
           </span>
           {activeTab === 8 && (
-            <button onClick={() => setVideoOverlay(videoIDs[0])}>
+            <button onClick={() => setVideoOverlay(videoIDs[3])}>
               <FiYoutube />
               Voorbeeld
             </button>
