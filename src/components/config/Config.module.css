@@ -115,8 +115,10 @@
 
 .redEnd {
   color: red !important;
-  top: 0.5px !important;
+  top: px !important;
   position: relative;
+  font-size: 15px;
+  font-weight: bold;
 }
 .gray {
   color: gray !important;
