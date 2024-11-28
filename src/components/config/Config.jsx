@@ -107,7 +107,7 @@ const Config = ({
                   <span className={stl.currentLength}>
                     [{textLength}/
                     <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
-                      {maxChars[customLength] * lineAmount}
+                      {maxChars[customLength] * lineAmount || 250}
                     </span>
                     ]
                   </span>
