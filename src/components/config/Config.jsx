@@ -42,6 +42,7 @@ const Config = ({
   setVideoOverlay,
   textLength,
   setTextLength,
+  lineAmount,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -74,6 +75,9 @@ const Config = ({
     setCheckoutLoading(true);
   };
 
+  console.log(maxChars[customLength]);
+  console.log(lineAmount);
+
   return (
     <div className={stl.config}>
       {activeTab !== 8 && (
@@ -93,7 +97,7 @@ const Config = ({
               <div className={stl.content}>
                 {customLength < 150 && (
                   <span className={stl.currentLength}>
-                    [{textLength}/{maxChars[customLength]}]
+                    [{textLength}/{maxChars[customLength] * lineAmount}]
                   </span>
                 )}
                 <textarea
@@ -101,6 +105,7 @@ const Config = ({
                   placeholder="Voer uw text in"
                   className={stl.textInput}
                   value={currentText}
+                  maxLength={maxChars[customLength] * 4 + 1}
                   onInput={(e) => {
                     setTextLength(currentText.length);
                     setCurrentText(e.target.value);

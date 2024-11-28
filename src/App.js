@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import NavOverlay from "./components/nav/NavOverlay";
 import Config from "./components/config/Config";
 import Canvas from "./components/canvas/Canvas";
-import { colors, backgrounds } from "./utils/dataArrays";
+import { colors, backgrounds, maxChars } from "./utils/dataArrays";
 import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
@@ -21,12 +21,33 @@ const App = () => {
   const [checkoutMessage, setCheckoutMessage] = useState("");
   const [videoOverlay, setVideoOverlay] = useState("");
   const [textLength, setTextLength] = useState(13);
+  const [lineAmount, setLineAmount] = useState(1);
 
   // useEffect(() => {
   //   setFinalPrice();
   // }, []);
 
   useEffect(() => {
+    console.log(textLength);
+  }, [textLength]);
+
+  useEffect(() => {
+    const currentLength = currentText.length;
+    const minSencenteLength =
+      maxChars[customLength] * lineAmount - maxChars[customLength];
+    const maxSentenceLength = maxChars[customLength] * lineAmount;
+
+    if (currentLength >= maxChars[customLength] * 4) {
+      return;
+    }
+
+    // console.log(minSencenteLength);
+    console.log(maxSentenceLength);
+
+    if (currentLength > maxSentenceLength && lineAmount < 5) {
+      setLineAmount((prev) => prev + 1);
+    }
+
     setTextLength(currentText.length);
   }, [currentText]);
 
@@ -104,6 +125,7 @@ const App = () => {
             setVideoOverlay={setVideoOverlay}
             textLength={textLength}
             setTextLength={setTextLength}
+            lineAmount={lineAmount}
           />
         </main>
       </div>
