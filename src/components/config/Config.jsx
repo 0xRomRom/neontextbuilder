@@ -213,13 +213,13 @@ const Config = ({
                           : ""
                       }`}
                     >
-                      <span
+                      <h2
                         style={{
                           fontFamily: font,
                         }}
                       >
                         {font}
-                      </span>
+                      </h2>
                     </div>
                   ))}
                 </div>
