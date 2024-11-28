@@ -57,6 +57,10 @@ const Config = ({
   useEffect(() => {
     if (activeTab === 0) {
       inputRef?.current?.focus();
+      inputRef.current.setSelectionRange(
+        inputRef?.current?.value?.length,
+        inputRef?.current?.value?.length
+      );
     }
   }, [activeTab]);
 

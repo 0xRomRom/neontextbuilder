@@ -21,7 +21,7 @@ const Canvas = ({
   const [neonGlow, setNeonGlow] = useState(15.5);
   const [colorIndex, setColorIndex] = useState(0);
   const [rgbSpeed, setRgbSpeed] = useState(500);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(2.3);
 
   const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
   useEffect(() => {

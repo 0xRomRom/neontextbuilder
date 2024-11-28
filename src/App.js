@@ -8,7 +8,7 @@ import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
-  const [currentText, setCurrentText] = useState("LED's GO NEON");
+  const [currentText, setCurrentText] = useState("Vul uw text in");
   const [selectedColor, setSelectedColor] = useState(colors[2]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
   const [customBg, setCustomBg] = useState("");
