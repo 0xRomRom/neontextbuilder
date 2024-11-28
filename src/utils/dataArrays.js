@@ -56,6 +56,11 @@ const maxChars = {
   150: 250,
 };
 
-const videoIDs = ["9U296TyVMqY"];
+const videoIDs = [
+  "9U296TyVMqY", // Achterpaneel kleur
+  "9U296TyVMqY", // Achterpaneel vorm
+  "9U296TyVMqY", // Montage methode
+  "9U296TyVMqY", // Afrekenen
+];
 
 export { colors, backgrounds, fontFamilies, maxChars, videoIDs };
