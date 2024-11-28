@@ -28,27 +28,26 @@ const App = () => {
   // }, []);
 
   useEffect(() => {
-    console.log(textLength);
-  }, [textLength]);
-
-  useEffect(() => {
     const currentLength = currentText.length;
-    const minSencenteLength =
-      maxChars[customLength] * lineAmount - maxChars[customLength];
-    const maxSentenceLength = maxChars[customLength] * lineAmount;
+    const lineCap1 = maxChars[customLength];
+    const lineCap2 = maxChars[customLength] * 2;
+    const lineCap3 = maxChars[customLength] * 3;
+    const lineCap4 = maxChars[customLength] * 4;
 
-    if (currentLength >= maxChars[customLength] * 4) {
-      return;
+    if (currentLength <= lineCap1) {
+      setLineAmount(1);
+    }
+    if (currentLength > lineCap1 && currentLength <= lineCap2) {
+      setLineAmount(2);
+    }
+    if (currentLength > lineCap2 && currentLength <= lineCap3) {
+      setLineAmount(3);
+    }
+    if (currentLength > lineCap3 && currentLength <= lineCap4) {
+      setLineAmount(4);
     }
 
-    // console.log(minSencenteLength);
-    console.log(maxSentenceLength);
-
-    if (currentLength > maxSentenceLength && lineAmount < 5) {
-      setLineAmount((prev) => prev + 1);
-    }
-
-    setTextLength(currentText.length);
+    setTextLength(currentLength);
   }, [currentText]);
 
   // Truncate text if custom length is decreased below bounds
@@ -57,6 +56,7 @@ const App = () => {
       maxChars[customLength] * lineAmount;
     if (currentText.length > maxAllowedLengthForCustomSignLength) {
       setCurrentText(currentText.slice(0, maxAllowedLengthForCustomSignLength));
+      setTextLength(maxAllowedLengthForCustomSignLength);
     }
   }, [customLength]);
 

@@ -75,9 +75,6 @@ const Config = ({
     setCheckoutLoading(true);
   };
 
-  console.log(maxChars[customLength]);
-  console.log(lineAmount);
-
   return (
     <div className={stl.config}>
       {activeTab !== 8 && (
@@ -97,7 +94,11 @@ const Config = ({
               <div className={stl.content}>
                 {customLength < 150 && (
                   <span className={stl.currentLength}>
-                    [{textLength}/{maxChars[customLength] * lineAmount}]
+                    [{textLength}/
+                    <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
+                      {maxChars[customLength] * lineAmount}
+                    </span>
+                    ]
                   </span>
                 )}
                 <textarea
@@ -105,14 +106,14 @@ const Config = ({
                   placeholder="Voer uw text in"
                   className={stl.textInput}
                   value={currentText}
-                  maxLength={maxChars[customLength] * 4 + 1}
+                  maxLength={maxChars[customLength] * 4}
                   onInput={(e) => {
                     setTextLength(currentText.length);
                     setCurrentText(e.target.value);
                   }}
                   ref={inputRef}
                   style={{
-                    height: textLength > 110 ? "8rem" : "6rem",
+                    height: textLength > 100 ? "8rem" : "6rem",
                   }}
                 ></textarea>
               </div>

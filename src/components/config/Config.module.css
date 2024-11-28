@@ -113,6 +113,13 @@
   color: gray !important;
 }
 
+.redEnd {
+  color: red !important;
+}
+.gray {
+  color: gray !important;
+}
+
 .bgDiv {
   width: 60px;
   height: 60px;

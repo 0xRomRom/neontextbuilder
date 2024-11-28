@@ -57,6 +57,15 @@ const Canvas = ({
             />
           </>
         )}
+        <span>Zoom</span>
+        <input
+          type="range"
+          min="0.2"
+          max="3"
+          step="0.1"
+          onInput={(e) => setZoom(e.target.value)}
+          value={zoom}
+        />
         {selectedColor !== "RGB" && selectedFont > 4 && (
           <>
             <span>Dim NEON</span>
@@ -70,15 +79,6 @@ const Canvas = ({
             />
           </>
         )}
-        <span>Zoom</span>
-        <input
-          type="range"
-          min="0.2"
-          max="3"
-          step="0.1"
-          onInput={(e) => setZoom(e.target.value)}
-          value={zoom}
-        />
         <span>Dim Achtergrond</span>
         <input
           type="range"
@@ -113,6 +113,7 @@ const Canvas = ({
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
               transform: `scale(${zoom})`,
+              lineHeight: `${zoom * 25}px`,
             }}
           >
             {currentText.slice(0, maxChars[customLength])}
@@ -138,6 +139,7 @@ const Canvas = ({
                 fontSize:
                   fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
                 transform: `scale(${zoom})`,
+                lineHeight: `${zoom * 25}px`,
               }}
             >
               {currentText.slice(
@@ -167,6 +169,7 @@ const Canvas = ({
                 fontSize:
                   fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
                 transform: `scale(${zoom})`,
+                lineHeight: `${zoom * 25}px`,
               }}
             >
               {currentText.slice(
@@ -196,6 +199,7 @@ const Canvas = ({
                 fontSize:
                   fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
                 transform: `scale(${zoom})`,
+                lineHeight: `${zoom * 25}px`,
               }}
             >
               {currentText.slice(
