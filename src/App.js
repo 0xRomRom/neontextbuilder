@@ -56,6 +56,10 @@ const App = () => {
     selectedColor,
     selectedFont,
     backPanelColor,
+    BACKPANEL_TYPE,
+    FONT_FACTOR,
+    LED_TYPE,
+    lineAmount,
   ]);
 
   useEffect(() => {
@@ -79,7 +83,7 @@ const App = () => {
     }
 
     setTextLength(currentLength);
-  }, [currentText]);
+  }, [currentText, customLength]);
 
   // Truncate text if custom length is decreased below bounds
   useEffect(() => {
@@ -89,7 +93,7 @@ const App = () => {
       setCurrentText(currentText.slice(0, maxAllowedLengthForCustomSignLength));
       setTextLength(maxAllowedLengthForCustomSignLength);
     }
-  }, [customLength]);
+  }, [customLength, currentText, lineAmount]);
 
   return (
     <div className={stl.app}>

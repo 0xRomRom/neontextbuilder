@@ -34,7 +34,7 @@ const Canvas = ({
       const index = ColorsArray.indexOf(selectedColor);
       setColorIndex(index);
     }
-  }, [selectedColor, rgbSpeed]);
+  }, [selectedColor, rgbSpeed, rgbColors.length]);
 
   const getTextShadow = () => {
     if (selectedFont < 5) {
