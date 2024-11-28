@@ -15,6 +15,9 @@ import { GiScrew } from "react-icons/gi";
 import { FaCreditCard } from "react-icons/fa";
 import { FaArrowTurnDown } from "react-icons/fa6";
 import { FiYoutube } from "react-icons/fi";
+import { FaAlignJustify } from "react-icons/fa6";
+import { FaAlignLeft } from "react-icons/fa6";
+import { FaAlignRight } from "react-icons/fa6";
 
 import { RiShape2Fill } from "react-icons/ri";
 
@@ -43,6 +46,8 @@ const Config = ({
   textLength,
   setTextLength,
   lineAmount,
+  alignment,
+  setAlignment,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -75,6 +80,8 @@ const Config = ({
     setCheckoutLoading(true);
   };
 
+  console.log(alignment);
+
   return (
     <div className={stl.config}>
       {activeTab !== 8 && (
@@ -92,30 +99,55 @@ const Config = ({
 
             {activeTab === 0 && (
               <div className={stl.content}>
-                {customLength < 150 && (
-                  <span className={stl.currentLength}>
-                    [{textLength}/
-                    <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
-                      {maxChars[customLength] * lineAmount}
+                <div className={stl.textWrap}>
+                  {customLength < 150 && (
+                    <span className={stl.currentLength}>
+                      [{textLength}/
+                      <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
+                        {maxChars[customLength] * lineAmount}
+                      </span>
+                      ]
                     </span>
-                    ]
-                  </span>
+                  )}
+                  <textarea
+                    type="text"
+                    placeholder="Voer uw text in"
+                    className={stl.textInput}
+                    value={currentText}
+                    maxLength={maxChars[customLength] * 4}
+                    onInput={(e) => {
+                      setTextLength(currentText.length);
+                      setCurrentText(e.target.value);
+                    }}
+                    ref={inputRef}
+                    style={{
+                      height: textLength > 100 ? "8rem" : "6rem",
+                    }}
+                  ></textarea>
+                </div>
+                {lineAmount > 1 && (
+                  <div className={stl.alignment}>
+                    <button
+                      onClick={() => setAlignment("left")}
+                      className={alignment === "left" ? stl.activeAlign : ""}
+                    >
+                      {" "}
+                      <FaAlignLeft />
+                    </button>
+                    <button
+                      onClick={() => setAlignment("center")}
+                      className={alignment === "center" ? stl.activeAlign : ""}
+                    >
+                      <FaAlignJustify />
+                    </button>
+                    <button
+                      onClick={() => setAlignment("right")}
+                      className={alignment === "right" ? stl.activeAlign : ""}
+                    >
+                      <FaAlignRight />
+                    </button>
+                  </div>
                 )}
-                <textarea
-                  type="text"
-                  placeholder="Voer uw text in"
-                  className={stl.textInput}
-                  value={currentText}
-                  maxLength={maxChars[customLength] * 4}
-                  onInput={(e) => {
-                    setTextLength(currentText.length);
-                    setCurrentText(e.target.value);
-                  }}
-                  ref={inputRef}
-                  style={{
-                    height: textLength > 100 ? "8rem" : "6rem",
-                  }}
-                ></textarea>
               </div>
             )}
           </div>

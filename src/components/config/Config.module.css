@@ -370,3 +370,35 @@
 .topRow button:hover {
   background-color: rgba(255, 0, 221, 0.5);
 }
+
+.textWrap {
+  position: relative;
+}
+
+.alignment {
+  width: 100%;
+  height: 3rem;
+  /* background-color: black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.alignment button {
+  font-size: 20px;
+  padding: 0.6rem 0.8rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.activeAlign {
+  background-color: rgb(226, 0, 226) !important;
+}

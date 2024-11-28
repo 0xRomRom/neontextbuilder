@@ -15,7 +15,7 @@ const Canvas = ({
   finalPrice,
   customLength,
   textLength,
-  lineAmount,
+  alignment,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(15.5);
@@ -114,6 +114,7 @@ const Canvas = ({
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
               transform: `scale(${zoom})`,
               lineHeight: `${zoom * 25}px`,
+              textAlign: alignment,
             }}
           >
             {currentText.slice(0, maxChars[customLength])}
@@ -140,6 +141,7 @@ const Canvas = ({
                   fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
                 transform: `scale(${zoom})`,
                 lineHeight: `${zoom * 25}px`,
+                textAlign: alignment,
               }}
             >
               {currentText.slice(
@@ -170,6 +172,7 @@ const Canvas = ({
                   fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
                 transform: `scale(${zoom})`,
                 lineHeight: `${zoom * 25}px`,
+                textAlign: alignment,
               }}
             >
               {currentText.slice(
@@ -200,6 +203,7 @@ const Canvas = ({
                   fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
                 transform: `scale(${zoom})`,
                 lineHeight: `${zoom * 25}px`,
+                textAlign: alignment,
               }}
             >
               {currentText.slice(

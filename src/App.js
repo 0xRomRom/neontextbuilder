@@ -22,6 +22,7 @@ const App = () => {
   const [videoOverlay, setVideoOverlay] = useState("");
   const [textLength, setTextLength] = useState(13);
   const [lineAmount, setLineAmount] = useState(1);
+  const [alignment, setAlignment] = useState("center");
 
   // useEffect(() => {
   //   setFinalPrice();
@@ -111,6 +112,7 @@ const App = () => {
             customLength={customLength}
             textLength={textLength}
             lineAmount={lineAmount}
+            alignment={alignment}
           />
           <Config
             currentText={currentText}
@@ -137,6 +139,8 @@ const App = () => {
             textLength={textLength}
             setTextLength={setTextLength}
             lineAmount={lineAmount}
+            alignment={alignment}
+            setAlignment={setAlignment}
           />
         </main>
       </div>
