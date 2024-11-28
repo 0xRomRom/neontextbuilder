@@ -82,9 +82,44 @@ const Config = ({
 
   const submitForm = async () => {
     setCheckoutLoading(true);
-  };
 
-  console.log(alignment);
+    try {
+      // Create an array of items to add to the cart
+      const cartItems = [
+        {
+          id: 123, // Replace with the actual product ID
+          quantity: 1, // Adjust the quantity based on user input
+          meta_data: [
+            { key: "Text", value: currentText },
+            { key: "Color", value: selectedColor },
+            { key: "Font", value: fontFamilies[selectedFont] },
+            { key: "Length", value: customLength },
+          ],
+        },
+      ];
+
+      // Make a POST request to WooCommerce REST API or endpoint
+      const response = await fetch("/wp-json/wc/store/cart/add-item", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ items: cartItems }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add items to the cart");
+      }
+
+      // Redirect to the WooCommerce checkout page
+      window.location.href = "/checkout";
+    } catch (error) {
+      console.error("Error adding items to the cart:", error);
+      alert("Failed to process your order. Please try again.");
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
 
   return (
     <div className={stl.config}>

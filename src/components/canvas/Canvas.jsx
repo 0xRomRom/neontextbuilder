@@ -125,6 +125,7 @@ const Canvas = ({
         >
           {currentText.slice(0, maxChars[customLength])}
         </h1>
+
         {textLength > maxChars[customLength] && (
           <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
