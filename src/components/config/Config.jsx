@@ -111,6 +111,9 @@ const Config = ({
                     setCurrentText(e.target.value);
                   }}
                   ref={inputRef}
+                  style={{
+                    height: textLength > 110 ? "8rem" : "6rem",
+                  }}
                 ></textarea>
               </div>
             )}

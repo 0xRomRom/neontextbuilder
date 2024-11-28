@@ -51,6 +51,15 @@ const App = () => {
     setTextLength(currentText.length);
   }, [currentText]);
 
+  // Truncate text if custom length is decreased below bounds
+  useEffect(() => {
+    const maxAllowedLengthForCustomSignLength =
+      maxChars[customLength] * lineAmount;
+    if (currentText.length > maxAllowedLengthForCustomSignLength) {
+      setCurrentText(currentText.slice(0, maxAllowedLengthForCustomSignLength));
+    }
+  }, [customLength]);
+
   return (
     <div className={stl.app}>
       <NavOverlay setShowNav={setShowNav} showNav={showNav} />
