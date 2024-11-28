@@ -14,6 +14,8 @@ const Canvas = ({
   selectedFont,
   finalPrice,
   customLength,
+  textLength,
+  lineAmount,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(15.5);
@@ -113,8 +115,95 @@ const Canvas = ({
               transform: `scale(${zoom})`,
             }}
           >
-            {currentText}
+            {currentText.slice(0, maxChars[customLength])}
           </h1>
+          {textLength > maxChars[customLength] && (
+            <h2
+              className={`${stl.mainText2} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                textShadow:
+                  selectedFont < 5
+                    ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                    : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+                WebkitTextStrokeColor:
+                  selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+                fontSize:
+                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+                transform: `scale(${zoom})`,
+              }}
+            >
+              {currentText.slice(
+                maxChars[customLength],
+                maxChars[customLength] * 2
+              )}
+            </h2>
+          )}
+          {textLength > maxChars[customLength] * 2 && (
+            <h2
+              className={`${stl.mainText2} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                textShadow:
+                  selectedFont < 5
+                    ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                    : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+                WebkitTextStrokeColor:
+                  selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+                fontSize:
+                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+                transform: `scale(${zoom})`,
+              }}
+            >
+              {currentText.slice(
+                maxChars[customLength] * 2,
+                maxChars[customLength] * 3
+              )}
+            </h2>
+          )}
+          {textLength > maxChars[customLength] * 3 && (
+            <h2
+              className={`${stl.mainText2} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                textShadow:
+                  selectedFont < 5
+                    ? `0px 0px 25px ${ColorsArray[colorIndex]}`
+                    : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeWidth: selectedFont < 5 ? "2px" : "0px",
+                WebkitTextStrokeColor:
+                  selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+                fontSize:
+                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+                transform: `scale(${zoom})`,
+              }}
+            >
+              {currentText.slice(
+                maxChars[customLength] * 3,
+                maxChars[customLength] * 4
+              )}
+            </h2>
+          )}
         </div>
       </div>
       <img

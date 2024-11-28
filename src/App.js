@@ -109,6 +109,8 @@ const App = () => {
             backPlateShape={backPlateShape}
             mountingMethod={mountingMethod}
             customLength={customLength}
+            textLength={textLength}
+            lineAmount={lineAmount}
           />
           <Config
             currentText={currentText}

@@ -23,6 +23,17 @@
   font-family: "Arial Black";
   color: white;
 }
+.mainText2 {
+  z-index: 10;
+  position: relative;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  white-space: normal;
+  word-wrap: break-word;
+  width: 100%;
+  text-align: center;
+  font-family: "Arial Black";
+  color: white;
+}
 
 .outline {
   color: transparent !important; /* Hides the text fill */
@@ -81,6 +92,8 @@
   height: 100%;
   z-index: 30;
   padding: 0.65rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .displacer {
