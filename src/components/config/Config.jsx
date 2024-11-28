@@ -104,7 +104,6 @@ const Config = ({
             {activeTab === 0 && (
               <div className={stl.content}>
                 <div className={stl.textWrap}>
-                  {/* {customLength < 150 && ( */}
                   <span className={stl.currentLength}>
                     [{textLength}/
                     <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
@@ -112,7 +111,7 @@ const Config = ({
                     </span>
                     ]
                   </span>
-                  {/* )} */}
+
                   <textarea
                     type="text"
                     placeholder="Voer uw text in"

@@ -25,21 +25,29 @@ const Canvas = ({
 
   const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
   useEffect(() => {
-    if (selectedColor !== "RGB") {
-      return;
+    if (selectedColor === "RGB") {
+      const interval = setInterval(() => {
+        setColorIndex((prevIndex) => (prevIndex + 1) % rgbColors.length);
+      }, rgbSpeed);
+      return () => clearInterval(interval); // Cleanup interval
+    } else {
+      const index = ColorsArray.indexOf(selectedColor);
+      setColorIndex(index);
     }
-    const interval = setInterval(() => {
-      setColorIndex((prevIndex) => (prevIndex + 1) % rgbColors.length);
-    }, rgbSpeed);
+  }, [selectedColor, rgbSpeed]);
 
-    // Cleanup on unmount
-    return () => clearInterval(interval);
-  }, [rgbSpeed, selectedColor]);
-
-  useEffect(() => {
-    const index = ColorsArray.indexOf(selectedColor);
-    setColorIndex(index);
-  }, [selectedColor]);
+  const getTextShadow = () => {
+    if (selectedFont < 5) {
+      return `0px 0px ${neonGlow}px ${
+        selectedColor === "RGB"
+          ? rgbColors[colorIndex]
+          : ColorsArray[colorIndex]
+      }`;
+    }
+    return `0px 0px ${neonGlow}px ${
+      selectedColor === "RGB" ? rgbColors[colorIndex] : ColorsArray[colorIndex]
+    }`;
+  };
 
   return (
     <div className={stl.canvas}>
@@ -57,6 +65,19 @@ const Canvas = ({
             />
           </>
         )}
+        {selectedColor !== "RGB" && (
+          <>
+            <span>Dim NEON</span>
+            <input
+              type="range"
+              min={selectedFont < 5 ? "10" : "0"}
+              max="25"
+              step="0.25"
+              onInput={(e) => setNeonGlow(e.target.value)}
+              value={neonGlow}
+            />
+          </>
+        )}
         <span>Zoom</span>
         <input
           type="range"
@@ -66,19 +87,6 @@ const Canvas = ({
           onInput={(e) => setZoom(e.target.value)}
           value={zoom}
         />
-        {selectedColor !== "RGB" && selectedFont > 4 && (
-          <>
-            <span>Dim NEON</span>
-            <input
-              type="range"
-              min="0"
-              max="25"
-              step="0.25"
-              onInput={(e) => setNeonGlow(e.target.value)}
-              value={neonGlow}
-            />
-          </>
-        )}
         <span>Dim Achtergrond</span>
         <input
           type="range"
@@ -103,10 +111,7 @@ const Canvas = ({
               selectedColor !== "RGB"
                 ? ColorsArray[colorIndex]
                 : rgbColors[colorIndex],
-            textShadow:
-              selectedFont < 5
-                ? `0px 0px 25px ${ColorsArray[colorIndex]}`
-                : `0px 0px ${neonGlow}px ${rgbColors[colorIndex]}`,
+            textShadow: getTextShadow(),
             fontFamily: fontFamilies[selectedFont],
             WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
             WebkitTextStrokeColor:

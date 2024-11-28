@@ -1,20 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.646bdda0.css",
-    "main.js": "/static/js/main.7c6de5e3.js",
-    "static/media/Montserrat.ttf": "/static/media/Montserrat.4df14eb5e72bf55c4497.ttf",
-    "static/media/Opensans.ttf": "/static/media/Opensans.19ba637387f1d6142f55.ttf",
-    "static/media/Itim.ttf": "/static/media/Itim.38b1e6579a4ae98f4318.ttf",
-    "static/media/Roboto.ttf": "/static/media/Roboto.d50a80138ec4f2fb5e9f.ttf",
-    "static/media/VT3.ttf": "/static/media/VT3.2bc43ad8eb2f60b39f27.ttf",
+    "main.css": "/static/css/main.2ce58a13.css",
+    "main.js": "/static/js/main.592b50c8.js",
+    "static/media/MarkerFelt.ttc": "/static/media/MarkerFelt.3a83925bc211a8146173.ttc",
+    "static/media/ChalkboardSE.ttc": "/static/media/ChalkboardSE.dea96def2065948aca8e.ttc",
+    "static/media/ArtDeco.otf": "/static/media/ArtDeco.0cd13cbf5ca1f8c386f7.otf",
     "static/media/Brickbg.webp": "/static/media/Brickbg.3eb1016d93245f399641.webp",
-    "static/media/Hanken.ttf": "/static/media/Hanken.00cafff5cd29d5e57e5f.ttf",
+    "static/media/Impact.ttf": "/static/media/Impact.2f7e2866715e8f8e0af9.ttf",
+    "static/media/ArialBlack.ttf": "/static/media/ArialBlack.bcbbcd9b49adb2399664.ttf",
+    "static/media/AA14Neon-Regular.otf": "/static/media/AA14Neon-Regular.769938bfa2f6ea1ba495.otf",
+    "static/media/AA13Neon-Regular.otf": "/static/media/AA13Neon-Regular.e1595c7f193c1b06bbef.otf",
+    "static/media/PicnicBasket.ttf": "/static/media/PicnicBasket.9a9278a9b01d07b6cd26.ttf",
+    "static/media/AA15Neon-Regular.otf": "/static/media/AA15Neon-Regular.96554fa561791609e7ac.otf",
+    "static/media/ArchitectRegular.ttf": "/static/media/ArchitectRegular.94f25c987e1d23da5031.ttf",
+    "static/media/Peaches.ttf": "/static/media/Peaches.e7f7da70d1849be0d1e6.ttf",
+    "static/media/Magnolia.ttf": "/static/media/Magnolia.786495ec1e3fbf7607a1.ttf",
+    "static/media/BubbleWrap.ttf": "/static/media/BubbleWrap.7f9459e757928bd343f3.ttf",
+    "static/media/ArialRoundedBold.ttf": "/static/media/ArialRoundedBold.5f260905da2e679d3dc3.ttf",
+    "static/media/Melody.ttf": "/static/media/Melody.f4bae39b6f720882c9d6.ttf",
     "index.html": "/index.html",
-    "main.646bdda0.css.map": "/static/css/main.646bdda0.css.map",
-    "main.7c6de5e3.js.map": "/static/js/main.7c6de5e3.js.map"
+    "main.2ce58a13.css.map": "/static/css/main.2ce58a13.css.map",
+    "main.592b50c8.js.map": "/static/js/main.592b50c8.js.map"
   },
   "entrypoints": [
-    "static/css/main.646bdda0.css",
-    "static/js/main.7c6de5e3.js"
+    "static/css/main.2ce58a13.css",
+    "static/js/main.592b50c8.js"
   ]
 }

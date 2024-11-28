@@ -115,6 +115,8 @@
 
 .redEnd {
   color: red !important;
+  top: 0.5px !important;
+  position: relative;
 }
 .gray {
   color: gray !important;
