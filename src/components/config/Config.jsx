@@ -94,19 +94,22 @@ const Config = ({
     }
     try {
       setCheckoutLoading(true);
-      const response = await fetch("http://localhost:1337/submit-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          backPanelColor,
-          selectedColor,
-          selectedFont,
-          lineMultiplier,
-          customLength,
-        }),
-      });
+      const response = await fetch(
+        "https://neonbackend.netlify.app/.netlify/functions/server",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            backPanelColor,
+            selectedColor,
+            selectedFont,
+            lineMultiplier,
+            customLength,
+          }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -523,7 +526,7 @@ const Config = ({
               onClick={submitForm}
             >
               {checkoutLoading && (
-                <img src="../images/Spinner.svg" alt="Spinner" />
+                <img src="./images/Spinner.svg" alt="Spinner" />
               )}
               {!checkoutLoading && "Afrekenen"}
             </button>

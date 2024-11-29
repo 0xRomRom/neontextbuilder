@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/config/static/css/main.2538b2ce.css",
-    "main.js": "/config/static/js/main.c856ecee.js",
+    "main.js": "/config/static/js/main.6ee3dcf5.js",
     "static/media/MarkerFelt.ttc": "/config/static/media/MarkerFelt.3a83925bc211a8146173.ttc",
     "static/media/ChalkboardSE.ttc": "/config/static/media/ChalkboardSE.dea96def2065948aca8e.ttc",
     "static/media/ArtDeco.otf": "/config/static/media/ArtDeco.0cd13cbf5ca1f8c386f7.otf",
@@ -20,10 +20,10 @@
     "static/media/Melody.ttf": "/config/static/media/Melody.f4bae39b6f720882c9d6.ttf",
     "index.html": "/config/index.html",
     "main.2538b2ce.css.map": "/config/static/css/main.2538b2ce.css.map",
-    "main.c856ecee.js.map": "/config/static/js/main.c856ecee.js.map"
+    "main.6ee3dcf5.js.map": "/config/static/js/main.6ee3dcf5.js.map"
   },
   "entrypoints": [
     "static/css/main.2538b2ce.css",
-    "static/js/main.c856ecee.js"
+    "static/js/main.6ee3dcf5.js"
   ]
 }
