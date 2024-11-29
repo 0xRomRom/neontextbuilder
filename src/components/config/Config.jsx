@@ -126,6 +126,8 @@ const Config = ({
     } catch (err) {
       console.error("Error adding to cart:", err);
       setCheckoutLoading(false);
+    } finally {
+      setCheckoutLoading(false);
     }
   };
 

@@ -24,7 +24,7 @@ const App = () => {
   const [lineAmount, setLineAmount] = useState(1);
   const [alignment, setAlignment] = useState("center");
 
-  //////////////// Price Constants ///////////////////
+  //////////////// Frontend Price Constants ///////////////////
   const BASE_PRICE = 175;
   const BACKPANEL_TYPE = backPanelColor === "Zwart" ? 1.25 : 1;
   const LED_TYPE = selectedColor === "RGB" ? 1.4 : 1;
@@ -84,16 +84,6 @@ const App = () => {
 
     setTextLength(currentLength);
   }, [currentText, customLength]);
-
-  // Truncate text if custom length is decreased below bounds
-  useEffect(() => {
-    const maxAllowedLengthForCustomSignLength =
-      maxChars[customLength] * lineAmount;
-    if (currentText.length > maxAllowedLengthForCustomSignLength) {
-      setCurrentText(currentText.slice(0, maxAllowedLengthForCustomSignLength));
-      setTextLength(maxAllowedLengthForCustomSignLength);
-    }
-  }, [customLength, currentText, lineAmount]);
 
   return (
     <div className={stl.app}>

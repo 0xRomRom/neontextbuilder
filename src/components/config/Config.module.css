@@ -30,11 +30,12 @@
   justify-content: flex-start;
   align-items: center;
   gap: 0.25rem;
-
+  font-size: 15px;
   padding: 4px;
   cursor: pointer;
   user-select: none;
   border-radius: 0.25rem;
+  text-align: center;
 }
 
 .textInput {
@@ -405,4 +406,10 @@
 
 .activeAlign {
   background-color: rgb(226, 0, 226) !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .config {
+    width: 100%;
+  }
 }

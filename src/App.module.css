@@ -2,7 +2,6 @@
   /* background-color: #030e26; */
   background-color: #030e26;
   background: linear-gradient(#030e26, #030e26, #030e26, #120326);
-  position: relative;
   display: flex;
   flex-direction: column;
   z-index: 200;
@@ -37,7 +36,7 @@
   position: absolute;
   left: 0rem;
   top: 0rem;
-  max-width: 325px;
+  max-width: 300px;
   cursor: pointer;
   z-index: 300;
 }
@@ -92,9 +91,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3rem;
   z-index: 30;
-  padding-bottom: 2rem;
+  padding: 3rem 1rem 2rem;
   gap: 1.5rem;
 }
 
@@ -305,12 +303,20 @@ a {
   filter: blur(50rem);
   top: 280rem;
   right: 30%;
-  /* display: none; */
 }
 
-@media (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
+  .mainApp {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 500px) {
   .purpleSphere4 {
     top: 245rem;
     right: 20%;
+  }
+  .mainApp {
+    padding-bottom: 2rem;
   }
 }

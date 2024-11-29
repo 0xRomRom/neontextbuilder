@@ -216,6 +216,11 @@
 
 .outline {
   color: transparent !important;
-  /* text-stroke: 2px green !important; */
   transition: all 0.1s ease-in-out;
+}
+
+@media only screen and (max-width: 1000px) {
+  .canvas {
+    width: 100%;
+  }
 }
