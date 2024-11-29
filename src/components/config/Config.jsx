@@ -81,43 +81,30 @@ const Config = ({
   };
 
   const submitForm = async () => {
-    setCheckoutLoading(true);
-
     try {
-      // Create an array of items to add to the cart
-      const cartItems = [
-        {
-          id: 123, // Replace with the actual product ID
-          quantity: 1, // Adjust the quantity based on user input
-          meta_data: [
-            { key: "Text", value: currentText },
-            { key: "Color", value: selectedColor },
-            { key: "Font", value: fontFamilies[selectedFont] },
-            { key: "Length", value: customLength },
-          ],
-        },
-      ];
-
-      // Make a POST request to WooCommerce REST API or endpoint
-      const response = await fetch("/wp-json/wc/store/cart/add-item", {
+      const response = await fetch("http://localhost:1337/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ items: cartItems }),
+        body: JSON.stringify({
+          id: "3407",
+          quantity: "1",
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to add items to the cart");
-      }
+      if (response.ok) {
+        const data = await response.json();
+        const cartKey = data.data.cart_key;
 
-      // Redirect to the WooCommerce checkout page
-      window.location.href = "/checkout";
-    } catch (error) {
-      console.error("Error adding items to the cart:", error);
-      alert("Failed to process your order. Please try again.");
-    } finally {
-      setCheckoutLoading(false);
+        console.log(data.message);
+        window.location.href = `https://ledsgoneon.nl/winkelwagen/?cocart-load-cart=${cartKey}`;
+      } else {
+        const error = await response.json();
+        console.error("Failed to add to cart:", error.message);
+      }
+    } catch (err) {
+      console.error("Error adding to cart:", err);
     }
   };
 
