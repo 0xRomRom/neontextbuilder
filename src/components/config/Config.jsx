@@ -80,70 +80,32 @@ const Config = ({
     }
   };
 
-  // const submitForm = async () => {
-  //   setCheckoutLoading(true);
-
-  //   const apiUrl = "https://ledsgoneon.nl/wp-json/wc/v3/products";
-  //   const consumerKey = "ck_f84b2a20e0eaf06d0b78094ea5a4fa0de1b7129a";
-  //   const consumerSecret = "cs_4563ce379d816f780c83266375ef507959165095";
-  //   const productImg =
-  //     "https://ledsgoneon.nl/wp-content/uploads/2024/11/Config-300x300.png";
-  //   // Item details to add to the cart
-  //   const itemDetails = {
-  //     name: "Custom text",
-  //     regular_price: "13.37",
-  //     date_created: new Date().toLocaleString(),
-  //     images: [
-  //       {
-  //         src: productImg,
-  //       },
-  //     ],
-  //     tags: [
-  //       {
-  //         kleur: "rood",
-  //       },
-  //       {
-  //         lengte:
-  //       }
-  //     ],
-  //   };
-
-  //   // dKu78a38&
-
-  //   try {
-  //     // Add items to the cart
-  //     const response = await fetch(`${apiUrl}`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Basic ${btoa(`${consumerKey}:${consumerSecret}`)}`,
-  //       },
-  //       body: JSON.stringify(itemDetails),
-  //       credentials: "include", // Make sure cookies are sent and received
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error("Failed to add item to cart");
-  //     }
-
-  //     const data = await response.json();
-  //     console.log(data);
-  //     const productID = data.id;
-  //     setCheckoutLoading(false);
-  //   } catch (error) {
-  //     console.error("Error submitting form:", error);
-  //     setCheckoutLoading(false);
-  //   }
-  // };
-
   const submitForm = async () => {
+    let lineMultiplier = 0.225;
+
+    if (lineAmount === 2) {
+      lineMultiplier = 0.375;
+    }
+    if (lineAmount === 3) {
+      lineMultiplier = 0.525;
+    }
+    if (lineAmount === 4) {
+      lineMultiplier = 0.675;
+    }
     try {
+      setCheckoutLoading(true);
       const response = await fetch("http://localhost:1337/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+          backPanelColor,
+          selectedColor,
+          selectedFont,
+          lineMultiplier,
+          customLength,
+        }),
       });
 
       if (response.ok) {
@@ -155,10 +117,12 @@ const Config = ({
         window.location.href = `https://ledsgoneon.nl/afrekenen/?cocart-load-cart=${cartKey}`;
       } else {
         const error = await response.json();
+        setCheckoutLoading(false);
         console.error("Failed to add to cart:", error.message);
       }
     } catch (err) {
       console.error("Error adding to cart:", err);
+      setCheckoutLoading(false);
     }
   };
 
