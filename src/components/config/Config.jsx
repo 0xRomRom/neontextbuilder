@@ -18,8 +18,32 @@ import { FiYoutube } from "react-icons/fi";
 import { FaAlignJustify } from "react-icons/fa6";
 import { FaAlignLeft } from "react-icons/fa6";
 import { FaAlignRight } from "react-icons/fa6";
-
 import { RiShape2Fill } from "react-icons/ri";
+import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+const carousselItems = [
+  "Text",
+  "Lettertype",
+  "Kleur",
+  "Lengte",
+  "Achterpaneel Kleur",
+  "Achterpaneel Vorm",
+  "Voorbeeld Achtergrond",
+  "Montage Methode",
+  "Afrekenen",
+];
+
+const icons = [
+  <BiText />,
+  <ImFontSize />,
+  <IoColorPaletteOutline />,
+  <FaRulerVertical />,
+  <IoColorPaletteOutline />,
+  <RiShape2Fill />,
+  <IoColorPaletteOutline />,
+  <GiScrew />,
+  <FaCreditCard />,
+];
 
 const Config = ({
   currentText,
@@ -53,6 +77,7 @@ const Config = ({
   const fileInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [carousselIndex, setCarousselIndex] = useState(0);
 
   useEffect(() => {
     if (activeTab === 0 && window.innerWidth > 500) {
@@ -131,8 +156,35 @@ const Config = ({
     }
   };
 
+  const incrementCaroussel = () => {
+    if (carousselIndex === 0) {
+      setCarousselIndex(8);
+    } else {
+      setCarousselIndex((prev) => prev - 1);
+    }
+  };
+  const decrementCaroussel = () => {
+    if (carousselIndex === 8) {
+      setCarousselIndex(0);
+    } else {
+      setCarousselIndex((prev) => prev + 1);
+    }
+  };
+
   return (
     <div className={stl.config}>
+      <div className={stl.caroussel}>
+        <button onClick={incrementCaroussel}>
+          <FaArrowLeft />
+        </button>
+        <span className={stl.tabSpan}>
+          {icons[carousselIndex]}
+          {carousselItems[carousselIndex]}
+        </span>
+        <button onClick={decrementCaroussel}>
+          <FaArrowRight />
+        </button>
+      </div>
       {activeTab !== 8 && (
         <div className={stl.restRows}>
           <div

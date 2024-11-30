@@ -407,6 +407,43 @@
   background-color: rgb(226, 0, 226) !important;
 }
 
+.caroussel {
+  width: 100%;
+  min-height: 45px;
+  background-color: rgba(151, 0, 136, 0.6);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.caroussel button {
+  height: 100%;
+  width: 3rem;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.caroussel button:active {
+  transform: scale(1.1);
+}
+
+.tabSpan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 @media only screen and (max-width: 1000px) {
   .config {
     width: 100%;
