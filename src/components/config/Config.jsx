@@ -80,9 +80,10 @@ const Config = ({
   const [carousselIndex, setCarousselIndex] = useState(0);
 
   useEffect(() => {
+    if (!inputRef.current) return;
     if (activeTab === 0 && window.innerWidth > 500) {
       inputRef?.current?.focus();
-      inputRef.current.setSelectionRange(
+      inputRef?.current.setSelectionRange(
         inputRef?.current?.value?.length,
         inputRef?.current?.value?.length
       );
@@ -159,14 +160,18 @@ const Config = ({
   const incrementCaroussel = () => {
     if (carousselIndex === 0) {
       setCarousselIndex(8);
+      setActiveTab(8);
     } else {
+      setActiveTab((prev) => prev - 1);
       setCarousselIndex((prev) => prev - 1);
     }
   };
   const decrementCaroussel = () => {
     if (carousselIndex === 8) {
       setCarousselIndex(0);
+      setActiveTab(0);
     } else {
+      setActiveTab((prev) => prev + 1);
       setCarousselIndex((prev) => prev + 1);
     }
   };
@@ -187,148 +192,157 @@ const Config = ({
       </div>
       {activeTab !== 8 && (
         <div className={stl.restRows}>
-          <div
-            className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(activeTab === 0 ? 0 : 0)}
-          >
-            <div className={stl.topRow}>
-              <span className={stl.title}>
-                <BiText className={stl.icon} />
-                Text
-              </span>
-            </div>
+          {((window.innerWidth < 500 && activeTab === 0) ||
+            window.innerWidth > 500) && (
+            <div
+              className={`${stl.box} ${activeTab === 0 ? stl.activeBg : ""}`}
+              onClick={() => setActiveTab(activeTab === 0 ? 0 : 0)}
+            >
+              <div className={stl.topRow}>
+                <span className={stl.title}>
+                  <BiText className={stl.icon} />
+                  Text
+                </span>
+              </div>
 
-            {activeTab === 0 && (
-              <div className={stl.content}>
-                <div className={stl.textWrap}>
-                  <span className={stl.currentLength}>
-                    [{textLength}/
-                    <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
-                      {maxChars[customLength] * lineAmount || 250}
+              {activeTab === 0 && (
+                <div className={stl.content}>
+                  <div className={stl.textWrap}>
+                    <span className={stl.currentLength}>
+                      [{textLength}/
+                      <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
+                        {maxChars[customLength] * lineAmount || 250}
+                      </span>
+                      ]
                     </span>
-                    ]
-                  </span>
 
-                  <textarea
-                    type="text"
-                    placeholder="Voer uw text in"
-                    className={stl.textInput}
-                    value={currentText}
-                    maxLength={maxChars[customLength] * 4}
-                    onInput={(e) => {
-                      setTextLength(currentText.length);
-                      setCurrentText(e.target.value);
-                    }}
-                    ref={inputRef}
-                    style={{
-                      height: textLength > 100 ? "8rem" : "6rem",
-                    }}
-                  ></textarea>
-                </div>
-                {lineAmount > 1 && (
-                  <div className={stl.alignment}>
-                    <button
-                      onClick={() => setAlignment("left")}
-                      className={alignment === "left" ? stl.activeAlign : ""}
-                    >
-                      {" "}
-                      <FaAlignLeft />
-                    </button>
-                    <button
-                      onClick={() => setAlignment("center")}
-                      className={alignment === "center" ? stl.activeAlign : ""}
-                    >
-                      <FaAlignJustify />
-                    </button>
-                    <button
-                      onClick={() => setAlignment("right")}
-                      className={alignment === "right" ? stl.activeAlign : ""}
-                    >
-                      <FaAlignRight />
-                    </button>
+                    <textarea
+                      type="text"
+                      placeholder="Voer uw text in"
+                      className={stl.textInput}
+                      value={currentText}
+                      maxLength={maxChars[customLength] * 4}
+                      onInput={(e) => {
+                        setTextLength(currentText.length);
+                        setCurrentText(e.target.value);
+                      }}
+                      ref={inputRef}
+                      style={{
+                        height: textLength > 100 ? "8rem" : "6rem",
+                      }}
+                    ></textarea>
                   </div>
-                )}
-              </div>
-            )}
-          </div>
-
-          <div
-            className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(1)}
-          >
-            <div className={stl.topRow}>
-              <span className={stl.title}>
-                <ImFontSize className={stl.icon} />
-                Lettertype
-              </span>
-            </div>
-            {activeTab === 1 && (
-              <div className={stl.content}>
-                <div className={stl.fontGrid}>
-                  {fontFamilies.map((font, index) => (
-                    <div
-                      key={index}
-                      onClick={() => setSelectedFont(index)}
-                      className={`${stl.fontDiv} ${
-                        fontFamilies[selectedFont] === font
-                          ? stl.activeFont
-                          : ""
-                      }`}
-                    >
-                      <h5
-                        style={{
-                          fontFamily: font,
-                          WebkitTextStrokeWidth: "0.5px",
-                          WebkitTextStrokeColor: "white",
-                        }}
+                  {lineAmount > 1 && (
+                    <div className={stl.alignment}>
+                      <button
+                        onClick={() => setAlignment("left")}
+                        className={alignment === "left" ? stl.activeAlign : ""}
                       >
-                        {font}
-                      </h5>
+                        {" "}
+                        <FaAlignLeft />
+                      </button>
+                      <button
+                        onClick={() => setAlignment("center")}
+                        className={
+                          alignment === "center" ? stl.activeAlign : ""
+                        }
+                      >
+                        <FaAlignJustify />
+                      </button>
+                      <button
+                        onClick={() => setAlignment("right")}
+                        className={alignment === "right" ? stl.activeAlign : ""}
+                      >
+                        <FaAlignRight />
+                      </button>
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
-            )}
-          </div>
-
-          <div
-            className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}
-            onClick={() => setActiveTab(2)}
-          >
-            <div className={stl.topRow}>
-              <span className={stl.title}>
-                <IoColorPaletteOutline className={stl.icon} />
-                Kleur
-              </span>
+              )}
             </div>
-            {activeTab === 2 && (
-              <div className={stl.content}>
-                <div className={stl.colorGrid}>
-                  {colors.map((color, index) => (
-                    <div
-                      key={index}
-                      onClick={() => setSelectedColor(color)}
-                      className={`${stl.outerDiv} ${
-                        selectedColor === color ? stl.selected : ""
-                      }`}
-                    >
+          )}
+          {((window.innerWidth < 500 && activeTab === 1) ||
+            window.innerWidth > 500) && (
+            <div
+              className={`${stl.box} ${activeTab === 1 ? stl.activeBg : ""}`}
+              onClick={() => setActiveTab(1)}
+            >
+              <div className={stl.topRow}>
+                <span className={stl.title}>
+                  <ImFontSize className={stl.icon} />
+                  Lettertype
+                </span>
+              </div>
+              {activeTab === 1 && (
+                <div className={stl.content}>
+                  <div className={stl.fontGrid}>
+                    {fontFamilies.map((font, index) => (
                       <div
-                        className={stl.colorBox}
-                        style={{
-                          backgroundColor:
-                            index !== colors.length - 1 ? color : "black",
-                        }}
+                        key={index}
+                        onClick={() => setSelectedFont(index)}
+                        className={`${stl.fontDiv} ${
+                          fontFamilies[selectedFont] === font
+                            ? stl.activeFont
+                            : ""
+                        }`}
                       >
-                        {index === colors.length - 1 && (
-                          <div className={stl.rgbTile}></div>
-                        )}
+                        <h5
+                          style={{
+                            fontFamily: font,
+                            WebkitTextStrokeWidth: "0.5px",
+                            WebkitTextStrokeColor: "white",
+                          }}
+                        >
+                          {font}
+                        </h5>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
+              )}
+            </div>
+          )}
+          {((window.innerWidth < 500 && activeTab === 2) ||
+            window.innerWidth > 500) && (
+            <div
+              className={`${stl.box} ${activeTab === 2 ? stl.activeBg : ""}`}
+              onClick={() => setActiveTab(2)}
+            >
+              <div className={stl.topRow}>
+                <span className={stl.title}>
+                  <IoColorPaletteOutline className={stl.icon} />
+                  Kleur
+                </span>
               </div>
-            )}
-          </div>
+              {activeTab === 2 && (
+                <div className={stl.content}>
+                  <div className={stl.colorGrid}>
+                    {colors.map((color, index) => (
+                      <div
+                        key={index}
+                        onClick={() => setSelectedColor(color)}
+                        className={`${stl.outerDiv} ${
+                          selectedColor === color ? stl.selected : ""
+                        }`}
+                      >
+                        <div
+                          className={stl.colorBox}
+                          style={{
+                            backgroundColor:
+                              index !== colors.length - 1 ? color : "black",
+                          }}
+                        >
+                          {index === colors.length - 1 && (
+                            <div className={stl.rgbTile}></div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           <div
             className={`${stl.box} ${activeTab === 3 ? stl.activeBg : ""}`}
@@ -490,6 +504,7 @@ const Config = ({
               </div>
             )}
           </div>
+
           <div
             className={`${stl.box} ${activeTab === 7 ? stl.activeBg : ""}`}
             onClick={() => setActiveTab(7)}

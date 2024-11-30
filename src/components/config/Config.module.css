@@ -18,6 +18,7 @@
   background-color: rgba(151, 0, 136, 0.261);
   padding: 0.5rem;
   border-radius: 0.5rem;
+  padding: 8px;
 }
 
 .box:hover .title {
@@ -195,6 +196,7 @@
 
 .activeBg {
   background-color: rgba(128, 0, 128, 0.538);
+  padding: 8px;
 }
 .activeBg span {
   color: white;
@@ -417,6 +419,7 @@
   justify-content: space-between;
   align-items: center;
   color: white;
+  display: none;
 }
 
 .caroussel button {
@@ -447,5 +450,14 @@
 @media only screen and (max-width: 1000px) {
   .config {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .caroussel {
+    display: flex;
+  }
+  .topRow {
+    display: none;
   }
 }
