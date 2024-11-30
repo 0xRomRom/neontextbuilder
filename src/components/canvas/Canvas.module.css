@@ -229,4 +229,8 @@
   .canvas {
     height: 33rem;
   }
+  .endPrice {
+    width: 140px;
+    right: -0.25rem;
+  }
 }

@@ -79,17 +79,6 @@ const Config = ({
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [carousselIndex, setCarousselIndex] = useState(0);
 
-  useEffect(() => {
-    if (!inputRef.current) return;
-    if (activeTab === 0 && window.innerWidth > 500) {
-      inputRef?.current?.focus();
-      inputRef?.current.setSelectionRange(
-        inputRef?.current?.value?.length,
-        inputRef?.current?.value?.length
-      );
-    }
-  }, [activeTab]);
-
   const uploadImage = () => {
     fileInputRef.current.click();
   };

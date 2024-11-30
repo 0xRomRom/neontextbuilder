@@ -483,7 +483,9 @@
     display: none;
   }
   .config {
-    height: 395px;
+    height: 405px;
+    overflow-y: initial;
+    padding-right: 1rem;
   }
   .restRows {
     margin-bottom: 0;
