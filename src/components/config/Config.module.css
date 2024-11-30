@@ -171,6 +171,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 1.5px;
 }
 
 .fontDiv:hover {
@@ -378,6 +379,27 @@
   background-color: rgba(255, 0, 221, 0.5);
 }
 
+.mobileYT {
+  background-color: rgba(255, 0, 221, 0.2);
+  outline: none;
+  border: none;
+  color: white;
+  padding: 8px 4px;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.mobileYT:active {
+  background-color: rgba(255, 0, 221, 0.572);
+}
+
 .textWrap {
   position: relative;
 }
@@ -465,5 +487,9 @@
   }
   .restRows {
     margin-bottom: 0;
+  }
+  .config .checkoutDiv textarea {
+    height: 12.1rem;
+    margin-top: -0.25rem;
   }
 }

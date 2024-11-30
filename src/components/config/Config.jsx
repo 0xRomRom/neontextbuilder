@@ -392,24 +392,37 @@ const Config = ({
               </div>
 
               {activeTab === 4 && (
-                <div className={stl.choiceCtas}>
-                  <button
-                    className={
-                      backPanelColor === "Transparant" ? stl.activePlateCta : ""
-                    }
-                    onClick={() => setBackPanelColor("Transparant")}
-                  >
-                    Transparant
-                  </button>
-                  <button
-                    className={
-                      backPanelColor === "Zwart" ? stl.activePlateCta : ""
-                    }
-                    onClick={() => setBackPanelColor("Zwart")}
-                  >
-                    Zwart (+25%)
-                  </button>
-                </div>
+                <>
+                  {activeTab === 4 && window.innerWidth < 500 && (
+                    <button
+                      onClick={() => setVideoOverlay(videoIDs[0])}
+                      className={stl.mobileYT}
+                    >
+                      <FiYoutube />
+                      Voorbeeld
+                    </button>
+                  )}
+                  <div className={stl.choiceCtas}>
+                    <button
+                      className={
+                        backPanelColor === "Transparant"
+                          ? stl.activePlateCta
+                          : ""
+                      }
+                      onClick={() => setBackPanelColor("Transparant")}
+                    >
+                      Transparant
+                    </button>
+                    <button
+                      className={
+                        backPanelColor === "Zwart" ? stl.activePlateCta : ""
+                      }
+                      onClick={() => setBackPanelColor("Zwart")}
+                    >
+                      Zwart (+25%)
+                    </button>
+                  </div>
+                </>
               )}
             </div>
           )}
@@ -433,24 +446,37 @@ const Config = ({
               </div>
 
               {activeTab === 5 && (
-                <div className={stl.choiceCtas}>
-                  <button
-                    className={
-                      backPlateShape === "Rechthoekig" ? stl.activePlateCta : ""
-                    }
-                    onClick={() => setBackPlateShape("Rechthoekig")}
-                  >
-                    Rechthoekig
-                  </button>
-                  <button
-                    className={
-                      backPlateShape === "Contour" ? stl.activePlateCta : ""
-                    }
-                    onClick={() => setBackPlateShape("Contour")}
-                  >
-                    Contour
-                  </button>
-                </div>
+                <>
+                  {activeTab === 5 && window.innerWidth < 500 && (
+                    <button
+                      onClick={() => setVideoOverlay(videoIDs[1])}
+                      className={stl.mobileYT}
+                    >
+                      <FiYoutube />
+                      Voorbeeld
+                    </button>
+                  )}
+                  <div className={stl.choiceCtas}>
+                    <button
+                      className={
+                        backPlateShape === "Rechthoekig"
+                          ? stl.activePlateCta
+                          : ""
+                      }
+                      onClick={() => setBackPlateShape("Rechthoekig")}
+                    >
+                      Rechthoekig
+                    </button>
+                    <button
+                      className={
+                        backPlateShape === "Contour" ? stl.activePlateCta : ""
+                      }
+                      onClick={() => setBackPlateShape("Contour")}
+                    >
+                      Contour
+                    </button>
+                  </div>
+                </>
               )}
             </div>
           )}
@@ -532,38 +558,49 @@ const Config = ({
               </div>
 
               {activeTab === 7 && (
-                <div className={stl.choiceCtas}>
-                  <button
-                    className={
-                      mountingMethod === "Afstandhouders"
-                        ? stl.activePlateCta
-                        : ""
-                    }
-                    onClick={() => setMountingMethod("Afstandhouders")}
-                  >
-                    Afstandhouders
-                  </button>
-                  <button
-                    className={
-                      mountingMethod === "Ketting" ? stl.activePlateCta : ""
-                    }
-                    onClick={() => setMountingMethod("Ketting")}
-                  >
-                    Ketting
-                  </button>
-                  {backPanelColor === "Zwart" && (
+                <>
+                  {activeTab === 7 && window.innerWidth < 500 && (
+                    <button
+                      onClick={() => setVideoOverlay(videoIDs[2])}
+                      className={stl.mobileYT}
+                    >
+                      <FiYoutube />
+                      Voorbeeld
+                    </button>
+                  )}
+                  <div className={stl.choiceCtas}>
                     <button
                       className={
-                        mountingMethod === "Railmontage"
+                        mountingMethod === "Afstandhouders"
                           ? stl.activePlateCta
                           : ""
                       }
-                      onClick={() => setMountingMethod("Railmontage")}
+                      onClick={() => setMountingMethod("Afstandhouders")}
                     >
-                      Railmontage
+                      Afstandhouders
                     </button>
-                  )}
-                </div>
+                    <button
+                      className={
+                        mountingMethod === "Ketting" ? stl.activePlateCta : ""
+                      }
+                      onClick={() => setMountingMethod("Ketting")}
+                    >
+                      Ketting
+                    </button>
+                    {backPanelColor === "Zwart" && (
+                      <button
+                        className={
+                          mountingMethod === "Railmontage"
+                            ? stl.activePlateCta
+                            : ""
+                        }
+                        onClick={() => setMountingMethod("Railmontage")}
+                      >
+                        Railmontage
+                      </button>
+                    )}
+                  </div>
+                </>
               )}
             </div>
           )}
@@ -600,22 +637,33 @@ const Config = ({
           </div>
 
           {activeTab === 8 && (
-            <div className={stl.checkoutDiv}>
-              <textarea
-                placeholder="Opmerkingen (optioneel)"
-                value={checkoutMessage}
-                onInput={(e) => setCheckoutMessage(e.target.value)}
-              ></textarea>
-              <button
-                disabled={checkoutLoading ? true : false}
-                onClick={submitForm}
-              >
-                {checkoutLoading && (
-                  <img src="./images/Spinner.svg" alt="Spinner" />
-                )}
-                {!checkoutLoading && "Afrekenen"}
-              </button>
-            </div>
+            <>
+              {activeTab === 8 && window.innerWidth < 500 && (
+                <button
+                  onClick={() => setVideoOverlay(videoIDs[3])}
+                  className={stl.mobileYT}
+                >
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
+              <div className={stl.checkoutDiv}>
+                <textarea
+                  placeholder="Opmerkingen (optioneel)"
+                  value={checkoutMessage}
+                  onInput={(e) => setCheckoutMessage(e.target.value)}
+                ></textarea>
+                <button
+                  disabled={checkoutLoading ? true : false}
+                  onClick={submitForm}
+                >
+                  {checkoutLoading && (
+                    <img src="./images/Spinner.svg" alt="Spinner" />
+                  )}
+                  {!checkoutLoading && "Afrekenen"}
+                </button>
+              </div>
+            </>
           )}
         </div>
       )}
