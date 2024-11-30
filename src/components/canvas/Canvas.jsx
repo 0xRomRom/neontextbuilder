@@ -113,9 +113,9 @@ const Canvas = ({
                 : rgbColors[colorIndex],
             textShadow: getTextShadow(),
             fontFamily: fontFamilies[selectedFont],
-            WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
-            WebkitTextStrokeColor:
-              selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
+            WebkitTextStrokeWidth:
+              window.innerWidth < 500 && selectedFont < 5 ? "1px" : "0.5px",
+            WebkitTextStrokeColor: ColorsArray[colorIndex],
             fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
             transform: `scale(${zoom})`,
             lineHeight: `${zoom * 25}px`,
@@ -136,7 +136,7 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               textShadow: getTextShadow(),
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
+              WebkitTextStrokeWidth: window.innerWidth < 500 ? "3px" : "0.5px",
               WebkitTextStrokeColor:
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
@@ -162,7 +162,7 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               textShadow: getTextShadow(),
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
+              WebkitTextStrokeWidth: window.innerWidth < 500 ? "3px" : "0.5px",
               WebkitTextStrokeColor:
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
@@ -188,7 +188,7 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               textShadow: getTextShadow(),
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeWidth: selectedFont < 5 ? "0.4px" : "0px",
+              WebkitTextStrokeWidth: window.innerWidth < 500 ? "3px" : "0.5px",
               WebkitTextStrokeColor:
                 selectedFont < 5 ? ColorsArray[colorIndex] : "transparent",
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",

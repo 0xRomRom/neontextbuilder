@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/config/static/css/main.2538b2ce.css",
-    "main.js": "/config/static/js/main.3c166035.js",
+    "main.css": "/config/static/css/main.40327de0.css",
+    "main.js": "/config/static/js/main.1367b5ff.js",
     "static/media/MarkerFelt.ttc": "/config/static/media/MarkerFelt.3a83925bc211a8146173.ttc",
     "static/media/ChalkboardSE.ttc": "/config/static/media/ChalkboardSE.dea96def2065948aca8e.ttc",
     "static/media/ArtDeco.otf": "/config/static/media/ArtDeco.0cd13cbf5ca1f8c386f7.otf",
@@ -12,18 +12,22 @@
     "static/media/AA13Neon-Regular.otf": "/config/static/media/AA13Neon-Regular.e1595c7f193c1b06bbef.otf",
     "static/media/PicnicBasket.ttf": "/config/static/media/PicnicBasket.9a9278a9b01d07b6cd26.ttf",
     "static/media/AA15Neon-Regular.otf": "/config/static/media/AA15Neon-Regular.96554fa561791609e7ac.otf",
+    "static/media/AA13LEDsGoNeonRegular.eot": "/config/static/media/AA13LEDsGoNeonRegular.3f70aaadd39627e7f7db.eot",
+    "static/media/AA13LEDsGoNeonRegular.ttf": "/config/static/media/AA13LEDsGoNeonRegular.37243f77fc080712421c.ttf",
     "static/media/ArchitectRegular.ttf": "/config/static/media/ArchitectRegular.94f25c987e1d23da5031.ttf",
     "static/media/Peaches.ttf": "/config/static/media/Peaches.e7f7da70d1849be0d1e6.ttf",
     "static/media/Magnolia.ttf": "/config/static/media/Magnolia.786495ec1e3fbf7607a1.ttf",
     "static/media/BubbleWrap.ttf": "/config/static/media/BubbleWrap.7f9459e757928bd343f3.ttf",
     "static/media/ArialRoundedBold.ttf": "/config/static/media/ArialRoundedBold.5f260905da2e679d3dc3.ttf",
     "static/media/Melody.ttf": "/config/static/media/Melody.f4bae39b6f720882c9d6.ttf",
+    "static/media/AA13LEDsGoNeonRegular.woff": "/config/static/media/AA13LEDsGoNeonRegular.88f031f2559a150b8cdc.woff",
+    "static/media/AA13LEDsGoNeonRegular.woff2": "/config/static/media/AA13LEDsGoNeonRegular.20b8be4fd1d13eac6cfc.woff2",
     "index.html": "/config/index.html",
-    "main.2538b2ce.css.map": "/config/static/css/main.2538b2ce.css.map",
-    "main.3c166035.js.map": "/config/static/js/main.3c166035.js.map"
+    "main.40327de0.css.map": "/config/static/css/main.40327de0.css.map",
+    "main.1367b5ff.js.map": "/config/static/js/main.1367b5ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.2538b2ce.css",
-    "static/js/main.3c166035.js"
+    "static/css/main.40327de0.css",
+    "static/js/main.1367b5ff.js"
   ]
 }

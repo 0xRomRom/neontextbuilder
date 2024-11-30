@@ -55,7 +55,7 @@ const Config = ({
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   useEffect(() => {
-    if (activeTab === 0) {
+    if (activeTab === 0 && window.innerWidth > 500) {
       inputRef?.current?.focus();
       inputRef.current.setSelectionRange(
         inputRef?.current?.value?.length,
@@ -223,13 +223,15 @@ const Config = ({
                           : ""
                       }`}
                     >
-                      <h2
+                      <h5
                         style={{
                           fontFamily: font,
+                          WebkitTextStrokeWidth: "0.5px",
+                          WebkitTextStrokeColor: "white",
                         }}
                       >
                         {font}
-                      </h2>
+                      </h5>
                     </div>
                   ))}
                 </div>
