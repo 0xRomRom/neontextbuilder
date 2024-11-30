@@ -181,7 +181,7 @@ a {
 }
 @media (max-width: 780px) {
   .header {
-    padding-top: 9rem;
+    padding-top: 7rem;
   }
   .mainApp {
     padding-top: 3rem;
@@ -191,7 +191,7 @@ a {
   }
 
   .pageHero {
-    font-size: 8.7vw;
+    font-size: 8vw;
   }
 }
 @media (max-width: 480px) {

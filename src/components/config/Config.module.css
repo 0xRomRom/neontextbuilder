@@ -460,4 +460,10 @@
   .topRow {
     display: none;
   }
+  .config {
+    height: 395px;
+  }
+  .restRows {
+    margin-bottom: 0;
+  }
 }

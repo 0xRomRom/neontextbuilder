@@ -569,7 +569,7 @@ const Config = ({
           )}
         </div>
       )}
-      {activeTab === 8 && (
+      {activeTab === 8 && window.innerWidth > 500 && (
         <div className={stl.spaceDiv} onClick={() => setActiveTab(0)}>
           <FaArrowTurnDown className={stl.backArrow} />
           <button>Terug naar instellingen</button>
