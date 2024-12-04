@@ -176,8 +176,7 @@ const Config = ({
 
   const incrementLength = () => {
     if (customLength < 250) {
-      console.log(customLength);
-      setCustomLength((prev) => prev + 10);
+      setCustomLength((prev) => +prev + 10);
     }
   };
 
