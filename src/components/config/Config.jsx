@@ -174,6 +174,13 @@ const Config = ({
     }
   };
 
+  const incrementLength = () => {
+    if (customLength < 250) {
+      console.log(customLength);
+      setCustomLength((prev) => prev + 10);
+    }
+  };
+
   return (
     <div className={stl.config}>
       <div className={stl.caroussel}>
@@ -205,13 +212,26 @@ const Config = ({
 
               {activeTab === 0 && (
                 <div className={stl.content}>
+                  {currentText.length === maxChars[customLength] && (
+                    <span className={stl.maxCharsSpan}>
+                      Voeg extra regel toe of vergroot lengte.
+                      <br />
+                      <button
+                        className={stl.vergrootLengte}
+                        onClick={incrementLength}
+                      >
+                        Vergroot lengte
+                      </button>
+                    </span>
+                  )}
                   <div className={stl.textWrap}>
                     <textarea
                       type="text"
                       placeholder="Regel 1"
                       className={stl.textInput}
                       value={currentText}
-                      maxLength={maxChars[customLength] * 4}
+                      spellCheck={false}
+                      maxLength={maxChars[customLength]}
                       onInput={(e) => {
                         setCurrentText(e.target.value);
                       }}
@@ -224,7 +244,7 @@ const Config = ({
                         placeholder="Regel 2"
                         className={stl.textInput}
                         value={regel2}
-                        maxLength={maxChars[customLength] * 4}
+                        maxLength={maxChars[customLength]}
                         onInput={(e) => {
                           setRegel2(e.target.value);
                         }}
@@ -237,7 +257,7 @@ const Config = ({
                       placeholder="Regel 3"
                       className={stl.textInput}
                       value={regel3}
-                      maxLength={maxChars[customLength] * 4}
+                      maxLength={maxChars[customLength]}
                       onInput={(e) => {
                         setRegel3(e.target.value);
                       }}
@@ -249,7 +269,7 @@ const Config = ({
                       placeholder="Regel 4"
                       className={stl.textInput}
                       value={regel4}
-                      maxLength={maxChars[customLength] * 4}
+                      maxLength={maxChars[customLength]}
                       onInput={(e) => {
                         setRegel4(e.target.value);
                       }}

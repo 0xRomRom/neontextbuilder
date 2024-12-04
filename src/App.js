@@ -64,13 +64,10 @@ const App = () => {
   ]);
 
   useEffect(() => {
-    // If character amount exceeds character cap per length, decrease characters
-
+    // First text decides overall length
     const currentLength = currentText.length;
-    console.log("Current length: ", currentLength);
 
     const allowedForLength = maxChars[customLength];
-    console.log(allowedForLength);
 
     if (currentLength > allowedForLength) {
       setCurrentText(currentText.slice(0, allowedForLength));

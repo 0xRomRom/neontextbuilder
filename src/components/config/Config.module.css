@@ -51,6 +51,7 @@
   transition: all 0.1s ease-in-out;
   max-height: 4rem;
   resize: none;
+  /* color: red; */
 }
 
 .textInput:focus {
@@ -487,7 +488,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: 0.25rem;
+}
+
+.maxCharsSpan {
+  text-align: center;
+  width: 100%;
+  display: block;
+  background-color: rgba(226, 0, 226, 0.49);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 2px;
+  font-size: 14px;
+  user-select: none;
+}
+
+.vergrootLengte {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: rgb(226, 0, 226);
+  outline: none;
+  border: none;
+  color: white;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.vergrootLengte:hover {
+  background-color: rgb(255, 0, 255);
 }
 
 @media only screen and (max-width: 1000px) {
