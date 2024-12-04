@@ -78,7 +78,6 @@ const Config = ({
   setRegel4,
   setLineAmount,
 }) => {
-  const inputRef = useRef(null);
   const fileInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
   const [checkoutLoading, setCheckoutLoading] = useState(false);

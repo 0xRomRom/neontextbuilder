@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import stl from "./Canvas.module.css";
-import {
-  colors as ColorsArray,
-  maxChars,
-  fontFamilies,
-} from "../../utils/dataArrays";
+import { colors as ColorsArray, fontFamilies } from "../../utils/dataArrays";
 
 const Canvas = ({
   currentText,

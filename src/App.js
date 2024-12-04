@@ -23,7 +23,6 @@ const App = () => {
   const [mountingMethod, setMountingMethod] = useState("Afstandhouders");
   const [checkoutMessage, setCheckoutMessage] = useState("");
   const [videoOverlay, setVideoOverlay] = useState("");
-  const [textLength, setTextLength] = useState(13);
   const [lineAmount, setLineAmount] = useState(1);
   const [alignment, setAlignment] = useState("center");
 
@@ -54,7 +53,6 @@ const App = () => {
     setFinalPrice(finalPrice);
   }, [
     customLength,
-    textLength,
     currentText,
     selectedColor,
     selectedFont,
@@ -66,27 +64,21 @@ const App = () => {
   ]);
 
   useEffect(() => {
+    // If character amount exceeds character cap per length, decrease characters
+
     const currentLength = currentText.length;
-    const lineCap1 = maxChars[customLength];
-    const lineCap2 = maxChars[customLength] * 2;
-    const lineCap3 = maxChars[customLength] * 3;
-    const lineCap4 = maxChars[customLength] * 4;
+    console.log("Current length: ", currentLength);
 
-    if (currentLength <= lineCap1) {
-      setLineAmount(1);
-    }
-    if (currentLength > lineCap1 && currentLength <= lineCap2) {
-      setLineAmount(2);
-    }
-    if (currentLength > lineCap2 && currentLength <= lineCap3) {
-      setLineAmount(3);
-    }
-    if (currentLength > lineCap3 && currentLength <= lineCap4) {
-      setLineAmount(4);
-    }
+    const allowedForLength = maxChars[customLength];
+    console.log(allowedForLength);
 
-    setTextLength(currentLength);
-  }, [currentText, customLength]);
+    if (currentLength > allowedForLength) {
+      setCurrentText(currentText.slice(0, allowedForLength));
+      setRegel2(regel2.slice(0, allowedForLength));
+      setRegel3(regel3.slice(0, allowedForLength));
+      setRegel4(regel4.slice(0, allowedForLength));
+    }
+  }, [customLength]);
 
   return (
     <div className={stl.app}>
