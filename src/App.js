@@ -137,9 +137,11 @@ const App = () => {
             backPlateShape={backPlateShape}
             mountingMethod={mountingMethod}
             customLength={customLength}
-            textLength={textLength}
             lineAmount={lineAmount}
             alignment={alignment}
+            regel2={regel2}
+            regel3={regel3}
+            regel4={regel4}
           />
           <Config
             currentText={currentText}
@@ -163,8 +165,6 @@ const App = () => {
             checkoutMessage={checkoutMessage}
             setCheckoutMessage={setCheckoutMessage}
             setVideoOverlay={setVideoOverlay}
-            textLength={textLength}
-            setTextLength={setTextLength}
             lineAmount={lineAmount}
             alignment={alignment}
             setAlignment={setAlignment}
@@ -174,6 +174,7 @@ const App = () => {
             setRegel3={setRegel3}
             regel4={regel4}
             setRegel4={setRegel4}
+            setLineAmount={setLineAmount}
           />
         </main>
       </div>

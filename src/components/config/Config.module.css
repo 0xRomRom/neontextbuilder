@@ -458,6 +458,27 @@
   cursor: pointer;
 }
 
+.regelCtas {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addsentence {
+  background-color: rgb(226, 0, 226);
+  color: white;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.addsentence:hover {
+  background-color: rgb(255, 0, 255);
+}
+
 .caroussel button:active {
   transform: scale(1.1);
 }

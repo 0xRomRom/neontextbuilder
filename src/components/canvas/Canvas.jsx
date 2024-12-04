@@ -14,8 +14,11 @@ const Canvas = ({
   selectedFont,
   finalPrice,
   customLength,
-  textLength,
   alignment,
+  lineAmount,
+  regel2,
+  regel3,
+  regel4,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(4);
@@ -123,10 +126,10 @@ const Canvas = ({
             textAlign: alignment,
           }}
         >
-          {currentText.slice(0, maxChars[customLength])}
+          {currentText}
         </h2>
 
-        {textLength > maxChars[customLength] && (
+        {lineAmount > 1 && (
           <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
@@ -146,13 +149,10 @@ const Canvas = ({
               textAlign: alignment,
             }}
           >
-            {currentText.slice(
-              maxChars[customLength],
-              maxChars[customLength] * 2
-            )}
+            {regel2}
           </h2>
         )}
-        {textLength > maxChars[customLength] * 2 && (
+        {lineAmount > 2 && (
           <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
@@ -172,13 +172,10 @@ const Canvas = ({
               textAlign: alignment,
             }}
           >
-            {currentText.slice(
-              maxChars[customLength] * 2,
-              maxChars[customLength] * 3
-            )}
+            {regel3}
           </h2>
         )}
-        {textLength > maxChars[customLength] * 3 && (
+        {lineAmount > 3 && (
           <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
@@ -198,10 +195,7 @@ const Canvas = ({
               textAlign: alignment,
             }}
           >
-            {currentText.slice(
-              maxChars[customLength] * 3,
-              maxChars[customLength] * 4
-            )}
+            {regel4}
           </h2>
         )}
       </div>

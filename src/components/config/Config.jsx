@@ -67,8 +67,6 @@ const Config = ({
   checkoutMessage,
   setCheckoutMessage,
   setVideoOverlay,
-  textLength,
-  setTextLength,
   lineAmount,
   alignment,
   setAlignment,
@@ -78,6 +76,7 @@ const Config = ({
   setRegel3,
   regel4,
   setRegel4,
+  setLineAmount,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -215,12 +214,7 @@ const Config = ({
                       value={currentText}
                       maxLength={maxChars[customLength] * 4}
                       onInput={(e) => {
-                        setTextLength(currentText.length);
                         setCurrentText(e.target.value);
-                      }}
-                      ref={inputRef}
-                      style={{
-                        height: textLength > 100 ? "8rem" : "6rem",
                       }}
                     ></textarea>
                   </div>
@@ -228,16 +222,12 @@ const Config = ({
                     <>
                       <textarea
                         type="text"
-                        placeholder="Voer uw text in"
+                        placeholder="Regel 2"
                         className={stl.textInput}
                         value={regel2}
                         maxLength={maxChars[customLength] * 4}
                         onInput={(e) => {
                           setRegel2(e.target.value);
-                        }}
-                        ref={inputRef}
-                        style={{
-                          height: textLength > 100 ? "8rem" : "6rem",
                         }}
                       ></textarea>
                     </>
@@ -245,32 +235,24 @@ const Config = ({
                   {lineAmount > 2 && (
                     <textarea
                       type="text"
-                      placeholder="Voer uw text in"
+                      placeholder="Regel 3"
                       className={stl.textInput}
                       value={regel3}
                       maxLength={maxChars[customLength] * 4}
                       onInput={(e) => {
                         setRegel3(e.target.value);
                       }}
-                      ref={inputRef}
-                      style={{
-                        height: textLength > 100 ? "8rem" : "6rem",
-                      }}
                     ></textarea>
                   )}
                   {lineAmount > 3 && (
                     <textarea
                       type="text"
-                      placeholder="Voer uw text in"
+                      placeholder="Regel 4"
                       className={stl.textInput}
                       value={regel4}
                       maxLength={maxChars[customLength] * 4}
                       onInput={(e) => {
                         setRegel4(e.target.value);
-                      }}
-                      ref={inputRef}
-                      style={{
-                        height: textLength > 100 ? "8rem" : "6rem",
                       }}
                     ></textarea>
                   )}
@@ -297,6 +279,26 @@ const Config = ({
                       >
                         <FaAlignRight />
                       </button>
+                    </div>
+                  )}
+                  {lineAmount < 5 && (
+                    <div className={stl.regelCtas}>
+                      {lineAmount < 4 && (
+                        <button
+                          className={stl.addsentence}
+                          onClick={() => setLineAmount((prev) => prev + 1)}
+                        >
+                          Regel Toevoegen
+                        </button>
+                      )}
+                      {lineAmount > 1 && (
+                        <button
+                          className={stl.addsentence}
+                          onClick={() => setLineAmount((prev) => prev - 1)}
+                        >
+                          Regel Verwijderen
+                        </button>
+                      )}
                     </div>
                   )}
                 </div>
