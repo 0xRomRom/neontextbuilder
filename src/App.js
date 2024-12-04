@@ -9,6 +9,9 @@ import VideoOverlay from "./components/videooverlay/VideoOverlay";
 const App = () => {
   const [showNav, setShowNav] = useState(false);
   const [currentText, setCurrentText] = useState("Vul uw text in");
+  const [regel2, setRegel2] = useState("");
+  const [regel3, setRegel3] = useState("");
+  const [regel4, setRegel4] = useState("");
   const [selectedColor, setSelectedColor] = useState(colors[2]);
   const [backgroundImage, setBackgroundImage] = useState(backgrounds[0]);
   const [customBg, setCustomBg] = useState("");
@@ -165,6 +168,12 @@ const App = () => {
             lineAmount={lineAmount}
             alignment={alignment}
             setAlignment={setAlignment}
+            regel2={regel2}
+            setRegel2={setRegel2}
+            regel3={regel3}
+            setRegel3={setRegel3}
+            regel4={regel4}
+            setRegel4={setRegel4}
           />
         </main>
       </div>

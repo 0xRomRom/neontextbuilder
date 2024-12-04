@@ -72,6 +72,12 @@ const Config = ({
   lineAmount,
   alignment,
   setAlignment,
+  regel2,
+  setRegel2,
+  regel3,
+  setRegel3,
+  regel4,
+  setRegel4,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -202,17 +208,9 @@ const Config = ({
               {activeTab === 0 && (
                 <div className={stl.content}>
                   <div className={stl.textWrap}>
-                    <span className={stl.currentLength}>
-                      [{textLength}/
-                      <span className={lineAmount > 3 ? stl.redEnd : stl.gray}>
-                        {maxChars[customLength] * lineAmount || 250}
-                      </span>
-                      ]
-                    </span>
-
                     <textarea
                       type="text"
-                      placeholder="Voer uw text in"
+                      placeholder="Regel 1"
                       className={stl.textInput}
                       value={currentText}
                       maxLength={maxChars[customLength] * 4}
@@ -226,6 +224,56 @@ const Config = ({
                       }}
                     ></textarea>
                   </div>
+                  {lineAmount > 1 && (
+                    <>
+                      <textarea
+                        type="text"
+                        placeholder="Voer uw text in"
+                        className={stl.textInput}
+                        value={regel2}
+                        maxLength={maxChars[customLength] * 4}
+                        onInput={(e) => {
+                          setRegel2(e.target.value);
+                        }}
+                        ref={inputRef}
+                        style={{
+                          height: textLength > 100 ? "8rem" : "6rem",
+                        }}
+                      ></textarea>
+                    </>
+                  )}
+                  {lineAmount > 2 && (
+                    <textarea
+                      type="text"
+                      placeholder="Voer uw text in"
+                      className={stl.textInput}
+                      value={regel3}
+                      maxLength={maxChars[customLength] * 4}
+                      onInput={(e) => {
+                        setRegel3(e.target.value);
+                      }}
+                      ref={inputRef}
+                      style={{
+                        height: textLength > 100 ? "8rem" : "6rem",
+                      }}
+                    ></textarea>
+                  )}
+                  {lineAmount > 3 && (
+                    <textarea
+                      type="text"
+                      placeholder="Voer uw text in"
+                      className={stl.textInput}
+                      value={regel4}
+                      maxLength={maxChars[customLength] * 4}
+                      onInput={(e) => {
+                        setRegel4(e.target.value);
+                      }}
+                      ref={inputRef}
+                      style={{
+                        height: textLength > 100 ? "8rem" : "6rem",
+                      }}
+                    ></textarea>
+                  )}
                   {lineAmount > 1 && (
                     <div className={stl.alignment}>
                       <button

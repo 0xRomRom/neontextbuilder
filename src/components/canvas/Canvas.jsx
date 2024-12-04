@@ -121,7 +121,6 @@ const Canvas = ({
             transform: `scale(${zoom})`,
             lineHeight: `${zoom * 20}px`,
             textAlign: alignment,
-            letterSpacing: `${zoom * 1.1}px`,
           }}
         >
           {currentText.slice(0, maxChars[customLength])}
@@ -145,7 +144,6 @@ const Canvas = ({
               transform: `scale(${zoom})`,
               lineHeight: `${zoom * 20}px`,
               textAlign: alignment,
-              letterSpacing: `${zoom * 1.1}px`,
             }}
           >
             {currentText.slice(
@@ -172,7 +170,6 @@ const Canvas = ({
               transform: `scale(${zoom})`,
               lineHeight: `${zoom * 20}px`,
               textAlign: alignment,
-              letterSpacing: `${zoom * 1.1}px`,
             }}
           >
             {currentText.slice(
@@ -199,7 +196,6 @@ const Canvas = ({
               transform: `scale(${zoom})`,
               lineHeight: `${zoom * 20}px`,
               textAlign: alignment,
-              letterSpacing: `${zoom * 1.1}px`,
             }}
           >
             {currentText.slice(
