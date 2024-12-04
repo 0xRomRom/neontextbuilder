@@ -18,7 +18,7 @@ const Canvas = ({
   alignment,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
-  const [neonGlow, setNeonGlow] = useState(15.5);
+  const [neonGlow, setNeonGlow] = useState(4);
   const [colorIndex, setColorIndex] = useState(0);
   const [rgbSpeed, setRgbSpeed] = useState(500);
   const [zoom, setZoom] = useState(2);
@@ -65,7 +65,7 @@ const Canvas = ({
             />
           </>
         )}
-        {selectedColor !== "RGB" && (
+        {/* {selectedColor !== "RGB" && (
           <>
             <span>Dim NEON</span>
             <input
@@ -77,7 +77,7 @@ const Canvas = ({
               value={neonGlow}
             />
           </>
-        )}
+        )} */}
         <span>Zoom</span>
         <input
           type="range"
@@ -104,14 +104,15 @@ const Canvas = ({
       </div>
 
       <div className={stl.innerColWrap}>
-        <h1
+        <h2
           className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
           style={{
             color:
               selectedColor !== "RGB"
                 ? ColorsArray[colorIndex]
                 : rgbColors[colorIndex],
-            textShadow: getTextShadow(),
+            // textShadow: getTextShadow(),
+            filter: `drop-shadow(${getTextShadow()})`,
             fontFamily: fontFamilies[selectedFont],
             WebkitTextStrokeWidth:
               window.innerWidth < 500 && selectedFont < 5 ? "1px" : "0.5px",
@@ -124,7 +125,7 @@ const Canvas = ({
           }}
         >
           {currentText.slice(0, maxChars[customLength])}
-        </h1>
+        </h2>
 
         {textLength > maxChars[customLength] && (
           <h2
@@ -134,7 +135,8 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              textShadow: getTextShadow(),
+              // textShadow: getTextShadow(),
+              filter: `drop-shadow(${getTextShadow()})`,
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth:
                 window.innerWidth < 500 && selectedFont < 5 ? "1px" : "0.5px",
@@ -160,7 +162,8 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              textShadow: getTextShadow(),
+              // textShadow: getTextShadow(),
+              filter: `drop-shadow(${getTextShadow()})`,
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth:
                 window.innerWidth < 500 && selectedFont < 5 ? "1px" : "0.5px",
@@ -186,7 +189,8 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              textShadow: getTextShadow(),
+              // textShadow: getTextShadow(),
+              filter: `drop-shadow(${getTextShadow()})`,
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeWidth:
                 window.innerWidth < 500 && selectedFont < 5 ? "1px" : "0.5px",

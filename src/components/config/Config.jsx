@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import stl from "./Config.module.css";
 import { BiText } from "react-icons/bi";
 import { IoColorPaletteOutline } from "react-icons/io5";
@@ -118,10 +118,15 @@ const Config = ({
           },
           body: JSON.stringify({
             backPanelColor,
+            backPlateShape,
             selectedColor,
-            selectedFont,
             lineMultiplier,
+            selectedFont,
             customLength,
+            mountingMethod,
+            currentText,
+            checkouttext: checkoutMessage,
+            lettertype: fontFamilies[selectedFont],
           }),
         }
       );

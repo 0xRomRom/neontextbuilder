@@ -75,6 +75,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  left: 25%;
 }
 
 .displacer {
@@ -224,13 +226,24 @@
     width: 100%;
   }
 }
+@media only screen and (max-width: 800px) {
+  .innerColWrap {
+    width: 70%;
+    left: 15%;
+  }
+}
 
 @media only screen and (max-width: 500px) {
   .canvas {
     height: 33rem;
+    padding: 0.25rem;
   }
   .endPrice {
     width: 140px;
     right: -0.25rem;
+  }
+  .innerColWrap {
+    width: 100%;
+    left: 0%;
   }
 }
