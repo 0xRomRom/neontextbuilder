@@ -119,7 +119,7 @@ const Canvas = ({
             WebkitTextStrokeColor: ColorsArray[colorIndex],
             fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
             transform: `scale(${zoom})`,
-            lineHeight: `${zoom * 25}px`,
+            lineHeight: `${zoom * 20}px`,
             textAlign: alignment,
             letterSpacing: `${zoom * 1.1}px`,
           }}
@@ -143,7 +143,7 @@ const Canvas = ({
               WebkitTextStrokeColor: ColorsArray[colorIndex],
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
               transform: `scale(${zoom})`,
-              lineHeight: `${zoom * 25}px`,
+              lineHeight: `${zoom * 20}px`,
               textAlign: alignment,
               letterSpacing: `${zoom * 1.1}px`,
             }}
@@ -170,7 +170,7 @@ const Canvas = ({
               WebkitTextStrokeColor: ColorsArray[colorIndex],
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
               transform: `scale(${zoom})`,
-              lineHeight: `${zoom * 25}px`,
+              lineHeight: `${zoom * 20}px`,
               textAlign: alignment,
               letterSpacing: `${zoom * 1.1}px`,
             }}
@@ -197,7 +197,7 @@ const Canvas = ({
               WebkitTextStrokeColor: ColorsArray[colorIndex],
               fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
               transform: `scale(${zoom})`,
-              lineHeight: `${zoom * 25}px`,
+              lineHeight: `${zoom * 20}px`,
               textAlign: alignment,
               letterSpacing: `${zoom * 1.1}px`,
             }}
