@@ -213,7 +213,7 @@ const Config = ({
                 <div className={stl.content}>
                   {currentText.length === maxChars[customLength] && (
                     <span className={stl.maxCharsSpan}>
-                      Voeg extra regel toe of vergroot lengte.
+                      Voeg extra regel toe of vergroot lengte
                       <br />
                       <button
                         className={stl.vergrootLengte}

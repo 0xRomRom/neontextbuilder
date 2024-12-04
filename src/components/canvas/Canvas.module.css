@@ -17,13 +17,28 @@
 .mainText {
   z-index: 10;
   position: relative;
-  font-size: clamp(0.6rem, 1.5vw, 1rem);
-  white-space: normal;
-  word-wrap: break-word;
+  /* font-size: clamp(0.6rem, 1.5vw, 1rem); */
+  /* white-space: normal; */
+  /* word-wrap: break-word; */
   text-align: center;
   font-family: "Arial Black";
   color: white;
   width: 100%;
+}
+
+.ghostText {
+  z-index: 0;
+  position: absolute;
+  /* font-size: clamp(0.6rem, 1.5vw, 1rem); */
+  /* white-space: normal; */
+  /* word-wrap: break-word; */
+  text-align: center;
+  font-family: "Arial Black";
+  color: white;
+  width: 100%;
+  inset: 0;
+  opacity: 0.5;
+  filter: blur(0.3rem);
 }
 .mainShadow {
   position: absolute;
@@ -75,6 +90,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .displacer {
@@ -183,6 +199,12 @@
   animation: rgbCycle 4s infinite;
 }
 
+.textWrap {
+  /* background-color: red; */
+  position: relative;
+  width: 100%;
+}
+
 @keyframes rgbCycle {
   0% {
     color: red;
@@ -216,6 +238,7 @@
 
 .outline {
   color: transparent !important;
+  -webkit-text-stroke-width: 1px;
   transition: all 0.1s ease-in-out;
 }
 
@@ -243,5 +266,8 @@
   .innerColWrap {
     /* width: 100%; */
     left: 0%;
+  }
+  .outline {
+    -webkit-text-stroke-width: 0.5px;
   }
 }
