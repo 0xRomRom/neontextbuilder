@@ -114,18 +114,14 @@ const Canvas = ({
           transform: `scale(${zoom})`,
         }}
       >
-        <div
-          className={stl.textWrap}
-          // style={{
-          //   width:
-          //     currentText.length > 50 ? `${currentText.length + 150}%` : "100%",
-          // }}
-        >
+        <div className={stl.textWrap}>
           <h2
-            className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
+            className={stl.mainText}
             style={{
               color:
-                selectedColor !== "RGB"
+                selectedFont < 5
+                  ? "transparent"
+                  : selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
@@ -138,12 +134,12 @@ const Canvas = ({
             {currentText}
           </h2>
           <h2
-            className={`${stl.ghostText} ${
-              selectedFont < 5 ? stl.outline : ""
-            }`}
+            className={stl.ghostText}
             style={{
               color:
-                selectedColor !== "RGB"
+                selectedFont < 5
+                  ? "transparent"
+                  : selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
@@ -161,12 +157,12 @@ const Canvas = ({
         {lineAmount > 1 && (
           <div className={stl.textWrap}>
             <h2
-              className={`${stl.mainText} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
+              className={stl.mainText}
               style={{
                 color:
-                  selectedColor !== "RGB"
+                  selectedFont < 5
+                    ? "transparent"
+                    : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
@@ -180,12 +176,12 @@ const Canvas = ({
               {regel2}
             </h2>
             <h2
-              className={`${stl.ghostText} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
+              className={stl.ghostText}
               style={{
                 color:
-                  selectedColor !== "RGB"
+                  selectedFont < 5
+                    ? "transparent"
+                    : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
@@ -204,12 +200,12 @@ const Canvas = ({
         {lineAmount > 2 && (
           <div className={stl.textWrap}>
             <h2
-              className={`${stl.mainText} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
+              className={stl.mainText}
               style={{
                 color:
-                  selectedColor !== "RGB"
+                  selectedFont < 5
+                    ? "transparent"
+                    : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
@@ -223,12 +219,12 @@ const Canvas = ({
               {regel3}
             </h2>
             <h2
-              className={`${stl.ghostText} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
+              className={stl.ghostText}
               style={{
                 color:
-                  selectedColor !== "RGB"
+                  selectedFont < 5
+                    ? "transparent"
+                    : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
@@ -247,12 +243,12 @@ const Canvas = ({
         {lineAmount > 3 && (
           <div className={stl.textWrap}>
             <h2
-              className={`${stl.mainText} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
+              className={stl.mainText}
               style={{
                 color:
-                  selectedColor !== "RGB"
+                  selectedFont < 5
+                    ? "transparent"
+                    : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
@@ -266,12 +262,12 @@ const Canvas = ({
               {regel4}
             </h2>
             <h2
-              className={`${stl.ghostText} ${
-                selectedFont < 5 ? stl.outline : ""
-              }`}
+              className={stl.ghostText}
               style={{
                 color:
-                  selectedColor !== "RGB"
+                  selectedFont < 5
+                    ? "transparent"
+                    : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
