@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import stl from "./Canvas.module.css";
-import { colors as ColorsArray, fontFamilies } from "../../utils/dataArrays";
+import {
+  colors as ColorsArray,
+  fontFamilies,
+  customfontWeights,
+} from "../../utils/dataArrays";
 
 const Canvas = ({
   currentText,
@@ -54,22 +58,11 @@ const Canvas = ({
     return () => window.removeEventListener("resize", adjustFontSize);
   }, [currentText, containerRef, adjustFontSize]);
 
+  console.log(customfontWeights[selectedFont]);
+
   return (
     <div className={stl.canvas} ref={containerRef}>
       <div className={stl.backgroundLightning}>
-        {/* {selectedColor === "RGB" && (
-          <>
-            <span>RGB Snelheid</span>
-            <input
-              type="range"
-              min="100"
-              max="1000"
-              step="10"
-              onInput={(e) => setRgbSpeed(e.target.value)}
-              value={rgbSpeed}
-            />
-          </>
-        )} */}
         {selectedColor !== "RGB" && (
           <>
             <span>Dim NEON</span>
@@ -129,6 +122,7 @@ const Canvas = ({
               WebkitTextStrokeWidth: window.innerWidth < 500 ? "0.5px" : "1px",
               fontSize: `${fontSize}px`,
               textAlign: alignment,
+              fontWeight: customfontWeights[selectedFont],
             }}
           >
             {currentText}
@@ -148,6 +142,7 @@ const Canvas = ({
               fontSize: `${fontSize}px`,
               opacity: neonGlow,
               textAlign: alignment,
+              fontWeight: customfontWeights[selectedFont],
             }}
           >
             {currentText}
@@ -171,6 +166,7 @@ const Canvas = ({
                   window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
+                fontWeight: customfontWeights[selectedFont],
               }}
             >
               {regel2}
@@ -191,6 +187,7 @@ const Canvas = ({
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
+                fontWeight: customfontWeights[selectedFont],
               }}
             >
               {regel2}
@@ -214,6 +211,7 @@ const Canvas = ({
                   window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
+                fontWeight: customfontWeights[selectedFont],
               }}
             >
               {regel3}
@@ -234,6 +232,7 @@ const Canvas = ({
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
+                fontWeight: customfontWeights[selectedFont],
               }}
             >
               {regel3}
@@ -257,6 +256,7 @@ const Canvas = ({
                   window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
+                fontWeight: customfontWeights[selectedFont],
               }}
             >
               {regel4}
@@ -277,6 +277,7 @@ const Canvas = ({
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
+                fontWeight: customfontWeights[selectedFont],
               }}
             >
               {regel4}

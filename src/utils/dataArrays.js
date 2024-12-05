@@ -42,6 +42,25 @@ const fontFamilies = [
   "Peaches",
 ];
 
+// Heeft geen effect op outline fonts (1/5)
+const customfontWeights = [
+  "1000", // Arial Black
+  "1000", // Arial Rounded Bold
+  "1000", // ChalkboardSE
+  "1000", // Impact
+  "1000", // MarkerFelt
+  "500", // AA13Regular
+  "500", // AA14Regular
+  "500", // AA15Regular
+  "500", // Art Deco
+  "500", // Bubble Wrap
+  "500", // Magnolia
+  "500", // Melody
+  "500", // Picnic Basket
+  "500", // Architect Regular
+  "500", // Peaches
+];
+
 const maxChars = {
   40: 8,
   50: 10,
@@ -73,4 +92,11 @@ const videoIDs = [
   "9U296TyVMqY", // Afrekenen
 ];
 
-export { colors, backgrounds, fontFamilies, maxChars, videoIDs };
+export {
+  colors,
+  backgrounds,
+  fontFamilies,
+  customfontWeights,
+  maxChars,
+  videoIDs,
+};
