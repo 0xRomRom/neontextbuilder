@@ -78,6 +78,7 @@ const Config = ({
   setRegel4,
   setLineAmount,
 }) => {
+  const inputRef = useRef(null);
   const fileInputRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
@@ -177,6 +178,15 @@ const Config = ({
   const incrementLength = () => {
     if (customLength < 250) {
       setCustomLength((prev) => +prev + 10);
+
+      if (inputRef?.current) {
+        const inputElement = inputRef.current;
+        inputElement.focus();
+
+        // Set the caret to the end of the text
+        const length = inputElement.value.length;
+        inputElement.setSelectionRange(length, length);
+      }
     }
   };
 
@@ -246,6 +256,7 @@ const Config = ({
                       onInput={(e) => {
                         setCurrentText(e.target.value);
                       }}
+                      ref={inputRef}
                     ></textarea>
                   </div>
                   {lineAmount > 1 && (
