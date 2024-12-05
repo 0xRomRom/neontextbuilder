@@ -23,7 +23,6 @@ const Canvas = ({
   const [zoom, setZoom] = useState(1);
   const containerRef = useRef(null);
   const [fontSize, setFontSize] = useState(1);
-  const [textLen, setTextLen] = useState(currentText.length);
 
   const rgbColors = ["red", "green", "yellow", "orange", "cyan", "purple"];
   useEffect(() => {
@@ -53,11 +52,7 @@ const Canvas = ({
     adjustFontSize();
     window.addEventListener("resize", adjustFontSize);
     return () => window.removeEventListener("resize", adjustFontSize);
-  }, [currentText, containerRef]);
-
-  useEffect(() => {
-    setTextLen(currentText.length);
-  }, [currentText]);
+  }, [currentText, containerRef, adjustFontSize]);
 
   return (
     <div className={stl.canvas} ref={containerRef}>
@@ -126,7 +121,7 @@ const Canvas = ({
               currentText.length > 50 ? `${currentText.length + 150}%` : "100%",
           }}
         >
-          <h5
+          <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
               color:
@@ -141,7 +136,7 @@ const Canvas = ({
             }}
           >
             {currentText}
-          </h5>
+          </h2>
           <h2
             className={`${stl.ghostText} ${
               selectedFont < 5 ? stl.outline : ""
