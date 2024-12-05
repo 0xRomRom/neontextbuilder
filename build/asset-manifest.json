@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/config/static/css/main.a0e1240b.css",
-    "main.js": "/config/static/js/main.04795586.js",
+    "main.css": "/config/static/css/main.ee16d058.css",
+    "main.js": "/config/static/js/main.190b0df1.js",
     "static/media/MarkerFelt.ttc": "/config/static/media/MarkerFelt.3a83925bc211a8146173.ttc",
     "static/media/ChalkboardSE.ttc": "/config/static/media/ChalkboardSE.dea96def2065948aca8e.ttc",
     "static/media/ArtDeco.otf": "/config/static/media/ArtDeco.0cd13cbf5ca1f8c386f7.otf",
@@ -23,11 +23,11 @@
     "static/media/AA13LEDsGoNeonRegular.woff": "/config/static/media/AA13LEDsGoNeonRegular.88f031f2559a150b8cdc.woff",
     "static/media/AA13LEDsGoNeonRegular.woff2": "/config/static/media/AA13LEDsGoNeonRegular.20b8be4fd1d13eac6cfc.woff2",
     "index.html": "/config/index.html",
-    "main.a0e1240b.css.map": "/config/static/css/main.a0e1240b.css.map",
-    "main.04795586.js.map": "/config/static/js/main.04795586.js.map"
+    "main.ee16d058.css.map": "/config/static/css/main.ee16d058.css.map",
+    "main.190b0df1.js.map": "/config/static/js/main.190b0df1.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0e1240b.css",
-    "static/js/main.04795586.js"
+    "static/css/main.ee16d058.css",
+    "static/js/main.190b0df1.js"
   ]
 }

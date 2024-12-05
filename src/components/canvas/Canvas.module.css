@@ -94,7 +94,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
 }
 
 .displacer {
@@ -232,8 +232,8 @@
     right: -0.25rem;
   }
   .innerColWrap {
-    /* width: 100%; */
-    left: 0%;
+    width: 95%;
+    /* left: 2.5%; */
   }
   .outline {
     -webkit-text-stroke-width: 0.5px;
