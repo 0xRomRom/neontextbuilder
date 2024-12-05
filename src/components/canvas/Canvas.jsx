@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import stl from "./Canvas.module.css";
 import { colors as ColorsArray, fontFamilies } from "../../utils/dataArrays";
 
@@ -19,7 +19,7 @@ const Canvas = ({
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(0.8);
   const [colorIndex, setColorIndex] = useState(0);
-  const [rgbSpeed, setRgbSpeed] = useState(500);
+  // const [rgbSpeed, setRgbSpeed] = useState(500);
   const [zoom, setZoom] = useState(1);
   const containerRef = useRef(null);
   const [fontSize, setFontSize] = useState(1);
@@ -29,15 +29,15 @@ const Canvas = ({
     if (selectedColor === "RGB") {
       const interval = setInterval(() => {
         setColorIndex((prevIndex) => (prevIndex + 1) % rgbColors.length);
-      }, rgbSpeed);
+      }, 500);
       return () => clearInterval(interval); // Cleanup interval
     } else {
       const index = ColorsArray.indexOf(selectedColor);
       setColorIndex(index);
     }
-  }, [selectedColor, rgbSpeed, rgbColors.length]);
+  }, [selectedColor, rgbColors.length]);
 
-  const adjustFontSize = () => {
+  const adjustFontSize = useCallback(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth;
       const calculatedFontSize = Math.max(
@@ -46,7 +46,7 @@ const Canvas = ({
       ); // Scale font size based on width and ensure a minimum size
       setFontSize(calculatedFontSize);
     }
-  };
+  }, [currentText.length]);
 
   useEffect(() => {
     adjustFontSize();
@@ -116,10 +116,10 @@ const Canvas = ({
       >
         <div
           className={stl.textWrap}
-          style={{
-            width:
-              currentText.length > 50 ? `${currentText.length + 150}%` : "100%",
-          }}
+          // style={{
+          //   width:
+          //     currentText.length > 50 ? `${currentText.length + 150}%` : "100%",
+          // }}
         >
           <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
@@ -159,15 +159,7 @@ const Canvas = ({
         </div>
 
         {lineAmount > 1 && (
-          <div
-            className={stl.textWrap}
-            style={{
-              width:
-                currentText.length > 50
-                  ? `${currentText.length + 150}%`
-                  : "100%",
-            }}
-          >
+          <div className={stl.textWrap}>
             <h2
               className={`${stl.mainText} ${
                 selectedFont < 5 ? stl.outline : ""
@@ -210,15 +202,7 @@ const Canvas = ({
           </div>
         )}
         {lineAmount > 2 && (
-          <div
-            className={stl.textWrap}
-            style={{
-              width:
-                currentText.length > 50
-                  ? `${currentText.length + 150}%`
-                  : "100%",
-            }}
-          >
+          <div className={stl.textWrap}>
             <h2
               className={`${stl.mainText} ${
                 selectedFont < 5 ? stl.outline : ""
@@ -261,15 +245,7 @@ const Canvas = ({
           </div>
         )}
         {lineAmount > 3 && (
-          <div
-            className={stl.textWrap}
-            style={{
-              width:
-                currentText.length > 50
-                  ? `${currentText.length + 150}%`
-                  : "100%",
-            }}
-          >
+          <div className={stl.textWrap}>
             <h2
               className={`${stl.mainText} ${
                 selectedFont < 5 ? stl.outline : ""

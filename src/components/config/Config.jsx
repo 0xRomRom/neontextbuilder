@@ -242,18 +242,19 @@ const Config = ({
 
               {activeTab === 0 && (
                 <div className={stl.content}>
-                  {currentText.length === maxChars[customLength] && (
-                    <span className={stl.maxCharsSpan}>
-                      Voeg extra regel toe of vergroot lengte
-                      <br />
-                      <button
-                        className={stl.vergrootLengte}
-                        onClick={incrementLength}
-                      >
-                        Vergroot lengte
-                      </button>
-                    </span>
-                  )}
+                  {currentText.length === maxChars[customLength] &&
+                    customLength < 150 && (
+                      <span className={stl.maxCharsSpan}>
+                        Voeg extra regel toe of vergroot lengte
+                        <br />
+                        <button
+                          className={stl.vergrootLengte}
+                          onClick={incrementLength}
+                        >
+                          Vergroot lengte
+                        </button>
+                      </span>
+                    )}
                   <div className={stl.textWrap}>
                     <textarea
                       type="text"

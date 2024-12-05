@@ -75,7 +75,7 @@ const App = () => {
       setRegel3(regel3.slice(0, allowedForLength));
       setRegel4(regel4.slice(0, allowedForLength));
     }
-  }, [customLength]);
+  }, [currentText, customLength, regel2, regel3, regel4]);
 
   return (
     <div className={stl.app}>
