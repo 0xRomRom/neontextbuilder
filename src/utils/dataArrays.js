@@ -43,6 +43,7 @@ const fontFamilies = [
 ];
 
 // Heeft geen effect op outline fonts (1/5)
+// Waarde tussen "100" en "1000"
 const customfontWeights = [
   "1000", // Arial Black
   "1000", // Arial Rounded Bold
@@ -59,6 +60,60 @@ const customfontWeights = [
   "500", // Picnic Basket
   "500", // Architect Regular
   "500", // Peaches
+];
+
+const desktopLineWidths = [
+  "1px", // Arial Black
+  "1px", // Arial Rounded Bold
+  "1px", // ChalkboardSE
+  "1px", // Impact
+  "1px", // MarkerFelt
+  "1px", // AA13Regular
+  "1px", // AA14Regular
+  "1px", // AA15Regular
+  "1px", // Art Deco
+  "1px", // Bubble Wrap
+  "1px", // Magnolia
+  "1px", // Melody
+  "1px", // Picnic Basket
+  "1px", // Architect Regular
+  "1px", // Peaches
+];
+
+const mobileLineWidths = [
+  "0.5px", // Arial Black
+  "0.5px", // Arial Rounded Bold
+  "0.5px", // ChalkboardSE
+  "0.5px", // Impact
+  "0.5px", // MarkerFelt
+  "0.5px", // AA13Regular
+  "0.5px", // AA14Regular
+  "0.5px", // AA15Regular
+  "0.5px", // Art Deco
+  "0.5px", // Bubble Wrap
+  "0.5px", // Magnolia
+  "0.5px", // Melody
+  "0.5px", // Picnic Basket
+  "0.5px", // Architect Regular
+  "0.5px", // Peaches
+];
+
+const customLetterSpacing = [
+  "0px", // Arial Black
+  "0px", // Arial Rounded Bold
+  "0px", // ChalkboardSE
+  "0px", // Impact
+  "0px", // MarkerFelt
+  "0px", // AA13Regular
+  "0px", // AA14Regular
+  "0px", // AA15Regular
+  "0px", // Art Deco
+  "0px", // Bubble Wrap
+  "0px", // Magnolia
+  "0px", // Melody
+  "0px", // Picnic Basket
+  "0px", // Architect Regular
+  "0px", // Peaches
 ];
 
 const maxChars = {
@@ -86,6 +141,7 @@ const maxChars = {
 };
 
 const videoIDs = [
+  "9U296TyVMqY", // Text
   "9U296TyVMqY", // Achterpaneel kleur
   "9U296TyVMqY", // Achterpaneel vorm
   "9U296TyVMqY", // Montage methode
@@ -99,4 +155,7 @@ export {
   customfontWeights,
   maxChars,
   videoIDs,
+  desktopLineWidths,
+  mobileLineWidths,
+  customLetterSpacing,
 };

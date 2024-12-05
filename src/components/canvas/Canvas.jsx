@@ -4,6 +4,9 @@ import {
   colors as ColorsArray,
   fontFamilies,
   customfontWeights,
+  desktopLineWidths,
+  mobileLineWidths,
+  customLetterSpacing,
 } from "../../utils/dataArrays";
 
 const Canvas = ({
@@ -119,10 +122,14 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeColor: ColorsArray[colorIndex],
-              WebkitTextStrokeWidth: window.innerWidth < 500 ? "0.5px" : "1px",
+              WebkitTextStrokeWidth:
+                window.innerWidth < 500
+                  ? mobileLineWidths[selectedFont]
+                  : desktopLineWidths[selectedFont],
               fontSize: `${fontSize}px`,
               textAlign: alignment,
               fontWeight: customfontWeights[selectedFont],
+              letterSpacing: customLetterSpacing[selectedFont],
             }}
           >
             {currentText}
@@ -138,11 +145,15 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeColor: ColorsArray[colorIndex],
-              WebkitTextStrokeWidth: window.innerWidth < 500 ? "0.5px" : "1px",
+              WebkitTextStrokeWidth:
+                window.innerWidth < 500
+                  ? mobileLineWidths[selectedFont]
+                  : desktopLineWidths[selectedFont],
               fontSize: `${fontSize}px`,
               opacity: neonGlow,
               textAlign: alignment,
               fontWeight: customfontWeights[selectedFont],
+              letterSpacing: customLetterSpacing[selectedFont],
             }}
           >
             {currentText}
@@ -163,10 +174,13 @@ const Canvas = ({
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
                 WebkitTextStrokeWidth:
-                  window.innerWidth < 500 ? "0.5px" : "1px",
+                  window.innerWidth < 500
+                    ? mobileLineWidths[selectedFont]
+                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
+                letterSpacing: customLetterSpacing[selectedFont],
               }}
             >
               {regel2}
@@ -183,11 +197,14 @@ const Canvas = ({
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
                 WebkitTextStrokeWidth:
-                  window.innerWidth < 500 ? "0.5px" : "1px",
+                  window.innerWidth < 500
+                    ? mobileLineWidths[selectedFont]
+                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
+                letterSpacing: customLetterSpacing[selectedFont],
               }}
             >
               {regel2}
@@ -208,10 +225,13 @@ const Canvas = ({
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
                 WebkitTextStrokeWidth:
-                  window.innerWidth < 500 ? "0.5px" : "1px",
+                  window.innerWidth < 500
+                    ? mobileLineWidths[selectedFont]
+                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
+                letterSpacing: customLetterSpacing[selectedFont],
               }}
             >
               {regel3}
@@ -228,11 +248,14 @@ const Canvas = ({
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
                 WebkitTextStrokeWidth:
-                  window.innerWidth < 500 ? "0.5px" : "1px",
+                  window.innerWidth < 500
+                    ? mobileLineWidths[selectedFont]
+                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
+                letterSpacing: customLetterSpacing[selectedFont],
               }}
             >
               {regel3}
@@ -253,10 +276,13 @@ const Canvas = ({
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
                 WebkitTextStrokeWidth:
-                  window.innerWidth < 500 ? "0.5px" : "1px",
+                  window.innerWidth < 500
+                    ? mobileLineWidths[selectedFont]
+                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
+                letterSpacing: customLetterSpacing[selectedFont],
               }}
             >
               {regel4}
@@ -273,11 +299,14 @@ const Canvas = ({
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
                 WebkitTextStrokeWidth:
-                  window.innerWidth < 500 ? "0.5px" : "1px",
+                  window.innerWidth < 500
+                    ? mobileLineWidths[selectedFont]
+                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
+                letterSpacing: customLetterSpacing[selectedFont],
               }}
             >
               {regel4}
