@@ -245,7 +245,8 @@ const Config = ({
                   {currentText.length === maxChars[customLength] &&
                     customLength < 150 && (
                       <span className={stl.maxCharsSpan}>
-                        Voeg extra regel toe of vergroot lengte
+                        Karakterlimiet voor bordlengte bereikt.
+                        <br /> Voeg extra regel toe of vergroot lengte
                         <br />
                         <button
                           className={stl.vergrootLengte}

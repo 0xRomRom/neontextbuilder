@@ -78,7 +78,7 @@
   width: 155px;
 }
 .endPrice span:nth-child(1) {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .innerColWrap {
@@ -227,6 +227,7 @@
   .innerColWrap {
     width: 95%;
     left: 2.5%;
+    margin-bottom: 3rem;
   }
   .outline {
     -webkit-text-stroke-width: 0.5px;

@@ -61,8 +61,6 @@ const Canvas = ({
     return () => window.removeEventListener("resize", adjustFontSize);
   }, [currentText, containerRef, adjustFontSize]);
 
-  console.log(customfontWeights[selectedFont]);
-
   return (
     <div className={stl.canvas} ref={containerRef}>
       <div className={stl.backgroundLightning}>
