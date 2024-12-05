@@ -230,6 +230,15 @@ const Config = ({
                   </button>
                 )}
               </div>
+              {activeTab === 0 && window.innerWidth < 500 && (
+                <button
+                  onClick={() => setVideoOverlay(videoIDs[0])}
+                  className={stl.mobileYT}
+                >
+                  <FiYoutube />
+                  Voorbeeld
+                </button>
+              )}
 
               {activeTab === 0 && (
                 <div className={stl.content}>
@@ -358,6 +367,7 @@ const Config = ({
                   Lettertype
                 </span>
               </div>
+
               {activeTab === 1 && (
                 <div className={stl.content}>
                   <div className={stl.fontGrid}>

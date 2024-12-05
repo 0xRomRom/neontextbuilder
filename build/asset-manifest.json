@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/config/static/css/main.db7e9882.css",
-    "main.js": "/config/static/js/main.fca9846f.js",
+    "main.css": "/config/static/css/main.f6a46b0e.css",
+    "main.js": "/config/static/js/main.2df42bc6.js",
     "static/media/MarkerFelt.ttc": "/config/static/media/MarkerFelt.3a83925bc211a8146173.ttc",
     "static/media/ChalkboardSE.ttc": "/config/static/media/ChalkboardSE.dea96def2065948aca8e.ttc",
     "static/media/ArtDeco.otf": "/config/static/media/ArtDeco.0cd13cbf5ca1f8c386f7.otf",
@@ -23,11 +23,11 @@
     "static/media/AA13LEDsGoNeonRegular.woff": "/config/static/media/AA13LEDsGoNeonRegular.88f031f2559a150b8cdc.woff",
     "static/media/AA13LEDsGoNeonRegular.woff2": "/config/static/media/AA13LEDsGoNeonRegular.20b8be4fd1d13eac6cfc.woff2",
     "index.html": "/config/index.html",
-    "main.db7e9882.css.map": "/config/static/css/main.db7e9882.css.map",
-    "main.fca9846f.js.map": "/config/static/js/main.fca9846f.js.map"
+    "main.f6a46b0e.css.map": "/config/static/css/main.f6a46b0e.css.map",
+    "main.2df42bc6.js.map": "/config/static/js/main.2df42bc6.js.map"
   },
   "entrypoints": [
-    "static/css/main.db7e9882.css",
-    "static/js/main.fca9846f.js"
+    "static/css/main.f6a46b0e.css",
+    "static/js/main.2df42bc6.js"
   ]
 }
