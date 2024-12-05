@@ -23,6 +23,7 @@ const Canvas = ({
   const [zoom, setZoom] = useState(1);
   const containerRef = useRef(null);
   const [fontSize, setFontSize] = useState(1);
+  const [textLen, setTextLen] = useState(currentText.length);
 
   const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
   useEffect(() => {
@@ -36,19 +37,6 @@ const Canvas = ({
       setColorIndex(index);
     }
   }, [selectedColor, rgbSpeed, rgbColors.length]);
-
-  const getTextShadow = () => {
-    if (selectedFont < 5) {
-      return `0px 0px ${neonGlow}px ${
-        selectedColor === "RGB"
-          ? rgbColors[colorIndex]
-          : ColorsArray[colorIndex]
-      }`;
-    }
-    return `0px 0px ${neonGlow}px ${
-      selectedColor === "RGB" ? rgbColors[colorIndex] : ColorsArray[colorIndex]
-    }`;
-  };
 
   const adjustFontSize = () => {
     if (containerRef.current) {
@@ -66,6 +54,16 @@ const Canvas = ({
     window.addEventListener("resize", adjustFontSize);
     return () => window.removeEventListener("resize", adjustFontSize);
   }, [currentText, containerRef]);
+
+  useEffect(() => {
+    console.log(currentText.length);
+  }, [currentText]);
+
+  const textLength = currentText.length;
+
+  useEffect(() => {
+    setTextLen(currentText.length);
+  }, [currentText]);
 
   return (
     <div className={stl.canvas} ref={containerRef}>
@@ -99,7 +97,7 @@ const Canvas = ({
         <span>Zoom</span>
         <input
           type="range"
-          min="0.5"
+          min="0.1"
           max="6"
           step="0.1"
           onInput={(e) => setZoom(e.target.value)}
@@ -127,7 +125,13 @@ const Canvas = ({
           transform: `scale(${zoom})`,
         }}
       >
-        <div className={stl.textWrap}>
+        <div
+          className={stl.textWrap}
+          style={{
+            width:
+              currentText.length > 50 ? `${currentText.length + 150}%` : "100%",
+          }}
+        >
           <h2
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
@@ -135,15 +139,9 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              // textShadow: getTextShadow(),
-              // filter: `drop-shadow(${getTextShadow()})`,
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeColor: ColorsArray[colorIndex],
-              fontSize:
-                fontFamilies[selectedFont] === "Melody"
-                  ? "0.55vw"
-                  : `${fontSize}px`,
-
+              fontSize: `${fontSize}px`,
               textAlign: alignment,
             }}
           >
@@ -158,14 +156,9 @@ const Canvas = ({
                 selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
-              // textShadow: getTextShadow(),
-              // filter: `drop-shadow(${getTextShadow()})`,
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeColor: ColorsArray[colorIndex],
-              fontSize:
-                fontFamilies[selectedFont] === "Melody"
-                  ? "0.55vw"
-                  : `${fontSize}px`,
+              fontSize: `${fontSize}px`,
               opacity: neonGlow,
               textAlign: alignment,
             }}
@@ -175,7 +168,15 @@ const Canvas = ({
         </div>
 
         {lineAmount > 1 && (
-          <div className={stl.textWrap}>
+          <div
+            className={stl.textWrap}
+            style={{
+              width:
+                currentText.length > 50
+                  ? `${currentText.length + 150}%`
+                  : "100%",
+            }}
+          >
             <h2
               className={`${stl.mainText} ${
                 selectedFont < 5 ? stl.outline : ""
@@ -185,12 +186,27 @@ const Canvas = ({
                   selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
-                // textShadow: getTextShadow(),
-                filter: `drop-shadow(${getTextShadow()})`,
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                fontSize:
-                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+                fontSize: `${fontSize}px`,
+                textAlign: alignment,
+              }}
+            >
+              {regel2}
+            </h2>
+            <h2
+              className={`${stl.ghostText} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeColor: ColorsArray[colorIndex],
+                fontSize: `${fontSize}px`,
+                opacity: neonGlow,
                 textAlign: alignment,
               }}
             >
@@ -199,30 +215,15 @@ const Canvas = ({
           </div>
         )}
         {lineAmount > 2 && (
-          <h2
-            className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
+          <div
+            className={stl.textWrap}
             style={{
-              color:
-                selectedColor !== "RGB"
-                  ? ColorsArray[colorIndex]
-                  : rgbColors[colorIndex],
-              // textShadow: getTextShadow(),
-              filter: `drop-shadow(${getTextShadow()})`,
-              fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeWidth:
-                window.innerWidth < 500 && selectedFont < 5 ? "1px" : "0.5px",
-              WebkitTextStrokeColor: ColorsArray[colorIndex],
-              fontSize: fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
-              transform: `scale(${zoom})`,
-              lineHeight: `${zoom * 20}px`,
-              textAlign: alignment,
+              width:
+                currentText.length > 50
+                  ? `${currentText.length + 150}%`
+                  : "100%",
             }}
           >
-            {regel3}
-          </h2>
-        )}
-        {lineAmount > 3 && (
-          <div className={stl.textWrap}>
             <h2
               className={`${stl.mainText} ${
                 selectedFont < 5 ? stl.outline : ""
@@ -232,12 +233,74 @@ const Canvas = ({
                   selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
-                // textShadow: getTextShadow(),
-                filter: `drop-shadow(${getTextShadow()})`,
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                fontSize:
-                  fontFamilies[selectedFont] === "Melody" ? "0.55vw" : "",
+                fontSize: `${fontSize}px`,
+                textAlign: alignment,
+              }}
+            >
+              {regel3}
+            </h2>
+            <h2
+              className={`${stl.ghostText} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeColor: ColorsArray[colorIndex],
+                fontSize: `${fontSize}px`,
+                opacity: neonGlow,
+                textAlign: alignment,
+              }}
+            >
+              {regel3}
+            </h2>
+          </div>
+        )}
+        {lineAmount > 3 && (
+          <div
+            className={stl.textWrap}
+            style={{
+              width:
+                currentText.length > 50
+                  ? `${currentText.length + 150}%`
+                  : "100%",
+            }}
+          >
+            <h2
+              className={`${stl.mainText} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeColor: ColorsArray[colorIndex],
+                fontSize: `${fontSize}px`,
+                textAlign: alignment,
+              }}
+            >
+              {regel4}
+            </h2>
+            <h2
+              className={`${stl.ghostText} ${
+                selectedFont < 5 ? stl.outline : ""
+              }`}
+              style={{
+                color:
+                  selectedColor !== "RGB"
+                    ? ColorsArray[colorIndex]
+                    : rgbColors[colorIndex],
+                fontFamily: fontFamilies[selectedFont],
+                WebkitTextStrokeColor: ColorsArray[colorIndex],
+                fontSize: `${fontSize}px`,
+                opacity: neonGlow,
                 textAlign: alignment,
               }}
             >

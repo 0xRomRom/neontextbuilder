@@ -248,10 +248,6 @@
   }
 }
 @media only screen and (max-width: 800px) {
-  .innerColWrap {
-    width: 70%;
-    left: 15%;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -269,5 +265,9 @@
   }
   .outline {
     -webkit-text-stroke-width: 0.5px;
+  }
+  .textWrap {
+    /* background-color: red; */
+    position: relative;
   }
 }
