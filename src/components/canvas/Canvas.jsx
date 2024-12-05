@@ -25,7 +25,7 @@ const Canvas = ({
   const [fontSize, setFontSize] = useState(1);
   const [textLen, setTextLen] = useState(currentText.length);
 
-  const rgbColors = ["red", "orange", "yellow", "green", "cyan", "magenta"];
+  const rgbColors = ["red", "green", "yellow", "orange", "cyan", "purple"];
   useEffect(() => {
     if (selectedColor === "RGB") {
       const interval = setInterval(() => {
@@ -54,12 +54,6 @@ const Canvas = ({
     window.addEventListener("resize", adjustFontSize);
     return () => window.removeEventListener("resize", adjustFontSize);
   }, [currentText, containerRef]);
-
-  useEffect(() => {
-    console.log(currentText.length);
-  }, [currentText]);
-
-  const textLength = currentText.length;
 
   useEffect(() => {
     setTextLen(currentText.length);
@@ -132,7 +126,7 @@ const Canvas = ({
               currentText.length > 50 ? `${currentText.length + 150}%` : "100%",
           }}
         >
-          <h2
+          <h5
             className={`${stl.mainText} ${selectedFont < 5 ? stl.outline : ""}`}
             style={{
               color:
@@ -141,13 +135,13 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeColor: ColorsArray[colorIndex],
-              WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+              WebkitTextStrokeWidth: window.innerWidth < 500 ? "0.5px" : "1px",
               fontSize: `${fontSize}px`,
               textAlign: alignment,
             }}
           >
             {currentText}
-          </h2>
+          </h5>
           <h2
             className={`${stl.ghostText} ${
               selectedFont < 5 ? stl.outline : ""
@@ -159,7 +153,7 @@ const Canvas = ({
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
               WebkitTextStrokeColor: ColorsArray[colorIndex],
-              WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+              WebkitTextStrokeWidth: window.innerWidth < 500 ? "0.5px" : "1px",
               fontSize: `${fontSize}px`,
               opacity: neonGlow,
               textAlign: alignment,
@@ -190,7 +184,8 @@ const Canvas = ({
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+                WebkitTextStrokeWidth:
+                  window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
               }}
@@ -208,7 +203,8 @@ const Canvas = ({
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+                WebkitTextStrokeWidth:
+                  window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
@@ -239,7 +235,8 @@ const Canvas = ({
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+                WebkitTextStrokeWidth:
+                  window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
               }}
@@ -257,7 +254,8 @@ const Canvas = ({
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+                WebkitTextStrokeWidth:
+                  window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
@@ -288,7 +286,8 @@ const Canvas = ({
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+                WebkitTextStrokeWidth:
+                  window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
               }}
@@ -306,7 +305,8 @@ const Canvas = ({
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
                 WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth: window.innerWidth < 500 ? "2px" : "1px",
+                WebkitTextStrokeWidth:
+                  window.innerWidth < 500 ? "0.5px" : "1px",
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,

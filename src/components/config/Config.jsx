@@ -363,7 +363,8 @@ const Config = ({
                         <h5
                           style={{
                             fontFamily: font,
-                            WebkitTextStrokeWidth: "0.5px",
+                            WebkitTextStrokeWidth:
+                              index < 5 ? "0.2px" : "1.25px",
                             WebkitTextStrokeColor: "white",
                           }}
                         >

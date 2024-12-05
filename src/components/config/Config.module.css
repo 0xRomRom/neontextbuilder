@@ -65,7 +65,7 @@
 
 .colorGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
 }
 
@@ -163,7 +163,7 @@
   border-radius: 0rem;
   border: none;
   outline: none;
-  padding: 4px;
+  /* padding: 6px 0px; */
   color: white;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -173,6 +173,7 @@
   justify-content: center;
   align-items: center;
   letter-spacing: 1.5px;
+  min-height: 35px;
 }
 
 .fontDiv:hover {
