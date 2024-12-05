@@ -183,16 +183,22 @@ const Config = ({
   return (
     <div className={stl.config}>
       <div className={stl.caroussel}>
-        <button onClick={incrementCaroussel}>
-          <FaArrowLeft />
-        </button>
+        {carousselIndex === 0 && <button></button>}
+        {carousselIndex > 0 && (
+          <button onClick={incrementCaroussel}>
+            <FaArrowLeft />
+          </button>
+        )}
         <span className={stl.tabSpan}>
           {icons[carousselIndex]}
           {carousselItems[carousselIndex]}
         </span>
-        <button onClick={decrementCaroussel}>
-          <FaArrowRight />
-        </button>
+        {carousselIndex < 8 && (
+          <button onClick={decrementCaroussel}>
+            <FaArrowRight />
+          </button>
+        )}
+        {carousselIndex === 8 && <button></button>}
       </div>
       {activeTab !== 8 && (
         <div className={stl.restRows}>
@@ -207,6 +213,12 @@ const Config = ({
                   <BiText className={stl.icon} />
                   Text
                 </span>
+                {activeTab === 0 && (
+                  <button onClick={() => setVideoOverlay(videoIDs[0])}>
+                    <FiYoutube />
+                    Voorbeeld
+                  </button>
+                )}
               </div>
 
               {activeTab === 0 && (

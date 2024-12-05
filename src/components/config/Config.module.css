@@ -493,6 +493,7 @@
   align-items: center;
   position: relative;
   gap: 0.25rem;
+  user-select: none;
 }
 
 .maxCharsSpan {

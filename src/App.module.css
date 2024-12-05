@@ -175,16 +175,16 @@ a {
     position: absolute;
     left: 0rem;
     top: 0rem;
-    max-width: 150px;
+    max-width: 125px;
     z-index: 300;
   }
 }
 @media (max-width: 780px) {
   .header {
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
   .mainApp {
-    padding-top: 3rem;
+    padding-top: 1rem;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 6rem;
