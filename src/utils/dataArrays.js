@@ -116,6 +116,24 @@ const customLetterSpacing = [
   "0px", // Peaches
 ];
 
+const glowIntensity = [
+  0.5, // Arial Black
+  0.5, // Arial Rounded Bold
+  0.5, // ChalkboardSE
+  0.5, // Impact
+  0.5, // MarkerFelt
+  0.5, // AA13Regular
+  0.5, // AA14Regular
+  0.5, // AA15Regular
+  0.5, // Art Deco
+  0.5, // Bubble Wrap
+  0.5, // Magnolia
+  0.5, // Melody
+  0.5, // Picnic Basket
+  0.5, // Architect Regular
+  0.5, // Peaches
+];
+
 const maxChars = {
   40: 8,
   50: 10,
@@ -158,4 +176,5 @@ export {
   desktopLineWidths,
   mobileLineWidths,
   customLetterSpacing,
+  glowIntensity,
 };

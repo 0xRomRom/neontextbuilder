@@ -7,6 +7,7 @@ import {
   desktopLineWidths,
   mobileLineWidths,
   customLetterSpacing,
+  glowIntensity,
 } from "../../utils/dataArrays";
 
 const Canvas = ({
@@ -152,6 +153,7 @@ const Canvas = ({
               textAlign: alignment,
               fontWeight: customfontWeights[selectedFont],
               letterSpacing: customLetterSpacing[selectedFont],
+              filter: `blur(${glowIntensity[selectedFont]}rem)`,
             }}
           >
             {currentText}
