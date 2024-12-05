@@ -205,6 +205,7 @@ const Canvas = ({
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
                 letterSpacing: customLetterSpacing[selectedFont],
+                filter: `blur(${glowIntensity[selectedFont]}rem)`,
               }}
             >
               {regel2}
@@ -256,6 +257,7 @@ const Canvas = ({
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
                 letterSpacing: customLetterSpacing[selectedFont],
+                filter: `blur(${glowIntensity[selectedFont]}rem)`,
               }}
             >
               {regel3}
@@ -307,6 +309,7 @@ const Canvas = ({
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
                 letterSpacing: customLetterSpacing[selectedFont],
+                filter: `blur(${glowIntensity[selectedFont]}rem)`,
               }}
             >
               {regel4}
