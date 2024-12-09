@@ -32,6 +32,7 @@ const App = () => {
   const LED_TYPE = selectedColor === "RGB" ? 1.4 : 1;
   const FONT_FACTOR = selectedFont < 5 ? 1.15 : 1;
 
+  // Increase linemultiplier based on line amount/content per line
   useEffect(() => {
     let lineMultiplier = 0.225;
 
@@ -73,9 +74,7 @@ const App = () => {
   ]);
 
   useEffect(() => {
-    // First text decides overall length
     const currentLength = currentText.length;
-
     const allowedForLength = maxChars[customLength];
 
     if (currentLength > allowedForLength) {

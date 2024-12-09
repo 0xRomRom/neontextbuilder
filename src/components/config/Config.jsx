@@ -187,16 +187,60 @@ const Config = ({
     }
   };
 
+  // Set & reset increment warning box on keystroke
   useEffect(() => {
-    if (
-      currentText.length === maxChars[customLength] ||
-      regel2.length === maxChars[customLength] ||
-      regel3.length === maxChars[customLength] ||
-      regel4.length === maxChars[customLength]
-    ) {
-      setAllowIncrement(true);
-    } else {
-      setAllowIncrement(false);
+    // if (
+    //   currentText.length === maxChars[customLength] ||
+    //   regel2.length === maxChars[customLength] ||
+    //   regel3.length === maxChars[customLength] ||
+    //   regel4.length === maxChars[customLength]
+    // ) {
+    //   setAllowIncrement(true);
+    // } else {
+    //   setAllowIncrement(false);
+    // }
+    if (lineAmount === 1) {
+      if (currentText.length === maxChars[customLength]) {
+        setAllowIncrement(true);
+      } else {
+        setAllowIncrement(false);
+      }
+    }
+
+    if (lineAmount === 2) {
+      if (
+        regel2.length === maxChars[customLength] ||
+        currentText.length === maxChars[customLength]
+      ) {
+        setAllowIncrement(true);
+      } else {
+        setAllowIncrement(false);
+      }
+    }
+
+    if (lineAmount === 3) {
+      if (
+        currentText.length === maxChars[customLength] ||
+        regel2.length === maxChars[customLength] ||
+        regel3.length === maxChars[customLength]
+      ) {
+        setAllowIncrement(true);
+      } else {
+        setAllowIncrement(false);
+      }
+    }
+
+    if (lineAmount === 4) {
+      if (
+        currentText.length === maxChars[customLength] ||
+        regel2.length === maxChars[customLength] ||
+        regel3.length === maxChars[customLength] ||
+        regel4.length === maxChars[customLength]
+      ) {
+        setAllowIncrement(true);
+      } else {
+        setAllowIncrement(false);
+      }
     }
   }, [
     currentText,
@@ -204,11 +248,12 @@ const Config = ({
     regel3.length,
     regel4.length,
     currentText.length,
+    lineAmount,
   ]);
 
+  // Update sign length only if allowed
   const updateLengthSlider = (e) => {
     const newValue = +e.target.value;
-
     if (newValue < customLength) {
       const allowedForLength = maxChars[newValue];
       const regel1Length = currentText.length;
@@ -222,12 +267,14 @@ const Config = ({
         regel4Length > allowedForLength
       ) {
         setDecrementWarning(true);
+        return;
       }
-    } else {
-      setCustomLength(e.target.value);
     }
+    setDecrementWarning(false);
+    setCustomLength(e.target.value);
   };
 
+  // Reset warning message on tab switch
   useEffect(() => {
     if (activeTab !== 3) {
       setDecrementWarning(false);
@@ -311,6 +358,12 @@ const Config = ({
                         setCurrentText(e.target.value);
                       }}
                       ref={inputRef}
+                      style={{
+                        border:
+                          currentText.length === maxChars[customLength]
+                            ? "1px solid red"
+                            : "",
+                      }}
                     ></textarea>
                   </div>
                   {lineAmount > 1 && (
@@ -320,9 +373,16 @@ const Config = ({
                         placeholder="Regel 2"
                         className={stl.textInput}
                         value={regel2}
+                        spellCheck={false}
                         maxLength={maxChars[customLength]}
                         onInput={(e) => {
                           setRegel2(e.target.value);
+                        }}
+                        style={{
+                          border:
+                            regel2.length === maxChars[customLength]
+                              ? "1px solid red"
+                              : "",
                         }}
                       ></textarea>
                     </>
@@ -333,9 +393,16 @@ const Config = ({
                       placeholder="Regel 3"
                       className={stl.textInput}
                       value={regel3}
+                      spellCheck={false}
                       maxLength={maxChars[customLength]}
                       onInput={(e) => {
                         setRegel3(e.target.value);
+                      }}
+                      style={{
+                        border:
+                          regel3.length === maxChars[customLength]
+                            ? "1px solid red"
+                            : "",
                       }}
                     ></textarea>
                   )}
@@ -345,9 +412,16 @@ const Config = ({
                       placeholder="Regel 4"
                       className={stl.textInput}
                       value={regel4}
+                      spellCheck={false}
                       maxLength={maxChars[customLength]}
                       onInput={(e) => {
                         setRegel4(e.target.value);
+                      }}
+                      style={{
+                        border:
+                          regel4.length === maxChars[customLength]
+                            ? "1px solid red"
+                            : "",
                       }}
                     ></textarea>
                   )}
@@ -381,7 +455,10 @@ const Config = ({
                       {lineAmount < 4 && (
                         <button
                           className={stl.addsentence}
-                          onClick={() => setLineAmount((prev) => prev + 1)}
+                          onClick={() => {
+                            setLineAmount((prev) => prev + 1);
+                            setAllowIncrement(false);
+                          }}
                         >
                           Regel Toevoegen
                         </button>
