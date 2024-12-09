@@ -35,14 +35,20 @@ const App = () => {
   useEffect(() => {
     let lineMultiplier = 0.225;
 
-    if (lineAmount === 2) {
-      lineMultiplier = 0.375;
+    if (lineAmount >= 2) {
+      if (regel2.length > 0) {
+        lineMultiplier = 0.375;
+      }
     }
-    if (lineAmount === 3) {
-      lineMultiplier = 0.525;
+    if (lineAmount >= 3) {
+      if ((regel2.length > 0 && regel3.length > 0) || regel3.length > 0) {
+        lineMultiplier = 0.525;
+      }
     }
     if (lineAmount === 4) {
-      lineMultiplier = 0.675;
+      if (regel4.length > 0) {
+        lineMultiplier = 0.675;
+      }
     }
 
     const base =
@@ -61,6 +67,9 @@ const App = () => {
     FONT_FACTOR,
     LED_TYPE,
     lineAmount,
+    regel2.length,
+    regel3.length,
+    regel4.length,
   ]);
 
   useEffect(() => {
