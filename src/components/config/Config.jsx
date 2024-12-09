@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import stl from "./Config.module.css";
 import { BiText } from "react-icons/bi";
 import { IoColorPaletteOutline } from "react-icons/io5";
@@ -83,6 +83,7 @@ const Config = ({
   const [activeTab, setActiveTab] = useState(0);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [carousselIndex, setCarousselIndex] = useState(0);
+  const [allowIncrement, setAllowIncrement] = useState(false);
 
   const uploadImage = () => {
     fileInputRef.current.click();
@@ -190,8 +191,24 @@ const Config = ({
         const length = inputElement.value.length;
         inputElement.setSelectionRange(length, length);
       }
+      setAllowIncrement(false);
     }
   };
+
+  useEffect(() => {
+    if (currentText.length === maxChars[customLength]) {
+      setAllowIncrement(true);
+    }
+    if (regel2.length === maxChars[customLength]) {
+      setAllowIncrement(true);
+    }
+    if (regel3.length === maxChars[customLength]) {
+      setAllowIncrement(true);
+    }
+    if (regel4.length === maxChars[customLength]) {
+      setAllowIncrement(true);
+    }
+  }, [currentText, regel2.length, regel3.length, regel4.length]);
 
   return (
     <div className={stl.config}>
@@ -245,20 +262,19 @@ const Config = ({
 
               {activeTab === 0 && (
                 <div className={stl.content}>
-                  {currentText.length === maxChars[customLength] &&
-                    customLength < 150 && (
-                      <span className={stl.maxCharsSpan}>
-                        Karakterlimiet voor bordlengte bereikt.
-                        <br /> Voeg extra regel toe of vergroot lengte
-                        <br />
-                        <button
-                          className={stl.vergrootLengte}
-                          onClick={incrementLength}
-                        >
-                          Vergroot lengte
-                        </button>
-                      </span>
-                    )}
+                  {allowIncrement && customLength < 150 && (
+                    <span className={stl.maxCharsSpan}>
+                      Karakterlimiet voor bordlengte bereikt.
+                      <br /> Voeg extra regel toe of vergroot lengte
+                      <br />
+                      <button
+                        className={stl.vergrootLengte}
+                        onClick={incrementLength}
+                      >
+                        Vergroot lengte
+                      </button>
+                    </span>
+                  )}
                   <div className={stl.textWrap}>
                     <textarea
                       type="text"
