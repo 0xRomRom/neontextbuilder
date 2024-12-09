@@ -84,6 +84,7 @@ const Config = ({
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [carousselIndex, setCarousselIndex] = useState(0);
   const [allowIncrement, setAllowIncrement] = useState(false);
+  const [decrementWarning, setDecrementWarning] = useState(false);
 
   const uploadImage = () => {
     fileInputRef.current.click();
@@ -183,32 +184,77 @@ const Config = ({
     if (customLength < 250) {
       setCustomLength((prev) => +prev + 10);
 
-      if (inputRef?.current) {
-        const inputElement = inputRef.current;
-        inputElement.focus();
+      // if (inputRef?.current) {
+      //   const inputElement = inputRef.current;
+      //   inputElement.focus();
 
-        // Set the caret to the end of the text
-        const length = inputElement.value.length;
-        inputElement.setSelectionRange(length, length);
-      }
+      //   // Set the caret to the end of the text
+      //   const length = inputElement.value.length;
+      //   inputElement.setSelectionRange(length, length);
+      // }
       setAllowIncrement(false);
     }
   };
 
   useEffect(() => {
-    if (currentText.length === maxChars[customLength]) {
+    if (
+      currentText.length === maxChars[customLength] ||
+      regel2.length === maxChars[customLength] ||
+      regel3.length === maxChars[customLength] ||
+      regel4.length === maxChars[customLength]
+    ) {
       setAllowIncrement(true);
+    } else {
+      setAllowIncrement(false);
     }
-    if (regel2.length === maxChars[customLength]) {
-      setAllowIncrement(true);
+  }, [
+    currentText,
+    regel2.length,
+    regel3.length,
+    regel4.length,
+    currentText.length,
+  ]);
+
+  // useEffect(() => {
+  //   const allowedForLength = maxChars[customLength];
+  //   const regel1Length = currentText.length;
+  //   const regel2Length = regel2.length;
+  //   const regel3Length = regel3.length;
+  //   const regel4Length = regel4.length;
+  //   console.log(`Regel 1 Length: ${regel1Length}`);
+  //   console.log(`Regel 2 Length: ${regel2Length}`);
+  //   console.log(`Regel 3 Length: ${regel3Length}`);
+  //   console.log(`Regel 4 Length: ${regel4Length}`);
+  //   console.log(allowedForLength);
+  // }, [customLength]);
+
+  const updateLengthSlider = (e) => {
+    const newValue = +e.target.value;
+    console.log(newValue);
+
+    if (newValue < customLength) {
+      const allowedForLength = maxChars[newValue];
+      const regel1Length = currentText.length;
+      const regel2Length = regel2.length;
+      const regel3Length = regel3.length;
+      const regel4Length = regel4.length;
+      if (
+        regel1Length > allowedForLength ||
+        regel2Length > allowedForLength ||
+        regel3Length > allowedForLength ||
+        regel4Length > allowedForLength
+      ) {
+        setDecrementWarning(true);
+      }
+      console.log(`Allowed for: ${allowedForLength}`);
+      console.log(`Regel 1 Length: ${regel1Length}`);
+      console.log(`Regel 2 Length: ${regel2Length}`);
+      console.log(`Regel 3 Length: ${regel3Length}`);
+      console.log(`Regel 4 Length: ${regel4Length}`);
+    } else {
+      setCustomLength(e.target.value);
     }
-    if (regel3.length === maxChars[customLength]) {
-      setAllowIncrement(true);
-    }
-    if (regel4.length === maxChars[customLength]) {
-      setAllowIncrement(true);
-    }
-  }, [currentText, regel2.length, regel3.length, regel4.length]);
+  };
 
   return (
     <div className={stl.config}>
@@ -475,13 +521,16 @@ const Config = ({
 
               {activeTab === 3 && (
                 <div className={stl.lengthBox}>
+                  {decrementWarning && (
+                    <div className={stl.warningBox}>hello</div>
+                  )}
                   <input
                     type="range"
                     min="40"
                     max="240"
                     step="10"
                     value={customLength}
-                    onChange={(e) => setCustomLength(e.target.value)}
+                    onChange={updateLengthSlider}
                     className={stl.rangeInput}
                   />
                   <span className={stl.rangeValue}>{customLength}CM</span>

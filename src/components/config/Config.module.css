@@ -401,6 +401,16 @@
   margin-bottom: 1rem;
 }
 
+.warningBox {
+  width: 100%;
+  background-color: red;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .mobileYT:active {
   background-color: rgba(255, 0, 221, 0.572);
 }
