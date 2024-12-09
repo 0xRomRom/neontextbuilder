@@ -8,7 +8,7 @@ import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
-  const [currentText, setCurrentText] = useState("Vul uw text in");
+  const [currentText, setCurrentText] = useState("Uw Text");
   const [regel2, setRegel2] = useState("");
   const [regel3, setRegel3] = useState("");
   const [regel4, setRegel4] = useState("");
