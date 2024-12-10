@@ -60,7 +60,7 @@ const Canvas = ({
         setZoom(2.5);
       } else {
         // Scale font size based on width and ensure a minimum size
-        setFontSize(calculatedFontSize);
+        setFontSize(calculatedFontSize - 4);
       }
     }
   }, [currentText.length, selectedFont]);
