@@ -48,13 +48,22 @@ const Canvas = ({
   const adjustFontSize = useCallback(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth;
+
+      const decreaseFont = fontFamilies[selectedFont] === "Melody";
       const calculatedFontSize = Math.max(
         containerWidth / currentText.length,
         10
-      ); // Scale font size based on width and ensure a minimum size
-      setFontSize(calculatedFontSize);
+      );
+      if (decreaseFont) {
+        // Set small for melody
+        setFontSize(4.5);
+        setZoom(2.5);
+      } else {
+        // Scale font size based on width and ensure a minimum size
+        setFontSize(calculatedFontSize);
+      }
     }
-  }, [currentText.length]);
+  }, [currentText.length, selectedFont]);
 
   useEffect(() => {
     adjustFontSize();

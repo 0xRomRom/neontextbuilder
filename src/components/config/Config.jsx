@@ -187,18 +187,8 @@ const Config = ({
     }
   };
 
-  // Set & reset increment warning box on keystroke
+  // Set & reset increment warning box on length cap reach
   useEffect(() => {
-    // if (
-    //   currentText.length === maxChars[customLength] ||
-    //   regel2.length === maxChars[customLength] ||
-    //   regel3.length === maxChars[customLength] ||
-    //   regel4.length === maxChars[customLength]
-    // ) {
-    //   setAllowIncrement(true);
-    // } else {
-    //   setAllowIncrement(false);
-    // }
     if (lineAmount === 1) {
       if (currentText.length === maxChars[customLength]) {
         setAllowIncrement(true);
@@ -249,6 +239,7 @@ const Config = ({
     regel4.length,
     currentText.length,
     lineAmount,
+    customLength,
   ]);
 
   // Update sign length only if allowed
