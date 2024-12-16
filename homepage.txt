@@ -1,1 +1,1 @@
-  // "homepage": "https://ledsgoneon.nl/config/",
+  // "homepage": "https://ledsgoneon.nl/tekst-samenstellen-pagina/",

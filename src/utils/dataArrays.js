@@ -15,6 +15,7 @@ const colors = [
 
 const backgrounds = [
   "./images/Brickwall.webp",
+  "./images/Tester.webp",
   "./images/Muur.jpg",
   "./images/Bord.jpg",
   "./images/Spotlight.jpg",
@@ -60,6 +61,7 @@ const customfontWeights = [
   "500", // Picnic Basket
   "500", // Architect Regular
   "500", // Peaches
+  "500", // Test
 ];
 
 const desktopLineWidths = [
@@ -78,6 +80,7 @@ const desktopLineWidths = [
   "1px", // Picnic Basket
   "1px", // Architect Regular
   "1px", // Peaches
+  "1px", // Test
 ];
 
 const mobileLineWidths = [
@@ -96,6 +99,7 @@ const mobileLineWidths = [
   "0.5px", // Picnic Basket
   "0.5px", // Architect Regular
   "0.5px", // Peaches
+  "0.5px", // Test
 ];
 
 const customLetterSpacing = [
@@ -114,6 +118,7 @@ const customLetterSpacing = [
   "0px", // Picnic Basket
   "0px", // Architect Regular
   "0px", // Peaches
+  "0px", // Test
 ];
 
 const glowIntensity = [
@@ -132,6 +137,7 @@ const glowIntensity = [
   0.5, // Picnic Basket
   0.5, // Architect Regular
   0.5, // Peaches
+  0.5, // Test
 ];
 
 const maxChars = {
@@ -160,6 +166,7 @@ const maxChars = {
 
 const videoIDs = [
   "9U296TyVMqY", // Text
+  "9U296TyVMqY", // Kleur
   "9U296TyVMqY", // Achterpaneel kleur
   "9U296TyVMqY", // Achterpaneel vorm
   "9U296TyVMqY", // Montage methode

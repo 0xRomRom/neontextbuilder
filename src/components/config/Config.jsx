@@ -522,6 +522,12 @@ const Config = ({
                   <IoColorPaletteOutline className={stl.icon} />
                   Kleur
                 </span>
+                {activeTab === 2 && (
+                  <button onClick={() => setVideoOverlay(videoIDs[1])}>
+                    <FiYoutube />
+                    Voorbeeld
+                  </button>
+                )}
               </div>
               {activeTab === 2 && (
                 <div className={stl.content}>
@@ -600,7 +606,7 @@ const Config = ({
                   Achterpaneel Kleur
                 </span>
                 {activeTab === 4 && (
-                  <button onClick={() => setVideoOverlay(videoIDs[0])}>
+                  <button onClick={() => setVideoOverlay(videoIDs[2])}>
                     <FiYoutube />
                     Voorbeeld
                   </button>
@@ -611,7 +617,7 @@ const Config = ({
                 <>
                   {activeTab === 4 && window.innerWidth < 500 && (
                     <button
-                      onClick={() => setVideoOverlay(videoIDs[0])}
+                      onClick={() => setVideoOverlay(videoIDs[2])}
                       className={stl.mobileYT}
                     >
                       <FiYoutube />
@@ -654,7 +660,7 @@ const Config = ({
                   Achterpaneel Vorm
                 </span>
                 {activeTab === 5 && (
-                  <button onClick={() => setVideoOverlay(videoIDs[1])}>
+                  <button onClick={() => setVideoOverlay(videoIDs[3])}>
                     <FiYoutube />
                     Voorbeeld
                   </button>
@@ -665,7 +671,7 @@ const Config = ({
                 <>
                   {activeTab === 5 && window.innerWidth < 500 && (
                     <button
-                      onClick={() => setVideoOverlay(videoIDs[1])}
+                      onClick={() => setVideoOverlay(videoIDs[3])}
                       className={stl.mobileYT}
                     >
                       <FiYoutube />
@@ -766,7 +772,7 @@ const Config = ({
                   Montage Methode
                 </span>
                 {activeTab === 7 && (
-                  <button onClick={() => setVideoOverlay(videoIDs[2])}>
+                  <button onClick={() => setVideoOverlay(videoIDs[4])}>
                     <FiYoutube />
                     Voorbeeld
                   </button>
@@ -777,7 +783,7 @@ const Config = ({
                 <>
                   {activeTab === 7 && window.innerWidth < 500 && (
                     <button
-                      onClick={() => setVideoOverlay(videoIDs[2])}
+                      onClick={() => setVideoOverlay(videoIDs[4])}
                       className={stl.mobileYT}
                     >
                       <FiYoutube />
@@ -845,7 +851,7 @@ const Config = ({
               Afrekenen
             </span>
             {activeTab === 8 && (
-              <button onClick={() => setVideoOverlay(videoIDs[3])}>
+              <button onClick={() => setVideoOverlay(videoIDs[5])}>
                 <FiYoutube />
                 Voorbeeld
               </button>
@@ -856,7 +862,7 @@ const Config = ({
             <>
               {activeTab === 8 && window.innerWidth < 500 && (
                 <button
-                  onClick={() => setVideoOverlay(videoIDs[3])}
+                  onClick={() => setVideoOverlay(videoIDs[5])}
                   className={stl.mobileYT}
                 >
                   <FiYoutube />
