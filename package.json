@@ -1,6 +1,7 @@
 {
   "name": "ledsgoneonconfigurator",
   "version": "0.1.0",
+  "homepage": "https://ledsgoneon.nl/tekst-samenstellen-pagina/",
   "private": true,
   "dependencies": {
     "@react-email/components": "0.0.14",
