@@ -12,7 +12,7 @@
 }
 @font-face {
   font-family: "TEST";
-  src: url("../public/fonts/SLFPeachesn\'Cream-Regular.ttf") format("truetype");
+  src: url("../public/fonts/SLFPeachesn'Cream-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -37,18 +37,6 @@
 /* Start of Single Line fonts */
 
 @font-face {
-  font-family: "AA13Regular";
-  src: url("../public/fonts/AA13LEDsGoNeonRegular.ttf") format("truetype");
-  src: url("../public/fonts/AA13LEDsGoNeonRegular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/AA13Neon-Regular.otf") format("opentype"),
-    url("../public/fonts/AA13LEDsGoNeonRegular.woff") format("woff"),
-    url("../public/fonts/AA13LEDsGoNeonRegular.woff2") format("woff2");
-  font-style: normal;
-  font-display: swap;
-
-}
-@font-face {
   font-family: "Parijs";
   src: url("../public/fonts/Parijs.otf") format("opentype");
   font-weight: normal;
@@ -69,7 +57,8 @@
 }
 @font-face {
   font-family: "Rome";
-  src: url("../public/fonts/SLF-TFPeachesn'Cream-Regular.ttf") format("truetype");
+  src: url("../public/fonts/SLF-TFPeachesn'Cream-Regular.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }

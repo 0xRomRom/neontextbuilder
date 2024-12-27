@@ -123,17 +123,10 @@ const Canvas = ({
             className={stl.mainText}
             style={{
               color:
-                selectedFont < OUTLINE_FONT_COUNT
-                  ? "transparent"
-                  : selectedColor !== "RGB"
+                selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeColor: ColorsArray[colorIndex],
-              WebkitTextStrokeWidth:
-                window.innerWidth < 500
-                  ? mobileLineWidths[selectedFont]
-                  : desktopLineWidths[selectedFont],
               fontSize: `${fontSize}px`,
               textAlign: alignment,
               fontWeight: customfontWeights[selectedFont],
@@ -146,17 +139,10 @@ const Canvas = ({
             className={stl.ghostText}
             style={{
               color:
-                selectedFont < OUTLINE_FONT_COUNT
-                  ? "transparent"
-                  : selectedColor !== "RGB"
+                selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
                   : rgbColors[colorIndex],
               fontFamily: fontFamilies[selectedFont],
-              WebkitTextStrokeColor: ColorsArray[colorIndex],
-              WebkitTextStrokeWidth:
-                window.innerWidth < 500
-                  ? mobileLineWidths[selectedFont]
-                  : desktopLineWidths[selectedFont],
               fontSize: `${fontSize}px`,
               opacity: neonGlow,
               textAlign: alignment,
@@ -175,17 +161,10 @@ const Canvas = ({
               className={stl.mainText}
               style={{
                 color:
-                  selectedFont < OUTLINE_FONT_COUNT
-                    ? "transparent"
-                    : selectedColor !== "RGB"
+                  selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth:
-                  window.innerWidth < 500
-                    ? mobileLineWidths[selectedFont]
-                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
@@ -198,17 +177,10 @@ const Canvas = ({
               className={stl.ghostText}
               style={{
                 color:
-                  selectedFont < OUTLINE_FONT_COUNT
-                    ? "transparent"
-                    : selectedColor !== "RGB"
+                  selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth:
-                  window.innerWidth < 500
-                    ? mobileLineWidths[selectedFont]
-                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
@@ -227,17 +199,10 @@ const Canvas = ({
               className={stl.mainText}
               style={{
                 color:
-                  selectedFont < OUTLINE_FONT_COUNT
-                    ? "transparent"
-                    : selectedColor !== "RGB"
+                  selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth:
-                  window.innerWidth < 500
-                    ? mobileLineWidths[selectedFont]
-                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
@@ -250,17 +215,10 @@ const Canvas = ({
               className={stl.ghostText}
               style={{
                 color:
-                  selectedFont < OUTLINE_FONT_COUNT
-                    ? "transparent"
-                    : selectedColor !== "RGB"
+                  selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth:
-                  window.innerWidth < 500
-                    ? mobileLineWidths[selectedFont]
-                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,
@@ -279,17 +237,10 @@ const Canvas = ({
               className={stl.mainText}
               style={{
                 color:
-                  selectedFont < OUTLINE_FONT_COUNT
-                    ? "transparent"
-                    : selectedColor !== "RGB"
+                  selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth:
-                  window.innerWidth < 500
-                    ? mobileLineWidths[selectedFont]
-                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 textAlign: alignment,
                 fontWeight: customfontWeights[selectedFont],
@@ -302,17 +253,10 @@ const Canvas = ({
               className={stl.ghostText}
               style={{
                 color:
-                  selectedFont < OUTLINE_FONT_COUNT
-                    ? "transparent"
-                    : selectedColor !== "RGB"
+                  selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
                     : rgbColors[colorIndex],
                 fontFamily: fontFamilies[selectedFont],
-                WebkitTextStrokeColor: ColorsArray[colorIndex],
-                WebkitTextStrokeWidth:
-                  window.innerWidth < 500
-                    ? mobileLineWidths[selectedFont]
-                    : desktopLineWidths[selectedFont],
                 fontSize: `${fontSize}px`,
                 opacity: neonGlow,
                 textAlign: alignment,

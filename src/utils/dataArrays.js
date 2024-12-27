@@ -25,6 +25,7 @@ const backgrounds = [
   "./images/Last.webp",
 ];
 
+// Let op: OUTLINE_FONT_COUNT telt vanaf onder aan de array.
 const fontFamilies = [
   "Parijs",
   "Madrid",
@@ -59,7 +60,6 @@ const customfontWeights = [
   "1000", // Manchester
   "1000", // Warschau
   "0", // TEST
-
 ];
 
 const desktopLineWidths = [

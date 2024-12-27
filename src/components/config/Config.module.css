@@ -193,10 +193,6 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-.fontGrid > :last-child {
-  grid-column: span 2;
-}
-
 .activeBg {
   background-color: rgba(128, 0, 128, 0.538);
   padding: 8px;

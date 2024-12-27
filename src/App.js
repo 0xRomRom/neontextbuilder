@@ -31,7 +31,7 @@ const App = () => {
   const BASE_PRICE = 175;
   const BACKPANEL_TYPE = backPanelColor === "Zwart" ? 1.25 : 1;
   const LED_TYPE = selectedColor === "RGB" ? 1.4 : 1;
-  const FONT_FACTOR = selectedFont < OUTLINE_FONT_COUNT ? 1.15 : 1;
+  const FONT_FACTOR = selectedFont > OUTLINE_FONT_COUNT - 1 ? 1.15 : 1;
 
   // Increase linemultiplier based on line amount/content per line
   useEffect(() => {

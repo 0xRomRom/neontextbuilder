@@ -138,6 +138,7 @@ const Config = ({
             regel4,
             checkouttext: checkoutMessage,
             lettertype: fontFamilies[selectedFont],
+            OUTLINE_FONT_COUNT,
           }),
         }
       );
@@ -498,9 +499,6 @@ const Config = ({
                         <h5
                           style={{
                             fontFamily: font,
-                            WebkitTextStrokeWidth:
-                              index < OUTLINE_FONT_COUNT ? "0.2px" : "1.25px",
-                            WebkitTextStrokeColor: "white",
                           }}
                         >
                           {font}
