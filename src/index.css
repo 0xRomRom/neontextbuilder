@@ -1,30 +1,36 @@
 @font-face {
-  font-family: "Arial Black";
-  src: url("../public/fonts/ArialBlack.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Arial Rounded Bold";
+  font-family: "Keulen";
   src: url("../public/fonts/ArialRoundedBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "ChalkboardSE";
-  src: url("../public/fonts/ChalkboardSE.ttc") format("truetype");
+  font-family: "Napels";
+  src: url("../public/fonts/ArialBlack.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Impact";
-  src: url("../public/fonts/Impact.ttf") format("truetype");
+  font-family: "TEST";
+  src: url("../public/fonts/SLFPeachesn\'Cream-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "MarkerFelt";
+  font-family: "Athene";
+  src: url("../public/fonts/Cream Cake.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manchester";
   src: url("../public/fonts/MarkerFelt.ttc") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Warschau";
+  src: url("../public/fonts/opera-western.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -40,59 +46,60 @@
     url("../public/fonts/AA13LEDsGoNeonRegular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
+
 }
 @font-face {
-  font-family: "AA14Regular";
-  src: url("../public/fonts/AA14Neon-Regular.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AA15Regular";
-  src: url("../public/fonts/AA15Neon-Regular.otf") format("opentype");
+  font-family: "Parijs";
+  src: url("../public/fonts/Parijs.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Art Deco";
-  src: url("../public/fonts/ArtDeco.otf") format("opentype");
+  font-family: "Londen";
+  src: url("../public/fonts/SLFArchitect-Regular.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Bubble Wrap";
+  font-family: "Madrid";
   src: url("../public/fonts/BubbleWrap.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Magnolia";
-  src: url("../public/fonts/Magnolia.ttf") format("truetype");
+  font-family: "Rome";
+  src: url("../public/fonts/SLF-TFPeachesn'Cream-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Melody";
-  src: url("../public/fonts/Melody.ttf") format("truetype");
+  font-family: "Lissabon";
+  src: url("../public/fonts/AA15Neon-Regular.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Picnic Basket";
+  font-family: "Istanbul";
+  src: url("../public/fonts/AA14Neon-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Berlijn";
+  src: url("../public/fonts/Leiden.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Milaan";
   src: url("../public/fonts/PicnicBasket.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Architect Regular";
-  src: url("../public/fonts/ArchitectRegular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Peaches";
-  src: url("../public/fonts/Peaches.ttf") format("truetype");
+  font-family: "Brussel";
+  src: url("../public/fonts/Maastricht.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

@@ -26,11 +26,12 @@ const App = () => {
   const [lineAmount, setLineAmount] = useState(1);
   const [alignment, setAlignment] = useState("center");
 
+  const OUTLINE_FONT_COUNT = 6;
   //////////////// Frontend Price Constants ///////////////////
   const BASE_PRICE = 175;
   const BACKPANEL_TYPE = backPanelColor === "Zwart" ? 1.25 : 1;
   const LED_TYPE = selectedColor === "RGB" ? 1.4 : 1;
-  const FONT_FACTOR = selectedFont < 5 ? 1.15 : 1;
+  const FONT_FACTOR = selectedFont < OUTLINE_FONT_COUNT ? 1.15 : 1;
 
   // Increase linemultiplier based on line amount/content per line
   useEffect(() => {
@@ -139,6 +140,7 @@ const App = () => {
             regel2={regel2}
             regel3={regel3}
             regel4={regel4}
+            OUTLINE_FONT_COUNT={OUTLINE_FONT_COUNT}
           />
           <Config
             currentText={currentText}
@@ -172,6 +174,7 @@ const App = () => {
             regel4={regel4}
             setRegel4={setRegel4}
             setLineAmount={setLineAmount}
+            OUTLINE_FONT_COUNT={OUTLINE_FONT_COUNT}
           />
         </main>
       </div>

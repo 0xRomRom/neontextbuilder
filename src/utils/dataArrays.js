@@ -26,85 +26,79 @@ const backgrounds = [
 ];
 
 const fontFamilies = [
-  "Arial Black",
-  "Arial Rounded Bold",
-  "ChalkboardSE",
-  "Impact",
-  "MarkerFelt",
-  "AA13Regular",
-  "AA14Regular",
-  "AA15Regular",
-  "Art Deco",
-  "Bubble Wrap",
-  "Magnolia",
-  "Melody",
-  "Picnic Basket",
-  "Architect Regular",
-  "Peaches",
+  "Parijs",
+  "Madrid",
+  "Rome",
+  "Lissabon",
+  "Istanbul",
+  "Berlijn",
+  "Milaan",
+  "Brussel",
+  "Keulen",
+  "Napels",
+  "Athene",
+  "Manchester",
+  "Warschau",
+  "TEST",
 ];
 
 // Heeft geen effect op outline fonts (1/5)
 // Waarde tussen "100" en "1000"
 const customfontWeights = [
-  "1000", // Arial Black
-  "1000", // Arial Rounded Bold
-  "1000", // ChalkboardSE
-  "1000", // Impact
-  "1000", // MarkerFelt
-  "500", // AA13Regular
-  "500", // AA14Regular
-  "500", // AA15Regular
-  "500", // Art Deco
-  "500", // Bubble Wrap
-  "500", // Magnolia
-  "500", // Melody
-  "500", // Picnic Basket
-  "500", // Architect Regular
-  "500", // Peaches
-  "500", // Test
+  "500", // Parijs
+  "500", // Madrid
+  "500", // Rome
+  "500", // Lissabon
+  "500", // Istanbul
+  "500", // Berlijn
+  "500", // Milaan
+  "500", // Brussel
+  "1000", // Keulen
+  "1000", // Napels
+  "1000", // Athene
+  "1000", // Manchester
+  "1000", // Warschau
+  "0", // TEST
+
 ];
 
 const desktopLineWidths = [
-  "1px", // Arial Black
-  "1px", // Arial Rounded Bold
-  "1px", // ChalkboardSE
-  "1px", // Impact
-  "1px", // MarkerFelt
-  "1px", // AA13Regular
-  "1px", // AA14Regular
-  "1px", // AA15Regular
-  "1px", // Art Deco
-  "1px", // Bubble Wrap
-  "1px", // Magnolia
-  "1px", // Melody
-  "1px", // Picnic Basket
-  "1px", // Architect Regular
-  "1px", // Peaches
-  "1px", // Test
+  "5px", // Parijs
+  "5px", // Madrid
+  "4px", // Rome
+  "5px", // Lissabon
+  "5px", // Istanbul
+  "4px", // Berlijn
+  "4px", // Milaan
+  "5px", // Brussel
+  "1px", // Keulen
+  "1px", // Napels
+  "1px", // Athene
+  "1px", // Manchester
+  "1px", // Warschau
+  "0px", // TEST
 ];
 
 const mobileLineWidths = [
-  "0.5px", // Arial Black
-  "0.5px", // Arial Rounded Bold
-  "0.5px", // ChalkboardSE
-  "0.5px", // Impact
-  "0.5px", // MarkerFelt
-  "0.5px", // AA13Regular
-  "0.5px", // AA14Regular
-  "0.5px", // AA15Regular
-  "0.5px", // Art Deco
-  "0.5px", // Bubble Wrap
-  "0.5px", // Magnolia
-  "0.5px", // Melody
-  "0.5px", // Picnic Basket
-  "0.5px", // Architect Regular
-  "0.5px", // Peaches
-  "0.5px", // Test
+  "1px", // Parijs
+  "1px", // Madrid
+  "1px", // Rome
+  "1px", // Lissabon
+  "1px", // Istanbul
+  "1px", // Berlijn
+  "1px", // Milaan
+  "1px", // Brussel
+  "1px", // Keulen
+  "1px", // Napels
+  "1px", // Athene
+  "1px", // Manchester
+  "1px", // Warschau
+  "0px", // TEST
 ];
 
 const customLetterSpacing = [
-  "0px", // Arial Black
-  "0px", // Arial Rounded Bold
+  "0px", // Parijs
+  "0px", // Madrid
   "0px", // ChalkboardSE
   "0px", // Impact
   "0px", // MarkerFelt
@@ -122,8 +116,8 @@ const customLetterSpacing = [
 ];
 
 const glowIntensity = [
-  0.5, // Arial Black
-  0.5, // Arial Rounded Bold
+  0.5, // Parijs
+  0.5, // Madrid
   0.5, // ChalkboardSE
   0.5, // Impact
   0.5, // MarkerFelt
@@ -165,11 +159,11 @@ const maxChars = {
 };
 
 const videoIDs = [
-  "9U296TyVMqY", // Text
-  "9U296TyVMqY", // Kleur
-  "9U296TyVMqY", // Achterpaneel kleur
-  "9U296TyVMqY", // Achterpaneel vorm
-  "9U296TyVMqY", // Montage methode
+  "G8p6vr0Of4I", // Text
+  "Io194T5VC2w", // Kleur
+  "bmMFjJ-g8jo", // Achterpaneel kleur
+  "8iSiPzDqDcg", // Achterpaneel vorm
+  "L2G1LQRGeq4", // Montage methode
   "9U296TyVMqY", // Afrekenen
 ];
 

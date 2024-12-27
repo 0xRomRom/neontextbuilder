@@ -77,6 +77,7 @@ const Config = ({
   regel4,
   setRegel4,
   setLineAmount,
+  OUTLINE_FONT_COUNT,
 }) => {
   const inputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -498,7 +499,7 @@ const Config = ({
                           style={{
                             fontFamily: font,
                             WebkitTextStrokeWidth:
-                              index < 5 ? "0.2px" : "1.25px",
+                              index < OUTLINE_FONT_COUNT ? "0.2px" : "1.25px",
                             WebkitTextStrokeColor: "white",
                           }}
                         >

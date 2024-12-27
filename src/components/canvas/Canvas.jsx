@@ -23,11 +23,11 @@ const Canvas = ({
   regel2,
   regel3,
   regel4,
+  OUTLINE_FONT_COUNT,
 }) => {
   const [bgOpacity, setBgOpacity] = useState("0.7");
   const [neonGlow, setNeonGlow] = useState(0.8);
   const [colorIndex, setColorIndex] = useState(0);
-  // const [rgbSpeed, setRgbSpeed] = useState(500);
   const [zoom, setZoom] = useState(1);
   const containerRef = useRef(null);
   const [fontSize, setFontSize] = useState(1);
@@ -123,7 +123,7 @@ const Canvas = ({
             className={stl.mainText}
             style={{
               color:
-                selectedFont < 5
+                selectedFont < OUTLINE_FONT_COUNT
                   ? "transparent"
                   : selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
@@ -146,7 +146,7 @@ const Canvas = ({
             className={stl.ghostText}
             style={{
               color:
-                selectedFont < 5
+                selectedFont < OUTLINE_FONT_COUNT
                   ? "transparent"
                   : selectedColor !== "RGB"
                   ? ColorsArray[colorIndex]
@@ -175,7 +175,7 @@ const Canvas = ({
               className={stl.mainText}
               style={{
                 color:
-                  selectedFont < 5
+                  selectedFont < OUTLINE_FONT_COUNT
                     ? "transparent"
                     : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
@@ -198,7 +198,7 @@ const Canvas = ({
               className={stl.ghostText}
               style={{
                 color:
-                  selectedFont < 5
+                  selectedFont < OUTLINE_FONT_COUNT
                     ? "transparent"
                     : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
@@ -227,7 +227,7 @@ const Canvas = ({
               className={stl.mainText}
               style={{
                 color:
-                  selectedFont < 5
+                  selectedFont < OUTLINE_FONT_COUNT
                     ? "transparent"
                     : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
@@ -250,7 +250,7 @@ const Canvas = ({
               className={stl.ghostText}
               style={{
                 color:
-                  selectedFont < 5
+                  selectedFont < OUTLINE_FONT_COUNT
                     ? "transparent"
                     : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
@@ -279,7 +279,7 @@ const Canvas = ({
               className={stl.mainText}
               style={{
                 color:
-                  selectedFont < 5
+                  selectedFont < OUTLINE_FONT_COUNT
                     ? "transparent"
                     : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
@@ -302,7 +302,7 @@ const Canvas = ({
               className={stl.ghostText}
               style={{
                 color:
-                  selectedFont < 5
+                  selectedFont < OUTLINE_FONT_COUNT
                     ? "transparent"
                     : selectedColor !== "RGB"
                     ? ColorsArray[colorIndex]
