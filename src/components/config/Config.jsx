@@ -139,6 +139,7 @@ const Config = ({
             checkouttext: checkoutMessage,
             lettertype: fontFamilies[selectedFont],
             OUTLINE_FONT_COUNT,
+            font_length: fontFamilies.length,
           }),
         }
       );

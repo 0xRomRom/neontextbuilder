@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import NavOverlay from "./components/nav/NavOverlay";
 import Config from "./components/config/Config";
 import Canvas from "./components/canvas/Canvas";
-import { colors, backgrounds, maxChars } from "./utils/dataArrays";
+import {
+  colors,
+  backgrounds,
+  maxChars,
+  fontFamilies,
+} from "./utils/dataArrays";
 import VideoOverlay from "./components/videooverlay/VideoOverlay";
 
 const App = () => {
@@ -31,7 +36,8 @@ const App = () => {
   const BASE_PRICE = 175;
   const BACKPANEL_TYPE = backPanelColor === "Zwart" ? 1.25 : 1;
   const LED_TYPE = selectedColor === "RGB" ? 1.4 : 1;
-  const FONT_FACTOR = selectedFont > OUTLINE_FONT_COUNT - 1 ? 1.15 : 1;
+  const FONT_FACTOR =
+    selectedFont > fontFamilies.length - OUTLINE_FONT_COUNT - 1 ? 1.15 : 1;
 
   // Increase linemultiplier based on line amount/content per line
   useEffect(() => {
